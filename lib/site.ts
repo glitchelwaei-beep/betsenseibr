@@ -1,0 +1,15 @@
+export const SITE = {
+  name: "BetSensei BR",
+  shortName: "BetSensei",
+  domain: "betsensei.com.br",
+  url: "https://betsensei.com.br",
+  description:
+    "Análise honesta da BetWinner Brasil: bônus, código promocional, cadastro com PIX, app, saque e suporte. Tudo em português.",
+  htmlLang: "pt-BR",
+  ogLocale: "pt_BR",
+  twitter: "@betsensei_br",
+  telegram: "https://t.me/betsensei_br",
+  youtube: "https://youtube.com/@betsensei_br",
+  instagram: "https://instagram.com/betsensei_br",
+  ageRestriction: 18,
+};
