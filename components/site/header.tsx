@@ -14,7 +14,7 @@ export function Header() {
           <span className="font-display text-xl font-extrabold tracking-tight">
             <span className="text-brand">BET</span>
             <span className="text-text">SENSEI</span>
-            <span className="text-text-muted text-sm ml-1">.br</span>
+            <span className="text-text-muted text-sm ml-1">brasil</span>
           </span>
         </Link>
 

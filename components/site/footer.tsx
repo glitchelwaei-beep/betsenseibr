@@ -44,7 +44,7 @@ export function Footer() {
             <div className="font-display text-xl font-extrabold tracking-tight">
               <span className="text-brand">BET</span>
               <span className="text-text">SENSEI</span>
-              <span className="text-text-muted text-sm ml-1">.br</span>
+              <span className="text-text-muted text-sm ml-1">brasil</span>
             </div>
             <p className="mt-3 text-sm text-text-muted leading-relaxed">
               Análise independente da BetWinner para apostadores brasileiros. Cadastro, PIX, app, saques — testado por nós.
