@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Contato",
-  description: `Entre em contato com o ${SITE.name}: e-mail, Telegram e formulário.`,
+  description: `Fale com o ${SITE.name} por e-mail (${SITE.email}) ou Telegram para dúvidas, correções de conteúdo e parcerias.`,
   path: "/contato",
 });
 
@@ -31,9 +31,11 @@ export default function ContatoPage() {
           <article className="prose-content mt-6">
             <p>Para correções de conteúdo, feedback ou parcerias:</p>
             <ul>
-              <li><strong>E-mail:</strong> contato@{SITE.domain}</li>
-              <li><strong>Telegram:</strong> <a href={SITE.telegram} target="_blank" rel="noopener noreferrer">@betsensei_br</a></li>
-              <li><strong>Instagram:</strong> <a href={SITE.instagram} target="_blank" rel="noopener noreferrer">@betsensei_br</a></li>
+              <li>
+                <strong>E-mail:</strong>{" "}
+                <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              </li>
+              <li><strong>Telegram:</strong> <a href={SITE.telegram} target="_blank" rel="noopener noreferrer">@betsenseibr</a></li>
             </ul>
 
             <h2>Suporte técnico da BetWinner</h2>
@@ -48,8 +50,9 @@ export default function ContatoPage() {
 
             <h2>Imprensa e parcerias</h2>
             <p>
-              Para parcerias editoriais (guest posts, conteúdo patrocinado), envie um e-mail para parcerias@{SITE.domain}.
-              Avaliamos caso a caso e mantemos transparência total sobre conteúdos patrocinados.
+              Para parcerias editoriais (guest posts, conteúdo patrocinado), envie um e-mail para{" "}
+              <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. Avaliamos caso a caso e mantemos transparência total
+              sobre conteúdos patrocinados.
             </p>
           </article>
         </Container>

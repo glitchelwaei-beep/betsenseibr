@@ -36,6 +36,7 @@ export function buildMetadata({ title, description, path, noindex, image }: SeoI
     },
     twitter: {
       card: "summary_large_image",
+      site: SITE.twitter,
       title: fullTitle,
       description,
       images: [ogImage],

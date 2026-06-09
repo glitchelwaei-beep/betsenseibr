@@ -39,20 +39,6 @@ export const metadata: Metadata = {
   },
   applicationName: SITE.name,
   authors: [{ name: SITE.name, url: SITE.url }],
-  keywords: [
-    "BetWinner Brasil",
-    "BetWinner código promocional",
-    "BetWinner cadastro",
-    "BetWinner PIX",
-    "BetWinner app",
-    "casas de apostas Brasil",
-    "apostas esportivas",
-    "apostas futebol",
-    "depósito PIX casa de apostas",
-    "saque PIX",
-    "bônus de boas-vindas BetWinner",
-    "BetWinner login",
-  ],
 };
 
 export default function RootLayout({

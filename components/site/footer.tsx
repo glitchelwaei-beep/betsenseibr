@@ -7,7 +7,7 @@ const FOOTER_GROUPS = [
     title: "BetWinner",
     links: [
       { href: "/betwinner", label: "Análise completa" },
-      { href: "/codigo-promocional", label: "Código promocional BETBRMAX" },
+      { href: "/codigo-promocional", label: "Código promocional BETSENSEI26" },
       { href: "/cadastro", label: "Cadastro" },
       { href: "/aplicativo", label: "App / APK" },
       { href: "/pix", label: "Depósito via PIX" },
@@ -52,7 +52,6 @@ export function Footer() {
             <div className="mt-4 flex gap-3">
               <a href={SITE.telegram} target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-brand text-sm">Telegram</a>
               <a href={SITE.youtube} target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-brand text-sm">YouTube</a>
-              <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-brand text-sm">Instagram</a>
             </div>
           </div>
 

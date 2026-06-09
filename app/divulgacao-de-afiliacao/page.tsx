@@ -36,7 +36,7 @@ export default function DivulgacaoPage() {
 
             <h2>O que isso significa para você</h2>
             <ul>
-              <li><strong>Custo zero:</strong> você não paga nada a mais. O bônus de boas-vindas é igual (ou maior, com o código <code>BETBRMAX</code>) do que se você acessasse direto</li>
+              <li><strong>Custo zero:</strong> você não paga nada a mais. O bônus de boas-vindas é igual (ou maior, com o código <code>BETSENSEI26</code>) do que se você acessasse direto</li>
               <li><strong>Sem influência editorial:</strong> a comissão não muda nossa avaliação. Apontamos defeitos da BetWinner abertamente</li>
               <li><strong>Sem dados compartilhados:</strong> só a informação "houve um cadastro" é repassada — sem dados pessoais</li>
             </ul>

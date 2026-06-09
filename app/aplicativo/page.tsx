@@ -1,9 +1,11 @@
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { PageUpdated } from "@/components/site/page-updated";
 import { JsonLd } from "@/components/site/json-ld";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { BETWINNER } from "@/lib/partner";
+import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -54,8 +56,9 @@ export default function AplicativoPage() {
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
             Baixar o app da BetWinner no Brasil
           </h1>
+          <PageUpdated date={PAGE_UPDATED.aplicativo} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted">
-            App oficial em português para Android (APK) e iPhone (iOS). Atualizado em maio de 2026.
+            App oficial em português para Android (APK) e iPhone (iOS).
           </p>
 
           <div className="my-8 rounded-2xl border border-border bg-bg-elevated p-6 sm:p-8">
@@ -68,7 +71,7 @@ export default function AplicativoPage() {
                 <div className="text-sm text-text-muted">Android 7.0+ • ~80 MB • PT-BR</div>
               </div>
             </div>
-            <ButtonLink href="/go/betwinner?src=apk-page" external size="lg" variant="primary" className="mt-6 w-full">
+            <ButtonLink href="/go/bw-apk?src=apk-page" external size="lg" variant="primary" className="mt-6 w-full">
               Baixar no site oficial →
             </ButtonLink>
             <p className="mt-3 text-xs text-text-dim text-center">
@@ -89,7 +92,7 @@ export default function AplicativoPage() {
 
             <h2>Instalação no iPhone (iOS)</h2>
             <ol>
-              <li>Abra o site oficial da BetWinner no Safari</li>
+              <li>Abra o <a href="/go/bw-apk?src=apk-ios">site oficial da BetWinner</a> no Safari</li>
               <li>Clique em "Baixar para iPhone"</li>
               <li>Aceite baixar o perfil de configuração da Apple</li>
               <li>Vá em <strong>Configurações → Geral → VPN e gerenciamento de dispositivo</strong> e confie no perfil</li>

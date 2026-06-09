@@ -1,14 +1,16 @@
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { PageUpdated } from "@/components/site/page-updated";
 import { JsonLd } from "@/components/site/json-ld";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { BETWINNER } from "@/lib/partner";
+import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Como se cadastrar na BetWinner — passo a passo 2026",
-  description: "Tutorial completo de cadastro na BetWinner Brasil: telefone +55, CPF, código promocional BETBRMAX, verificação. Em menos de 2 minutos.",
+  description: "Tutorial completo de cadastro na BetWinner Brasil: telefone +55, CPF, código promocional BETSENSEI26, verificação. Em menos de 2 minutos.",
   path: "/cadastro",
 });
 
@@ -45,6 +47,7 @@ export default function CadastroPage() {
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
             Como se cadastrar na BetWinner
           </h1>
+          <PageUpdated date={PAGE_UPDATED.cadastro} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted">
             Cadastro em 2 minutos: telefone, CPF, código promocional <strong className="font-mono text-brand">{BETWINNER.promoCode}</strong>. Tutorial passo a passo com prints.
           </p>
@@ -88,7 +91,7 @@ export default function CadastroPage() {
 
             <h2>Passo 4 — Aplicar o código promocional {BETWINNER.promoCode}</h2>
             <p>
-              No mesmo formulário, há um campo <strong>"Código de promoção"</strong>. Insira <strong>{BETWINNER.promoCode}</strong> para ativar o bônus máximo de boas-vindas (100% até R$ 1.500 + 150 giros grátis).
+              No mesmo formulário, há um campo <strong>"Código de promoção"</strong>. Insira <strong>{BETWINNER.promoCode}</strong> para ativar {BETWINNER.bonusHeadline.toLowerCase()} ({BETWINNER.bonusContext}).
             </p>
 
             <h2>Passo 5 — Confirmar telefone por SMS</h2>

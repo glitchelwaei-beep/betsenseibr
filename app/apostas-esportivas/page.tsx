@@ -2,9 +2,11 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { PageUpdated } from "@/components/site/page-updated";
 import { JsonLd } from "@/components/site/json-ld";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { BETWINNER } from "@/lib/partner";
+import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -22,6 +24,29 @@ const SPORTS = [
   { name: "E-sports", desc: "CS2, Dota 2, League of Legends, Valorant, CBLOL" },
 ];
 
+const FAQ = [
+  {
+    question: "As apostas esportivas são legais no Brasil?",
+    answer:
+      "A Lei 14.790/2023 regulamentou apostas de quota fixa no Brasil desde janeiro de 2025. Operadores precisam de licença da SPA. A BetWinner opera com licença internacional (Curaçao) e não está na lista da SPA — apostadores brasileiros usam a plataforma por conta própria.",
+  },
+  {
+    question: "Quais esportes a BetWinner cobre no Brasil?",
+    answer:
+      "Futebol (Brasileirão, Libertadores, Copa do Brasil, estaduais), UFC/MMA, basquete (NBA, NBB), vôlei, tênis e e-sports (CS2, LoL, Valorant, CBLOL). Mais de 40 modalidades no total.",
+  },
+  {
+    question: "Qual a diferença entre aposta pré-jogo e ao vivo?",
+    answer:
+      "Na pré-jogo você aposta antes do início com odds fixas no momento da aposta. No ao vivo (in-play) as odds mudam durante a partida conforme o jogo evolui — gols, cartões e escanteios alteram as linhas em tempo real.",
+  },
+  {
+    question: "Como funciona o bônus de boas-vindas na BetWinner?",
+    answer:
+      `A BetWinner oferece ${BETWINNER.bonusHeadline.toLowerCase()} (${BETWINNER.bonusContext}). Use o código ${BETWINNER.promoCode} no cadastro. ${BETWINNER.promoCodeNote}`,
+  },
+];
+
 export default function ApostasEsportivasPage() {
   return (
     <>
@@ -31,6 +56,7 @@ export default function ApostasEsportivasPage() {
           { name: "Apostas esportivas", url: "/apostas-esportivas" },
         ])}
       />
+      <JsonLd data={faqSchema(FAQ)} />
       <Container className="pt-6">
         <Breadcrumbs items={[{ label: "Início", href: "/" }, { label: "Apostas esportivas" }]} />
       </Container>
@@ -39,6 +65,7 @@ export default function ApostasEsportivasPage() {
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
             Apostas esportivas no Brasil — guia 2026
           </h1>
+          <PageUpdated date={PAGE_UPDATED.apostas} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted">
             Tipos de aposta, esportes cobertos pela BetWinner, odds, legislação brasileira e estratégias básicas.
           </p>
@@ -112,7 +139,7 @@ export default function ApostasEsportivasPage() {
             <div className="my-8 not-prose rounded-2xl border border-brand/30 bg-gradient-to-br from-brand/10 to-transparent p-6">
               <h3 className="font-display text-xl font-bold text-text mb-2">Começar a apostar</h3>
               <p className="text-text-muted mb-4">
-                Bônus de R$ 1.500 + 150 giros com código <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span>.
+                {BETWINNER.bonusHeadline} com código <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span>.
               </p>
               <ButtonLink href="/go/betwinner?src=apostas-page" external size="lg" variant="primary">
                 Cadastrar na BetWinner →

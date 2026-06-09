@@ -2,14 +2,16 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { PageUpdated } from "@/components/site/page-updated";
 import { JsonLd } from "@/components/site/json-ld";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { BETWINNER } from "@/lib/partner";
+import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: `Código promocional BetWinner 2026: ${BETWINNER.promoCode} — bônus de R$ 1.500 + 150 giros`,
-  description: `Código promocional BetWinner ${BETWINNER.promoCode} ativa 100% até R$ 1.500 + 150 giros grátis no primeiro depósito. Passo a passo para usar em 2026.`,
+  title: `Código promocional BetWinner 2026: ${BETWINNER.promoCode} — bônus ${BETWINNER.bonusShort}`,
+  description: `Código promocional BetWinner ${BETWINNER.promoCode} — ${BETWINNER.bonusHeadline.toLowerCase()}. Passo a passo para usar em 2026.`,
   path: "/codigo-promocional",
 });
 
@@ -19,12 +21,12 @@ const FAQ = [
     answer: `Durante o cadastro na BetWinner, no campo "Código de promoção" (ou "Promo code"). Se você esqueceu, abra um chat com o suporte logo após criar a conta — eles podem aplicar antes do primeiro depósito.`,
   },
   {
-    question: "O código BETBRMAX expira?",
-    answer: "Nosso código é atualizado mensalmente e está ativo em maio de 2026. Recomendamos voltar a esta página antes de se cadastrar para garantir que o código esteja válido.",
+    question: `O código ${BETWINNER.promoCode} expira?`,
+    answer: "Nosso código é atualizado periodicamente e está ativo em 2026. Recomendamos voltar a esta página antes de se cadastrar para garantir que o código esteja válido.",
   },
   {
     question: "Posso ganhar o bônus sem código?",
-    answer: "Você ganha o bônus padrão da BetWinner, mas o código BETBRMAX libera a versão máxima (R$ 1.500 + 150 giros, em vez de apenas R$ 750).",
+    answer: `Pelo link BetSensei você acessa a oferta de ${BETWINNER.bonusHeadline.toLowerCase()}. ${BETWINNER.promoCodeNote}`,
   },
   {
     question: "Quais as condições de rollover (apostas para liberar o bônus)?",
@@ -50,8 +52,9 @@ export default function CodigoPromocionalPage() {
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
             Código promocional BetWinner 2026
           </h1>
+          <PageUpdated date={PAGE_UPDATED.codigo} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted">
-            Bônus máximo de boas-vindas com o código atualizado para maio de 2026.
+            Bônus de boas-vindas com o código {BETWINNER.promoCode} — {BETWINNER.bonusContext}.
           </p>
 
           <div className="my-8 rounded-2xl border-2 border-dashed border-brand bg-brand/5 p-6 sm:p-8 text-center">
@@ -83,12 +86,12 @@ export default function CodigoPromocionalPage() {
 
             <h2>Termos do bônus de boas-vindas</h2>
             <ul>
-              <li><strong>Valor:</strong> 100% até R$ 1.500</li>
-              <li><strong>Giros grátis:</strong> 150 (creditados em 6 dias, 25 por dia)</li>
+              <li><strong>Oferta:</strong> {BETWINNER.bonusHeadline}</li>
+              <li><strong>Campanha:</strong> {BETWINNER.bonusContext}</li>
               <li><strong>Depósito mínimo qualificador:</strong> {BETWINNER.minDeposit}</li>
-              <li><strong>Rollover:</strong> 5x em apostas combinadas (mín. 3 seleções, odds ≥ 1.40 por seleção)</li>
-              <li><strong>Prazo:</strong> 30 dias após o depósito</li>
-              <li><strong>Mercados elegíveis:</strong> esportes (excluindo cash out e mercados handicap asiático)</li>
+              <li><strong>Rollover:</strong> conforme termos da promoção na BetWinner (geralmente 5x em apostas combinadas)</li>
+              <li><strong>Prazo:</strong> confira no e-mail de confirmação após o depósito</li>
+              <li><strong>Mercados elegíveis:</strong> esportes, incluindo jogos da Copa do Mundo 2026</li>
             </ul>
 
             <h2>Aviso legal: Lei 14.790/2023</h2>

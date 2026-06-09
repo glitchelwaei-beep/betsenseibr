@@ -1,22 +1,15 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
+import { HeaderMobileNav } from "@/components/site/header-mobile-nav";
+import { NAV_LINKS } from "@/lib/nav";
 import { SITE } from "@/lib/site";
-
-const NAV_LINKS = [
-  { href: "/betwinner", label: "BetWinner" },
-  { href: "/codigo-promocional", label: "Código promocional" },
-  { href: "/aplicativo", label: "Aplicativo" },
-  { href: "/pix", label: "PIX" },
-  { href: "/apostas-esportivas", label: "Esportes" },
-  { href: "/futebol", label: "Futebol" },
-  { href: "/como-apostar", label: "Como apostar" },
-];
+import { BETWINNER } from "@/lib/partner";
 
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg/85 backdrop-blur-md">
-      <Container className="flex h-16 items-center justify-between gap-4">
+      <Container className="relative flex h-16 items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2 group">
           <span className="font-display text-xl font-extrabold tracking-tight">
             <span className="text-brand">BET</span>
@@ -25,7 +18,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1" aria-label="Menu principal">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
@@ -38,11 +31,12 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <HeaderMobileNav />
           <ButtonLink href={SITE.telegram} external variant="outline" size="sm" className="hidden sm:inline-flex">
             Telegram
           </ButtonLink>
           <ButtonLink href="/go/betwinner" external variant="primary" size="sm">
-            Bônus R$ 1.500 →
+            Bônus {BETWINNER.bonusShort} →
           </ButtonLink>
         </div>
       </Container>

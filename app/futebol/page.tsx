@@ -2,9 +2,11 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { PageUpdated } from "@/components/site/page-updated";
 import { JsonLd } from "@/components/site/json-ld";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { BETWINNER } from "@/lib/partner";
+import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -12,6 +14,29 @@ export const metadata = buildMetadata({
   description: "Como apostar em futebol no Brasil em 2026: Campeonato Brasileiro, Libertadores, Copa do Brasil, estaduais. Mercados, odds e dicas com BetWinner.",
   path: "/futebol",
 });
+
+const FAQ = [
+  {
+    question: "Quais campeonatos de futebol a BetWinner cobre?",
+    answer:
+      "Campeonato Brasileiro Série A e B, Copa do Brasil, Libertadores, Sul-Americana, estaduais (Paulista, Carioca, Mineiro, Gaúcho), ligas europeias (Champions, Premier League, La Liga) e jogos da Seleção Brasileira, incluindo Copa do Mundo 2026.",
+  },
+  {
+    question: "Quais são os principais mercados para apostar em futebol?",
+    answer:
+      "1X2 (resultado final), dupla chance, mais/menos gols, ambas marcam, handicap asiático, resultado exato, escanteios, cartões e apostas combinadas (bet builder) na mesma partida.",
+  },
+  {
+    question: "A BetWinner transmite jogos ao vivo?",
+    answer:
+      "Sim. A BetWinner oferece live streaming integrado para a maioria das partidas do Brasileirão e Libertadores, com estatísticas em tempo real, cash out e apostas in-play.",
+  },
+  {
+    question: "Como apostar na Copa do Mundo 2026 pela BetWinner?",
+    answer:
+      `Cadastre-se com PIX (mínimo ${BETWINNER.minDeposit}), use o código ${BETWINNER.promoCode} para ${BETWINNER.bonusHeadline.toLowerCase()} e acesse Esportes → Futebol → Copa do Mundo 2026. Veja nosso guia completo com jogos do Brasil no Grupo C.`,
+  },
+];
 
 export default function FutebolPage() {
   return (
@@ -22,6 +47,7 @@ export default function FutebolPage() {
           { name: "Futebol", url: "/futebol" },
         ])}
       />
+      <JsonLd data={faqSchema(FAQ)} />
       <Container className="pt-6">
         <Breadcrumbs items={[{ label: "Início", href: "/" }, { label: "Futebol" }]} />
       </Container>
@@ -30,6 +56,7 @@ export default function FutebolPage() {
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
             Apostas em futebol no Brasil
           </h1>
+          <PageUpdated date={PAGE_UPDATED.futebol} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted">
             O esporte mais apostado no país. Cobertura completa de Brasileirão, Libertadores, Copa do Brasil e estaduais na BetWinner.
           </p>
@@ -44,7 +71,7 @@ export default function FutebolPage() {
             <div className="flex-1">
               <div className="text-[10px] uppercase tracking-wide font-bold text-brand">Especial</div>
               <div className="font-display text-lg font-bold text-text">Copa do Mundo 2026 — Brasil estreia 13/jun</div>
-              <div className="text-sm text-text-muted">Jogos do Grupo C, odds atualizadas, bônus de R$ 1.500 →</div>
+              <div className="text-sm text-text-muted">Jogos do Grupo C, odds atualizadas, bônus de {BETWINNER.bonusShort} →</div>
             </div>
           </Link>
 

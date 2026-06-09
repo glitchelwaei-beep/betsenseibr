@@ -1,9 +1,11 @@
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { PageUpdated } from "@/components/site/page-updated";
 import { JsonLd } from "@/components/site/json-ld";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { BETWINNER } from "@/lib/partner";
+import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -11,6 +13,29 @@ export const metadata = buildMetadata({
   description: "Como funciona a aposta ao vivo (in-play) na BetWinner Brasil: transmissões, cash out, estratégias e diferenças vs. pré-jogo.",
   path: "/aposta-ao-vivo",
 });
+
+const FAQ = [
+  {
+    question: "O que é aposta ao vivo (in-play)?",
+    answer:
+      "Aposta ao vivo é apostar com a partida em andamento. As odds mudam segundo a segundo conforme gols, cartões, escanteios e posse de bola — diferente da aposta pré-jogo, em que as odds são fixas no momento da aposta.",
+  },
+  {
+    question: "Como funciona o cash out na BetWinner?",
+    answer:
+      "Durante a partida, acesse Minhas apostas, veja o valor oferecido e clique em Cash out para encerrar a aposta antes do fim do jogo. O valor é creditado na hora. O cash out parcial permite fechar parte da aposta e deixar o restante correndo.",
+  },
+  {
+    question: "A BetWinner tem transmissão ao vivo?",
+    answer:
+      "Sim. A BetWinner oferece live streaming integrado para muitos eventos (dependendo dos direitos de transmissão), além de centro de estatísticas em tempo real e notificações de odds no app.",
+  },
+  {
+    question: "Quando evitar apostas ao vivo?",
+    answer:
+      "Evite quando a conexão estiver instável, quando não estiver assistindo à partida, após sequência de perdas ou quando houver alta carga emocional (por exemplo, apostar no time do coração).",
+  },
+];
 
 export default function ApostaAoVivoPage() {
   return (
@@ -21,6 +46,7 @@ export default function ApostaAoVivoPage() {
           { name: "Aposta ao vivo", url: "/aposta-ao-vivo" },
         ])}
       />
+      <JsonLd data={faqSchema(FAQ)} />
       <Container className="pt-6">
         <Breadcrumbs items={[{ label: "Início", href: "/" }, { label: "Aposta ao vivo" }]} />
       </Container>
@@ -29,6 +55,7 @@ export default function ApostaAoVivoPage() {
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
             Aposta ao vivo na BetWinner
           </h1>
+          <PageUpdated date={PAGE_UPDATED.live} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted">
             Apostar com a partida rolando, transmissões integradas e cash out. Como funciona e quando vale a pena.
           </p>
@@ -81,7 +108,7 @@ export default function ApostaAoVivoPage() {
             <div className="my-8 not-prose rounded-2xl border border-brand/30 bg-gradient-to-br from-brand/10 to-transparent p-6">
               <h3 className="font-display text-xl font-bold text-text mb-2">Testar apostas ao vivo</h3>
               <p className="text-text-muted mb-4">
-                Bônus de R$ 1.500 + 150 giros grátis com código <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span>.
+                {BETWINNER.bonusHeadline} com código <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span>.
               </p>
               <ButtonLink href="/go/betwinner?src=live-page" external size="lg" variant="primary">
                 Cadastrar e apostar →

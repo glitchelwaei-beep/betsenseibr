@@ -1,7 +1,9 @@
 import { Container } from "@/components/ui/container";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { PageUpdated } from "@/components/site/page-updated";
 import { JsonLd } from "@/components/site/json-ld";
 import { breadcrumbSchema } from "@/lib/schema";
+import { EDITORIAL, PAGE_UPDATED } from "@/lib/editorial";
 import { SITE } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo";
 
@@ -28,6 +30,7 @@ export default function SobrePage() {
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
             Sobre o {SITE.name}
           </h1>
+          <PageUpdated date={PAGE_UPDATED.sobre} className="mt-2" />
           <article className="prose-content mt-6">
             <p>
               O <strong>{SITE.name}</strong> é um portal independente focado em uma única casa de apostas: a <strong>BetWinner</strong>.
@@ -64,7 +67,7 @@ export default function SobrePage() {
             <p>
               O <strong>{SITE.name}</strong> recebe comissão da BetWinner quando você se cadastra através dos nossos
               links e faz um depósito. Isso é chamado de "modelo de afiliação". Não cobramos nada de você — o seu bônus
-              de cadastro é o mesmo (ou maior, com o código BETBRMAX) do que se você fosse direto.
+              de cadastro é o mesmo (ou maior, com o código BETSENSEI26) do que se você fosse direto.
             </p>
             <p>
               <strong>Importante:</strong> a comissão não influencia nossa avaliação. Apontamos os defeitos da BetWinner
@@ -83,6 +86,11 @@ export default function SobrePage() {
               <li>Lembretes de jogo responsável em todas as páginas relevantes</li>
               <li>Idade mínima 18+ destacada</li>
             </ul>
+
+            <h2>Equipe editorial</h2>
+            <p>
+              <strong>{EDITORIAL.authorName}</strong> — {EDITORIAL.authorBio}
+            </p>
 
             <h2>Contato</h2>
             <p>

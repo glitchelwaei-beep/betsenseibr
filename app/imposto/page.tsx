@@ -1,7 +1,9 @@
 import { Container } from "@/components/ui/container";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { PageUpdated } from "@/components/site/page-updated";
 import { JsonLd } from "@/components/site/json-ld";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -43,6 +45,7 @@ export default function ImpostoPage() {
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
             Imposto sobre prêmios de apostas no Brasil
           </h1>
+          <PageUpdated date={PAGE_UPDATED.imposto} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted">
             IR de 15% sobre prêmios líquidos, limite isento mensal, declaração para casas offshore. Tudo o que você precisa saber em 2026.
           </p>

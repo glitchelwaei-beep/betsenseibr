@@ -2,9 +2,11 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { PageUpdated } from "@/components/site/page-updated";
 import { JsonLd } from "@/components/site/json-ld";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { BETWINNER } from "@/lib/partner";
+import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -55,6 +57,7 @@ export default function PixPage() {
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
             PIX BetWinner: depósito e saque
           </h1>
+          <PageUpdated date={PAGE_UPDATED.pix} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted">
             O método de pagamento mais usado pelos brasileiros. Sem taxa, 24/7, creditado em até 5 minutos.
           </p>
@@ -120,7 +123,7 @@ export default function PixPage() {
             <div className="my-8 not-prose rounded-2xl border border-brand/30 bg-gradient-to-br from-brand/10 to-transparent p-6">
               <h3 className="font-display text-xl font-bold text-text mb-2">Pronto para depositar e apostar?</h3>
               <p className="text-text-muted mb-4">
-                Use o código <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span> no cadastro para ativar o bônus de R$ 1.500.
+                Use o código <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span> no cadastro para ativar {BETWINNER.bonusHeadline.toLowerCase()}.
               </p>
               <ButtonLink href="/go/betwinner?src=pix-cta" external size="lg" variant="primary">
                 Cadastrar na BetWinner →

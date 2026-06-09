@@ -10,13 +10,20 @@ export const BETWINNER = {
   rating: 9.1,
   brandColor: "#eab308",
 
-  // Welcome bonus (Brazilian-targeted)
-  bonusHeadline: "Bônus de 100% até R$ 1.500 + 150 giros grátis",
-  bonusAmount: "100%",
-  promoCode: "BETBRMAX",
+  // Welcome bonus — aligned with World Cup 2026 affiliate landing (200% offer)
+  bonusHeadline: "Bônus de 200% para novos jogadores",
+  bonusShort: "200%",
+  bonusContext: "Especial Copa do Mundo 2026",
+  bonusAmount: "200%",
+  promoCode: "BETSENSEI26",
+  promoCodeNote:
+    "Use o código BETSENSEI26 no campo \"Código de promoção\" durante o cadastro, se solicitado.",
 
   // Operational data
-  affiliateUrl: "https://gbaodm2hp.com/2Wuf?p=%2Fregistration%2F&lang=pt",
+  affiliateUrl:
+    "https://tgr2iihnlrzq.top/wc-2026-200-lite/?s1=betsensei&p=%2Fregistration%2F&lang=pt&id=2Wwf",
+  affiliateApkUrl:
+    "https://tgr2iihnlrzq.top/wc-2026-200-lite/?s1=betsensei&p=%2Fregistration%2F&lang=pt&id=2WNy",
   sports: 40,
   founded: 2018,
   minDeposit: "R$ 10",
@@ -32,9 +39,9 @@ export const BETWINNER = {
   licenseText: "Licença internacional (Curaçao eGaming)",
 
   highlights: [
-    "Bônus de 100% até R$ 1.500 + 150 giros grátis",
+    "Bônus de 200% para novos jogadores — especial Copa 2026",
     "Saque via PIX em até 1 hora",
-    "Mais de 40 esportes incluindo futebol brasileiro",
+    "Mais de 40 esportes incluindo futebol brasileiro e Copa do Mundo",
     "App Android (APK) e iOS — interface 100% em português",
     "Suporte 24/7 em português via chat e e-mail",
   ],
@@ -42,7 +49,7 @@ export const BETWINNER = {
   pros: [
     "Cadastro rápido (menos de 2 minutos)",
     "Aceita PIX, boleto e criptomoedas",
-    "Cobertura completa do Campeonato Brasileiro",
+    "Cobertura completa do Campeonato Brasileiro e Copa do Mundo 2026",
     "Transmissões ao vivo de futebol, UFC e e-sports",
     "Promoções recorrentes para apostadores recorrentes",
   ],

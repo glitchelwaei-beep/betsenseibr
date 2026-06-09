@@ -2,19 +2,22 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
+import { PageUpdated } from "@/components/site/page-updated";
 import { JsonLd } from "@/components/site/json-ld";
 import { breadcrumbSchema, faqSchema, sportsEventSchema, articleSchema } from "@/lib/schema";
 import { BETWINNER } from "@/lib/partner";
 import { SITE } from "@/lib/site";
+import { EDITORIAL, PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
-import { Countdown } from "./countdown";
+import { Countdown } from "@/components/site/countdown";
+import { WORLD_CUP } from "@/lib/worldcup";
 
-const PAGE_PATH = "/copa-do-mundo-2026";
-const PAGE_TITLE = "Copa do Mundo 2026 — Apostas, Odds e Bônus de R$ 1.500 na BetWinner";
+const PAGE_PATH = WORLD_CUP.pagePath;
+const PAGE_TITLE = "Copa do Mundo 2026: apostas, odds e bônus 200%";
 const PAGE_DESCRIPTION =
-  "Copa do Mundo FIFA 2026: jogos do Brasil no Grupo C, odds atualizadas, favoritos, artilheiro e bônus de R$ 1.500 na BetWinner. Tudo em português, deposite com PIX.";
+  "Jogos do Brasil no Grupo C, favoritos, artilheiro e mercados da Copa 2026. Bônus 200% na BetWinner com PIX — guia completo em português.";
 const PUBLISHED_AT = "2026-05-26";
-const KICKOFF_ISO = "2026-06-11T19:00:00Z"; // 16:00 BRT — México x África do Sul, Estadio Azteca
+const MODIFIED_AT = "2026-06-09";
 
 export const metadata = buildMetadata({
   title: PAGE_TITLE,
@@ -56,7 +59,7 @@ const FAQ_ITEMS = [
   {
     question: "Qual a melhor casa de apostas para a Copa do Mundo 2026?",
     answer:
-      "A BetWinner é a nossa recomendação para apostadores brasileiros: aceita PIX (depósito mínimo R$ 10), tem cobertura completa da Copa em português, oferece o bônus de boas-vindas de R$ 1.500 + 150 giros grátis com o código BETBRMAX e licença internacional desde 2018. Leia nossa análise completa antes de cadastrar.",
+      `A BetWinner é a nossa recomendação para apostadores brasileiros: aceita PIX (depósito mínimo R$ 10), tem cobertura completa da Copa em português, oferece ${BETWINNER.bonusHeadline.toLowerCase()} (${BETWINNER.bonusContext}) com o código ${BETWINNER.promoCode} e licença internacional desde 2018. Leia nossa análise completa antes de cadastrar.`,
   },
   {
     question: "A BetWinner aceita PIX para apostas da Copa do Mundo?",
@@ -66,7 +69,7 @@ const FAQ_ITEMS = [
   {
     question: "A BetWinner vai lançar um bônus específico para a Copa do Mundo?",
     answer:
-      "Até a publicação desta página (26 de maio de 2026), a BetWinner ainda não anunciou um bônus dedicado à Copa do Mundo. O bônus padrão de boas-vindas de R$ 1.500 + 150 giros grátis (código BETBRMAX) continua válido e pode ser usado em qualquer mercado, incluindo jogos da Copa. Operadores normalmente lançam promoções temáticas 7 a 10 dias antes do apito inicial — esta página será atualizada assim que houver novidade.",
+      `A BetWinner disponibiliza a campanha ${BETWINNER.bonusHeadline.toLowerCase()} (${BETWINNER.bonusContext}) pelo link BetSensei. ${BETWINNER.promoCodeNote} A oferta vale para apostas em qualquer mercado, incluindo jogos da Copa. Termos e rollover conforme a promoção na BetWinner.`,
   },
   {
     question: "Quais mercados estão disponíveis para apostar na Copa 2026?",
@@ -141,8 +144,8 @@ export default function CopaDoMundoPage() {
           description: PAGE_DESCRIPTION,
           url: PAGE_PATH,
           datePublished: PUBLISHED_AT,
-          dateModified: PUBLISHED_AT,
-          authorName: "Redação BetSensei BR",
+          dateModified: MODIFIED_AT,
+          authorName: EDITORIAL.authorName,
         })}
       />
 
@@ -172,16 +175,15 @@ export default function CopaDoMundoPage() {
             <p className="mt-5 text-lg text-text-muted leading-relaxed max-w-2xl">
               Brasil estreia contra Marrocos em 13 de junho. Aqui você encontra os jogos do Grupo C,
               odds atualizadas dos favoritos, mercados de artilheiro, como apostar pela BetWinner
-              com PIX e o bônus de boas-vindas de{" "}
-              <span className="font-mono font-bold text-brand">R$ {BETWINNER.bonusHeadline.includes("1.500") ? "1.500" : ""}</span>{" "}
-              + 150 giros grátis. Tudo em português, atualizado em 26/05/2026.
+              com PIX e {BETWINNER.bonusHeadline.toLowerCase()}. Tudo em português.
             </p>
+            <PageUpdated date={PAGE_UPDATED.copa} className="mt-3" />
 
-            <Countdown targetIso={KICKOFF_ISO} label="Falta para o apito inicial (11/jun 16h BRT)" />
+            <Countdown targetIso={WORLD_CUP.kickoffIso} label={WORLD_CUP.countdownLabel} />
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <ButtonLink href="/go/bw-worldcup?src=copa-hero" external size="lg" variant="primary">
-                Garantir bônus para a Copa →
+                Garantir bônus de {BETWINNER.bonusShort} →
               </ButtonLink>
               <ButtonLink href="/betwinner" size="lg" variant="outline">
                 Análise da BetWinner
@@ -373,13 +375,13 @@ export default function CopaDoMundoPage() {
             Como apostar na Copa do Mundo 2026 pela BetWinner
           </h2>
           <ol className="mt-6 space-y-4">
-            <Step n={1} title="Cadastre-se com o código BETBRMAX">
+            <Step n={1} title={`Cadastre-se com o código ${BETWINNER.promoCode}`}>
               Acesse a BetWinner pelo nosso link verificado, preencha telefone (+55), CPF e o código promocional{" "}
               <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span>. Leva menos de 2 minutos.{" "}
               <Link href="/cadastro" className="text-brand hover:underline">Veja o tutorial completo de cadastro</Link>.
             </Step>
             <Step n={2} title="Deposite via PIX (mínimo R$ 10)">
-              PIX é creditado em até 5 minutos. Sem taxas da casa. O bônus de 100% até R$ 1.500 é ativado no primeiro depósito.{" "}
+              PIX é creditado em até 5 minutos. Sem taxas da casa. {BETWINNER.bonusHeadline} é ativado no primeiro depósito conforme os termos da promoção.{" "}
               <Link href="/pix" className="text-brand hover:underline">Detalhes sobre PIX na BetWinner</Link>.
             </Step>
             <Step n={3} title="Encontre os jogos da Copa">
@@ -439,49 +441,42 @@ export default function CopaDoMundoPage() {
         </Container>
       </section>
 
-      {/* PROMO ESPECIAL — EM BREVE */}
+      {/* PROMO COPA 2026 */}
       <section className="py-12 sm:py-16 border-t border-border bg-bg-elevated/20">
         <Container className="max-w-3xl">
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Promoções específicas da Copa do Mundo
+            Bônus Copa do Mundo 2026 na BetWinner
           </h2>
           <p className="mt-3 text-text-muted leading-relaxed">
-            Operadores normalmente lançam ofertas temáticas da Copa do Mundo entre 7 e 10 dias antes do apito inicial — combos de
-            odds turbinadas, freebets para jogos do Brasil, cashback em derrotas por pênaltis, etc.
+            A campanha especial de {BETWINNER.bonusContext.toLowerCase()} já está ativa pelo link BetSensei — ideal para
+            chegar com saldo extra antes do apito inicial em 11 de junho.
           </p>
 
-          <div className="mt-6 rounded-2xl border-2 border-dashed border-border bg-bg p-6 sm:p-8 opacity-95">
+          <div className="mt-6 rounded-2xl border border-brand/40 bg-gradient-to-br from-brand/10 to-transparent p-6 sm:p-8">
             <div className="flex items-center gap-2 mb-3">
               <span className="rounded-full border border-brand/40 bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-brand">
-                Em breve · Junho 2026
+                Ativo · {BETWINNER.bonusContext}
               </span>
             </div>
             <h3 className="font-display text-2xl font-extrabold text-text">
-              Promo Copa do Mundo BetWinner
+              {BETWINNER.bonusHeadline}
             </h3>
             <p className="mt-3 text-text-muted">
-              A BetWinner ainda não publicou um bônus dedicado à Copa do Mundo 2026. Esta página será atualizada assim que houver novidade.
-              Enquanto isso, o bônus padrão de boas-vindas de <strong>R$ 1.500 + 150 giros grátis</strong> (código{" "}
-              <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span>) é válido para qualquer mercado — inclusive
-              os jogos da Copa a partir de 13 de junho.
+              Resgate pelo link BetSensei e use o código{" "}
+              <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span> no cadastro, se solicitado —
+              válido para apostas em qualquer mercado, inclusive os jogos da Copa a partir de 13 de junho.
             </p>
             <div className="mt-5">
-              <button
-                type="button"
-                disabled
-                className="inline-flex items-center justify-center gap-2 rounded-lg font-bold tracking-[-0.005em] h-12 px-6 text-base sm:h-11 sm:px-5 sm:text-sm bg-bg-elevated text-text-dim border border-border cursor-not-allowed"
-                aria-disabled="true"
-                title="Disponível a partir de junho de 2026"
-              >
-                Disponível em junho de 2026
-              </button>
+              <ButtonLink href="/go/bw-worldcup?src=copa-promo" external size="lg" variant="primary">
+                Resgatar bônus de {BETWINNER.bonusShort} →
+              </ButtonLink>
             </div>
           </div>
 
           <p className="mt-6 text-sm text-text-dim">
             Quer chegar pronto para o apito inicial?{" "}
             <Link href="/go/bw-worldcup?src=copa-embreve" className="text-brand font-semibold hover:underline" target="_blank" rel="sponsored noopener noreferrer">
-              Cadastre-se agora com o bônus padrão de R$ 1.500
+              Cadastre-se agora com bônus de {BETWINNER.bonusShort}
             </Link>{" "}
             — saldo disponível para apostar desde o jogo de abertura em 11 de junho.
           </p>
@@ -522,13 +517,13 @@ export default function CopaDoMundoPage() {
             Esteja pronto para o apito inicial
           </h2>
           <p className="mt-4 text-text-muted leading-relaxed">
-            Cadastre-se na BetWinner agora, ative o bônus de R$ 1.500 + 150 giros grátis com o código{" "}
+            Cadastre-se na BetWinner agora, ative {BETWINNER.bonusHeadline.toLowerCase()} com o código{" "}
             <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span> e tenha saldo disponível
             desde o primeiro jogo da Copa do Mundo 2026.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <ButtonLink href="/go/bw-worldcup?src=copa-final" external size="lg" variant="primary">
-              Cadastrar com BETBRMAX →
+              Cadastrar com {BETWINNER.promoCode} →
             </ButtonLink>
             <ButtonLink href="/betwinner" size="lg" variant="outline">
               Ler análise da BetWinner

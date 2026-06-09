@@ -7,7 +7,7 @@ export function organizationSchema() {
     name: SITE.name,
     url: SITE.url,
     logo: `${SITE.url}/logo.png`,
-    sameAs: [SITE.telegram, SITE.youtube, SITE.instagram],
+    sameAs: [SITE.telegram, SITE.youtube],
   };
 }
 
@@ -18,11 +18,6 @@ export function websiteSchema() {
     name: SITE.name,
     url: SITE.url,
     inLanguage: SITE.htmlLang,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${SITE.url}/buscar?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 
@@ -113,19 +108,14 @@ export function sportsEventSchema({
     endDate,
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    location: countryCodes.map((country) => ({
-      "@type": "Country",
-      name: country,
-    })).length
-      ? {
-          "@type": "Place",
-          name: locationName,
-          address: countryCodes.map((country) => ({
-            "@type": "PostalAddress",
-            addressCountry: country,
-          })),
-        }
-      : { "@type": "Place", name: locationName },
+    location: {
+      "@type": "Place",
+      name: locationName,
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: countryCodes.join(", "),
+      },
+    },
     organizer: {
       "@type": "Organization",
       name: organizerName,

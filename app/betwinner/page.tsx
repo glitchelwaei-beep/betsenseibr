@@ -3,14 +3,15 @@ import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { JsonLd } from "@/components/site/json-ld";
-import { breadcrumbSchema, faqSchema, reviewSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { BETWINNER } from "@/lib/partner";
+import { EDITORIAL, PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: `BetWinner Brasil — análise completa, bônus, código promocional ${BETWINNER.promoCode} (2026)`,
+  title: `BetWinner Brasil: análise, bônus ${BETWINNER.bonusShort} e PIX 2026`,
   description:
-    "Análise completa da BetWinner Brasil 2026: cadastro, bônus, PIX, app, saque, suporte, licença, prós e contras. Tudo testado por nós em português.",
+    "Análise BetWinner Brasil 2026: cadastro, bônus 200%, PIX, app APK e saque. Prós, contras e código BETSENSEI26 testados por nós.",
   path: "/betwinner",
 });
 
@@ -24,7 +25,7 @@ const FAQ = [
     answer: `Sim. Faça login, vá em "Depositar", selecione PIX, gere a chave QR ou copia-e-cola pelo app do seu banco. Valor mínimo: ${BETWINNER.minDeposit}. Sem taxa da casa. Crédito em até 5 minutos.`,
   },
   {
-    question: "Qual o bônus de boas-vindas e como ativar com BETBRMAX?",
+    question: "Qual o bônus de boas-vindas e como ativar com BETSENSEI26?",
     answer: `O bônus é ${BETWINNER.bonusHeadline.toLowerCase()}. Para ativar, use o código ${BETWINNER.promoCode} no campo "Código de promoção" durante o cadastro. O bônus é creditado no primeiro depósito qualificado. Rollover típico: ${BETWINNER.rating > 9 ? "5x em apostas com odds 1.40+" : "5x em apostas combinadas"}.`,
   },
   {
@@ -43,8 +44,6 @@ const FAQ = [
   },
 ];
 
-const REVIEW_BODY = `A BetWinner é uma casa de apostas que opera no Brasil desde 2018 sob licença de Curaçao. Cobre o Campeonato Brasileiro, aceita PIX e tem app em português. Nossa nota: ${BETWINNER.rating}/10.`;
-
 export default function BetWinnerPage() {
   return (
     <>
@@ -53,15 +52,6 @@ export default function BetWinnerPage() {
           { name: "Início", url: "/" },
           { name: "BetWinner", url: "/betwinner" },
         ])}
-      />
-      <JsonLd
-        data={reviewSchema({
-          itemName: BETWINNER.name,
-          ratingValue: BETWINNER.rating,
-          authorName: "Redação BetSensei BR",
-          reviewBody: REVIEW_BODY,
-          datePublished: "2026-05-22",
-        })}
       />
       <JsonLd data={faqSchema(FAQ)} />
 
@@ -86,7 +76,8 @@ export default function BetWinnerPage() {
                     <span className="rounded-full bg-accent/15 text-accent px-2.5 py-1 font-semibold">Licença internacional</span>
                     <span className="rounded-full bg-bg/60 text-text-muted px-2.5 py-1">Desde {BETWINNER.founded}</span>
                     <span className="rounded-full bg-success/15 text-success px-2.5 py-1 font-semibold">PIX</span>
-                    <span className="rounded-full bg-bg/60 text-text-muted px-2.5 py-1">Atualizado: maio 2026</span>
+                    <span className="rounded-full bg-bg/60 text-text-muted px-2.5 py-1">Atualizado: {PAGE_UPDATED.betwinner}</span>
+                    <span className="rounded-full bg-bg/60 text-text-muted px-2.5 py-1">{EDITORIAL.authorName}</span>
                   </div>
                 </div>
               </div>
