@@ -1,8 +1,8 @@
 export const SITE = {
   name: "BetSensei BR",
   shortName: "BetSensei",
-  domain: "betsensei.com.br",
-  url: "https://betsensei.com.br",
+  domain: "betsenseibrasil.com",
+  url: "https://betsenseibrasil.com",
   description:
     "Análise honesta da BetWinner Brasil: bônus, código promocional, cadastro com PIX, app, saque e suporte. Tudo em português.",
   htmlLang: "pt-BR",
