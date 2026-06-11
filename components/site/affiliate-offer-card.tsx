@@ -3,7 +3,7 @@ import { PromoCodeCopy } from "@/components/site/promo-code-copy";
 import { BETWINNER } from "@/lib/partner";
 import { cn } from "@/lib/cn";
 
-type OfferVariant = "full" | "compact" | "banner";
+type OfferVariant = "full" | "compact" | "banner" | "hero";
 
 type AffiliateOfferCardProps = {
   /** Legacy: builds `/go/bw-worldcup?src=` for site pages */
@@ -12,8 +12,10 @@ type AffiliateOfferCardProps = {
   href?: string;
   headline?: string;
   subline?: string;
-  /** full = original 2-panel; compact = single-panel (Option A); banner = horizontal strip */
+  /** full = original 2-panel; compact = single-panel; banner = horizontal strip; hero = push LP above-fold */
   variant?: OfferVariant;
+  /** Override CTA button label (hero variant) */
+  ctaLabel?: string;
   className?: string;
 };
 
@@ -196,6 +198,66 @@ function CompactOfferCard({
   );
 }
 
+function HeroOfferCard({
+  ctaHref,
+  isInternal,
+  ctaLabel,
+  className,
+}: {
+  ctaHref: string;
+  isInternal: boolean;
+  ctaLabel?: string;
+  className?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "overflow-hidden rounded-xl border border-border-strong bg-[#0f1729] shadow-[0_8px_32px_-12px_rgba(0,0,0,0.5)] ring-1 ring-brand/20",
+        className,
+      )}
+    >
+      <div
+        className="h-1 bg-gradient-to-r from-[#009739] via-[#FFDF00] to-[#009739]"
+        aria-hidden
+      />
+      <div className="p-4 sm:p-4">
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex min-w-0 items-center gap-2.5">
+            <BwLogo size="sm" />
+            <p className="font-display text-lg font-extrabold tracking-tight text-white">{BETWINNER.name}</p>
+          </div>
+          <CompactRatingBadge />
+        </div>
+
+        <p className="mt-3 font-display text-base font-bold leading-snug text-white sm:text-lg">
+          Bônus {BETWINNER.bonusShort} · Copa 2026
+        </p>
+        <p className="mt-1.5 text-sm font-medium text-[#FFDF00]">
+          Deposite R$100 → aposte com R$200
+        </p>
+        <p className="mt-2 text-sm text-zinc-400">
+          Código{" "}
+          <span className="rounded bg-[#009739]/25 px-1.5 py-0.5 font-mono font-bold text-[#FFDF00]">
+            {BETWINNER.promoCode}
+          </span>
+          {" · "}
+          Mín. {BETWINNER.minDeposit}
+        </p>
+
+        <OfferCta
+          href={ctaHref}
+          isInternal={isInternal}
+          label={ctaLabel ?? `Ativar bônus de ${BETWINNER.bonusShort} →`}
+          className="mt-3 min-h-[56px] text-base shadow-[0_8px_32px_-8px_rgba(249,115,22,0.65)]"
+        />
+        <p className="mt-2 text-center text-[10px] leading-relaxed text-zinc-500">
+          18+ · PIX ~5 min · Termos aplicam · Jogo responsável
+        </p>
+      </div>
+    </div>
+  );
+}
+
 function BannerOfferCard({
   ctaHref,
   isInternal,
@@ -244,11 +306,23 @@ export function AffiliateOfferCard({
   headline = `Novo cadastro? ${BETWINNER.bonusHeadline} — ${BETWINNER.bonusContext}`,
   subline = `${BETWINNER.bonusHeadline} · Depósito via PIX em 5 min · ${BETWINNER.promoCodeNote}`,
   variant = "full",
+  ctaLabel,
   className,
 }: AffiliateOfferCardProps) {
   const ctaHref =
     href ?? `/go/bw-worldcup?src=${encodeURIComponent(affiliateSrc ?? "site")}`;
   const isInternal = ctaHref.startsWith("/");
+
+  if (variant === "hero") {
+    return (
+      <HeroOfferCard
+        ctaHref={ctaHref}
+        isInternal={isInternal}
+        ctaLabel={ctaLabel}
+        className={className}
+      />
+    );
+  }
 
   if (variant === "compact") {
     return (

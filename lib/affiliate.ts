@@ -9,6 +9,7 @@ export const BEMOB_LP_PIXEL = {
   "migrando-betwinner": 2,
   "erro-copa": 3,
   "copa-pix": 4,
+  "copa-bonus-100": 5, // TODO: confirm landing= index from BeMob LP generator
 } as const;
 
 /** BeMob click URL `l=` index per LP route (from BeMob offer links). */
@@ -17,7 +18,15 @@ export const BEMOB_LP_CTA = {
   "migrando-betwinner": 3,
   "erro-copa": 4,
   "copa-pix": 5,
+  "copa-bonus-100": 6, // TODO: confirm l= index from BeMob offer link — or use BEMOB_COPA_BONUS_100_CTA_URL
 } as const;
+
+/**
+ * TODO: Paste full BeMob CTA URL from RichAds landing generator for /lp/copa-bonus-100.
+ * Replace the placeholder below before sending push traffic.
+ */
+export const BEMOB_COPA_BONUS_100_CTA_URL =
+  "https://39hmh.bemobtrcks.com/click/1?ns=c%3DTODO_PASTE_BEMOB_CTA_NS_FROM_GENERATOR";
 
 /** @deprecated Use BEMOB_LP_PIXEL or BEMOB_LP_CTA. */
 export const BEMOB_LP_LANDING = BEMOB_LP_PIXEL;
@@ -62,6 +71,11 @@ export function buildLpCtaHref(
   landingNumber: number,
 ): string {
   return appendAffiliateParams(buildBemobCtaBaseUrl(landingNumber), toSearchParams(params));
+}
+
+/** Build BeMob CTA href for /lp/copa-bonus-100 — uses BEMOB_COPA_BONUS_100_CTA_URL placeholder. */
+export function buildCopaBonus100CtaHref(params: Record<string, SearchParamValue>): string {
+  return appendAffiliateParams(BEMOB_COPA_BONUS_100_CTA_URL, toSearchParams(params));
 }
 
 /** Append all incoming query params onto an affiliate tracker URL. */
