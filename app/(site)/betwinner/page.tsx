@@ -11,7 +11,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: `BetWinner Brasil: análise, bônus ${BETWINNER.bonusShort} e PIX 2026`,
   description:
-    "Análise BetWinner Brasil 2026: cadastro, bônus 200%, PIX, app APK e saque. Prós, contras e código BETSENSEI26 testados por nós.",
+    `Análise BetWinner Brasil 2026: cadastro, bônus ${BETWINNER.bonusShort}, PIX, app APK e saque. Prós, contras e código BETSENSEI26 testados por nós.`,
   path: "/betwinner",
 });
 

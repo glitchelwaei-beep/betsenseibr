@@ -13,9 +13,9 @@ import { Countdown } from "@/components/site/countdown";
 import { WORLD_CUP } from "@/lib/worldcup";
 
 const PAGE_PATH = WORLD_CUP.pagePath;
-const PAGE_TITLE = "Copa do Mundo 2026: apostas, odds e bônus 200%";
+const PAGE_TITLE = `Copa do Mundo 2026: apostas, odds e bônus ${BETWINNER.bonusShort}`;
 const PAGE_DESCRIPTION =
-  "Jogos do Brasil no Grupo C, favoritos, artilheiro e mercados da Copa 2026. Bônus 200% na BetWinner com PIX — guia completo em português.";
+  `Jogos do Brasil no Grupo C, favoritos, artilheiro e mercados da Copa 2026. Bônus ${BETWINNER.bonusShort} na BetWinner com PIX — guia completo em português.`;
 const PUBLISHED_AT = "2026-05-26";
 const MODIFIED_AT = "2026-06-09";
 

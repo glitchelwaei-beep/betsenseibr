@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/site/header";
-import { Footer } from "@/components/site/footer";
 import { JsonLd } from "@/components/site/json-ld";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { SITE } from "@/lib/site";
@@ -49,9 +47,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-bg text-text">
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
