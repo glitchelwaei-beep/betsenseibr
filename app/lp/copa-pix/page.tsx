@@ -8,7 +8,7 @@ import {
   PixFlowStrip,
 } from "@/components/lp/advertorial-blocks";
 import { StickyOfferWidget } from "@/components/lp/sticky-offer-widget";
-import { buildBetwinnerGoHref } from "@/lib/affiliate";
+import { BEMOB_LP_CTA, buildLpCtaHref } from "@/lib/affiliate";
 import { LP_COPA_PIX, LP_COPA_PIX_PATH } from "@/lib/lp-copa-pix";
 import { BETWINNER } from "@/lib/partner";
 import { articleSchema, faqSchema } from "@/lib/schema";
@@ -51,7 +51,7 @@ const STEPS = [
 
 export default async function CopaPixLandingPage({ searchParams }: PageProps) {
   const params = await searchParams;
-  const ctaHref = buildBetwinnerGoHref(params);
+  const ctaHref = buildLpCtaHref(params, BEMOB_LP_CTA["copa-pix"]);
 
   const subhead = LP_COPA_PIX.subhead
     .replace("{bonusShort}", BETWINNER.bonusShort)

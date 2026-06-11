@@ -11,7 +11,7 @@ import {
 } from "@/components/lp/advertorial-blocks";
 import { ExitIntent } from "@/components/lp/exit-intent";
 import { ReadingProgress } from "@/components/lp/reading-progress";
-import { buildBetwinnerGoHref } from "@/lib/affiliate";
+import { BEMOB_LP_CTA, buildLpCtaHref } from "@/lib/affiliate";
 import { LP_MIGRANDO, LP_MIGRANDO_PATH } from "@/lib/lp-migrando-betwinner";
 import { BETWINNER } from "@/lib/partner";
 import { articleSchema, faqSchema } from "@/lib/schema";
@@ -118,7 +118,7 @@ const STEPS = [
 
 export default async function MigrandoBetwinnerPage({ searchParams }: PageProps) {
   const params = await searchParams;
-  const ctaHref = buildBetwinnerGoHref(params);
+  const ctaHref = buildLpCtaHref(params, BEMOB_LP_CTA["migrando-betwinner"]);
 
   const faq = [
     {

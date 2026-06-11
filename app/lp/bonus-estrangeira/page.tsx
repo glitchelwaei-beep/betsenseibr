@@ -8,7 +8,7 @@ import {
   PixFlowStrip,
 } from "@/components/lp/advertorial-blocks";
 import { StickyOfferWidget } from "@/components/lp/sticky-offer-widget";
-import { buildBetwinnerGoHref } from "@/lib/affiliate";
+import { BEMOB_LP_CTA, buildLpCtaHref } from "@/lib/affiliate";
 import { LP_BONUS_ESTRANGEIRA, LP_BONUS_ESTRANGEIRA_PATH } from "@/lib/lp-bonus-estrangeira";
 import { BETWINNER } from "@/lib/partner";
 import { articleSchema, faqSchema } from "@/lib/schema";
@@ -75,7 +75,7 @@ function replacePlaceholders(text: string): string {
 
 export default async function BonusEstrangeiraLandingPage({ searchParams }: PageProps) {
   const params = await searchParams;
-  const ctaHref = buildBetwinnerGoHref(params);
+  const ctaHref = buildLpCtaHref(params, BEMOB_LP_CTA["bonus-estrangeira"]);
 
   const headline = replacePlaceholders(LP_BONUS_ESTRANGEIRA.headline);
   const subhead = replacePlaceholders(LP_BONUS_ESTRANGEIRA.subhead);

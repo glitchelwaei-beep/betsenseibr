@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import { LpCtaLink } from "@/components/lp/lp-cta-link";
 
 type ExitIntentProps = {
   href: string;
@@ -58,12 +58,12 @@ export function ExitIntent({
         </h2>
         <p className="mt-3 text-sm text-zinc-600 leading-relaxed">{body}</p>
         <div className="mt-6 flex flex-col gap-3">
-          <Link
+          <LpCtaLink
             href={href}
             className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-brand px-6 text-sm font-bold uppercase tracking-wide text-white no-underline transition-colors hover:bg-brand-hover"
           >
             {buttonLabel}
-          </Link>
+          </LpCtaLink>
           <button
             type="button"
             onClick={dismiss}

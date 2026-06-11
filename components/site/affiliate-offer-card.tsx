@@ -78,6 +78,7 @@ function OfferCta({
     <ButtonLink
       href={href}
       external={!isInternal}
+      openInNewTab={false}
       size={compact ? "md" : "lg"}
       variant="primary"
       className={cn(

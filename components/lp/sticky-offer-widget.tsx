@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { LpCtaLink } from "@/components/lp/lp-cta-link";
 import { useEffect, useState } from "react";
 import { BETWINNER } from "@/lib/partner";
 import { cn } from "@/lib/cn";
@@ -70,12 +70,12 @@ export function StickyOfferWidget({
               </p>
             </div>
 
-            <Link
+            <LpCtaLink
               href={href}
               className="mt-3 flex min-h-[48px] w-full items-center justify-center rounded-lg bg-brand px-4 text-sm font-bold text-white no-underline shadow-[0_4px_20px_-4px_rgba(249,115,22,0.6)] transition-colors hover:bg-brand-hover active:scale-[0.98]"
             >
               Ir para BetWinner
-            </Link>
+            </LpCtaLink>
 
             <p className="mt-2.5 text-[10px] leading-relaxed text-zinc-500">
               18+ · Jogo responsável · Bônus sujeito a termos da {BETWINNER.name}. Apostas envolvem

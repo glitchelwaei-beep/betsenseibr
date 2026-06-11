@@ -9,7 +9,7 @@ import {
 } from "@/components/lp/advertorial-blocks";
 import { ExitIntent } from "@/components/lp/exit-intent";
 import { ReadingProgress } from "@/components/lp/reading-progress";
-import { buildBetwinnerGoHref } from "@/lib/affiliate";
+import { BEMOB_LP_CTA, buildLpCtaHref } from "@/lib/affiliate";
 import { LP_ERRO_COPA, LP_ERRO_COPA_PATH } from "@/lib/lp-erro-copa";
 import { BETWINNER } from "@/lib/partner";
 import { articleSchema, faqSchema } from "@/lib/schema";
@@ -58,7 +58,7 @@ const TIPS = [
 
 export default async function ErroCopaAdvertorialPage({ searchParams }: PageProps) {
   const params = await searchParams;
-  const ctaHref = buildBetwinnerGoHref(params);
+  const ctaHref = buildLpCtaHref(params, BEMOB_LP_CTA["erro-copa"]);
 
   const faq = [
     {

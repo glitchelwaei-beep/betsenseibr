@@ -34,8 +34,12 @@ export function ButtonLink({
   children,
   href,
   external = false,
+  openInNewTab = true,
   ...props
-}: CommonProps & { href: string; external?: boolean } & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "href">) {
+}: CommonProps & { href: string; external?: boolean; openInNewTab?: boolean } & Omit<
+  React.AnchorHTMLAttributes<HTMLAnchorElement>,
+  "href"
+>) {
   const classes = cn(
     "inline-flex items-center justify-center gap-2 rounded-lg font-bold tracking-[-0.005em] transition-all duration-150 active:scale-[0.98]",
     variantStyles[variant],
@@ -45,7 +49,13 @@ export function ButtonLink({
 
   if (external) {
     return (
-      <a href={href} className={classes} target="_blank" rel="sponsored noopener noreferrer" {...props}>
+      <a
+        href={href}
+        className={classes}
+        target={openInNewTab ? "_blank" : undefined}
+        rel="sponsored noopener noreferrer"
+        {...props}
+      >
         {children}
       </a>
     );

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ButtonLink } from "@/components/ui/button";
+import { isExternalLpCta } from "@/components/lp/lp-cta-link";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/cn";
 
@@ -106,6 +107,8 @@ export function StickyMobileCta({ href }: StickyMobileCtaProps) {
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-zinc-200 bg-white/95 p-3 backdrop-blur-md md:hidden shadow-[0_-8px_30px_-10px_rgba(0,0,0,0.15)]">
       <ButtonLink
         href={href}
+        external={isExternalLpCta(href)}
+        openInNewTab={false}
         size="lg"
         className="w-full min-h-[52px] rounded-full text-sm uppercase tracking-wide shadow-lg"
       >
@@ -164,7 +167,13 @@ type EditorialCtaLinkProps = {
 export function EditorialCtaLink({ href, children, className }: EditorialCtaLinkProps) {
   return (
     <div className={cn("my-8 text-center", className)}>
-      <ButtonLink href={href} size="lg" className="min-h-[48px] rounded-full px-8">
+      <ButtonLink
+        href={href}
+        external={isExternalLpCta(href)}
+        openInNewTab={false}
+        size="lg"
+        className="min-h-[48px] rounded-full px-8"
+      >
         {children}
       </ButtonLink>
     </div>
