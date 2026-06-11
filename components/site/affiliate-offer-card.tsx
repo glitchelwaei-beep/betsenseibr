@@ -3,7 +3,14 @@ import { PromoCodeCopy } from "@/components/site/promo-code-copy";
 import { BETWINNER } from "@/lib/partner";
 import { cn } from "@/lib/cn";
 
-type OfferVariant = "full" | "compact" | "banner" | "hero";
+type OfferVariant = "full" | "compact" | "banner" | "hero" | "terms";
+
+export type OfferTermsOverride = {
+  minDeposit: string;
+  maxBonus: string;
+  moneyLine?: string;
+  moneyExample?: string;
+};
 
 type AffiliateOfferCardProps = {
   /** Legacy: builds `/go/bw-worldcup?src=` for site pages */
@@ -12,10 +19,12 @@ type AffiliateOfferCardProps = {
   href?: string;
   headline?: string;
   subline?: string;
-  /** full = original 2-panel; compact = single-panel; banner = horizontal strip; hero = push LP above-fold */
+  /** full = original 2-panel; compact = single-panel; banner = horizontal strip; hero = push LP above-fold; terms = post-compliance CTA */
   variant?: OfferVariant;
-  /** Override CTA button label (hero variant) */
+  /** Override CTA button label (hero / terms variants) */
   ctaLabel?: string;
+  /** LP-specific deposit/bonus limits (e.g. copa-bonus-100) */
+  offerTerms?: OfferTermsOverride;
   className?: string;
 };
 
@@ -161,12 +170,17 @@ function CompactRatingBadge() {
 function CompactOfferCard({
   ctaHref,
   isInternal,
+  offerTerms,
   className,
 }: {
   ctaHref: string;
   isInternal: boolean;
+  offerTerms?: OfferTermsOverride;
   className?: string;
 }) {
+  const minDeposit = offerTerms?.minDeposit ?? BETWINNER.minDeposit;
+  const maxBonus = offerTerms?.maxBonus;
+
   return (
     <div
       className={cn(
@@ -186,7 +200,8 @@ function CompactOfferCard({
         Bônus {BETWINNER.bonusShort} no 1º depósito via PIX
       </p>
       <p className="mt-1 text-sm text-zinc-400">
-        Mín. {BETWINNER.minDeposit} · Código{" "}
+        Mín. {minDeposit}
+        {maxBonus ? ` · Até ${maxBonus} de bônus` : null} · Código{" "}
         <span className="font-mono font-bold text-white">{BETWINNER.promoCode}</span>
       </p>
 
@@ -202,13 +217,20 @@ function HeroOfferCard({
   ctaHref,
   isInternal,
   ctaLabel,
+  offerTerms,
   className,
 }: {
   ctaHref: string;
   isInternal: boolean;
   ctaLabel?: string;
+  offerTerms?: OfferTermsOverride;
   className?: string;
 }) {
+  const minDeposit = offerTerms?.minDeposit ?? BETWINNER.minDeposit;
+  const moneyLine =
+    offerTerms?.moneyLine ?? "Deposite R$100 → aposte com R$200";
+  const moneyExample = offerTerms?.moneyExample;
+
   return (
     <div
       className={cn(
@@ -232,16 +254,18 @@ function HeroOfferCard({
         <p className="mt-3 font-display text-base font-bold leading-snug text-white sm:text-lg">
           Bônus {BETWINNER.bonusShort} · Copa 2026
         </p>
-        <p className="mt-1.5 text-sm font-medium text-[#FFDF00]">
-          Deposite R$100 → aposte com R$200
-        </p>
+        <p className="mt-1.5 text-sm font-medium text-[#FFDF00]">{moneyLine}</p>
+        {moneyExample ? (
+          <p className="mt-1 text-xs text-zinc-400">{moneyExample}</p>
+        ) : null}
         <p className="mt-2 text-sm text-zinc-400">
           Código{" "}
           <span className="rounded bg-[#009739]/25 px-1.5 py-0.5 font-mono font-bold text-[#FFDF00]">
             {BETWINNER.promoCode}
           </span>
           {" · "}
-          Mín. {BETWINNER.minDeposit}
+          Mín. {minDeposit}
+          {offerTerms?.maxBonus ? ` · Até ${offerTerms.maxBonus} de bônus` : null}
         </p>
 
         <OfferCta
@@ -254,6 +278,64 @@ function HeroOfferCard({
           18+ · PIX ~5 min · Termos aplicam · Jogo responsável
         </p>
       </div>
+    </div>
+  );
+}
+
+function TermsOfferCard({
+  ctaHref,
+  isInternal,
+  ctaLabel,
+  offerTerms,
+  className,
+}: {
+  ctaHref: string;
+  isInternal: boolean;
+  ctaLabel?: string;
+  offerTerms?: OfferTermsOverride;
+  className?: string;
+}) {
+  const minDeposit = offerTerms?.minDeposit ?? BETWINNER.minDeposit;
+  const maxBonus = offerTerms?.maxBonus;
+
+  return (
+    <div
+      className={cn(
+        "overflow-hidden rounded-xl border border-border-strong border-l-[3px] border-l-[#009739] bg-[#0f1729] p-4 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.45)]",
+        className,
+      )}
+    >
+      <p className="flex items-center gap-2 text-sm font-medium text-emerald-400">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="shrink-0">
+          <path
+            d="M20 6L9 17l-5-5"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        Oferta disponível após cadastro
+      </p>
+
+      <p className="mt-3 font-display text-base font-bold leading-snug text-white">
+        {BETWINNER.bonusShort} no 1º depósito
+        {maxBonus ? ` · até ${maxBonus}` : null}
+      </p>
+      <p className="mt-1 text-sm text-zinc-400">
+        Mín. {minDeposit} via PIX · Código{" "}
+        <span className="font-mono font-bold text-white">{BETWINNER.promoCode}</span>
+      </p>
+
+      <OfferCta
+        href={ctaHref}
+        isInternal={isInternal}
+        label={ctaLabel ?? `Garantir meu bônus de ${BETWINNER.bonusShort} →`}
+        className="mt-3 min-h-[52px]"
+      />
+      <p className="mt-2 text-center text-[10px] leading-relaxed text-zinc-500">
+        18+ · PIX ~5 min · Jogo responsável
+      </p>
     </div>
   );
 }
@@ -307,6 +389,7 @@ export function AffiliateOfferCard({
   subline = `${BETWINNER.bonusHeadline} · Depósito via PIX em 5 min · ${BETWINNER.promoCodeNote}`,
   variant = "full",
   ctaLabel,
+  offerTerms,
   className,
 }: AffiliateOfferCardProps) {
   const ctaHref =
@@ -319,6 +402,7 @@ export function AffiliateOfferCard({
         ctaHref={ctaHref}
         isInternal={isInternal}
         ctaLabel={ctaLabel}
+        offerTerms={offerTerms}
         className={className}
       />
     );
@@ -326,7 +410,24 @@ export function AffiliateOfferCard({
 
   if (variant === "compact") {
     return (
-      <CompactOfferCard ctaHref={ctaHref} isInternal={isInternal} className={className} />
+      <CompactOfferCard
+        ctaHref={ctaHref}
+        isInternal={isInternal}
+        offerTerms={offerTerms}
+        className={className}
+      />
+    );
+  }
+
+  if (variant === "terms") {
+    return (
+      <TermsOfferCard
+        ctaHref={ctaHref}
+        isInternal={isInternal}
+        ctaLabel={ctaLabel}
+        offerTerms={offerTerms}
+        className={className}
+      />
     );
   }
 

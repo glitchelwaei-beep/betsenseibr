@@ -5,14 +5,14 @@ import { AffiliateOfferCard } from "@/components/site/affiliate-offer-card";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { buildCopaBonus100CtaHref } from "@/lib/affiliate";
-import { LP_COPA_BONUS_100, LP_COPA_BONUS_100_PATH } from "@/lib/lp-copa-bonus-100";
+import { LP_COPA_BONUS_100, LP_COPA_BONUS_100_OFFER, LP_COPA_BONUS_100_PATH } from "@/lib/lp-copa-bonus-100";
 import { BETWINNER } from "@/lib/partner";
 import { buildMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/cn";
 
 const META_DESCRIPTION =
-  "Bônus de boas-vindas na BetWinner para apostar na Copa do Mundo 2026 — cadastro via PIX, código promocional e mercados de futebol em português.";
+  `Bônus de ${BETWINNER.bonusShort} no 1º depósito via PIX na BetWinner — mínimo ${LP_COPA_BONUS_100_OFFER.minDeposit}, até ${LP_COPA_BONUS_100_OFFER.maxBonus} de bônus, código promocional e Copa 2026.`;
 
 export const metadata = {
   ...buildMetadata({
@@ -34,8 +34,8 @@ type PageProps = {
 
 const STEPS = [
   `Cadastre-se com o código ${BETWINNER.promoCode}`,
-  `Deposite via PIX (mínimo ${BETWINNER.minDeposit}, cai em minutos)`,
-  `Aposte na Copa e ative seu bônus de ${BETWINNER.bonusShort}`,
+  `Deposite via PIX (mínimo ${LP_COPA_BONUS_100_OFFER.minDeposit}, cai em minutos)`,
+  `Aposte na Copa e ative seu bônus de ${BETWINNER.bonusShort} (até ${LP_COPA_BONUS_100_OFFER.maxBonus})`,
 ] as const;
 
 function PushSecondaryCta({
@@ -110,6 +110,7 @@ export default async function CopaBonus100Page({ searchParams }: PageProps) {
             href={ctaHref}
             variant="hero"
             ctaLabel={`Ativar bônus de ${BETWINNER.bonusShort} →`}
+            offerTerms={LP_COPA_BONUS_100_OFFER}
             className="mt-5 shadow-xl"
           />
         </Container>
@@ -119,8 +120,8 @@ export default async function CopaBonus100Page({ searchParams }: PageProps) {
       <section className="border-b border-border bg-bg-elevated py-8">
         <Container className="max-w-lg space-y-3">
           {/* Step 1: "Sign up with code BETSENSEI26" */}
-          {/* Step 2: "Deposit via PIX (min R$10, arrives in minutes)" */}
-          {/* Step 3: "Bet on the World Cup and activate your 100% bonus" */}
+          {/* Step 2: "Deposit via PIX (min R$60, arrives in minutes)" */}
+          {/* Step 3: "Bet on the World Cup and activate your 100% bonus (up to R$700)" */}
           {STEPS.map((step, i) => (
             <div
               key={step}
@@ -132,7 +133,12 @@ export default async function CopaBonus100Page({ searchParams }: PageProps) {
               <p className="pt-1.5 text-[15px] font-semibold leading-snug text-text">{step}</p>
             </div>
           ))}
-          <AffiliateOfferCard href={ctaHref} variant="compact" className="mt-6 shadow-xl" />
+          <AffiliateOfferCard
+            href={ctaHref}
+            variant="compact"
+            offerTerms={LP_COPA_BONUS_100_OFFER}
+            className="mt-6 shadow-xl"
+          />
         </Container>
       </section>
 
@@ -177,23 +183,22 @@ export default async function CopaBonus100Page({ searchParams }: PageProps) {
           </h2>
           <ul className="mt-4 space-y-3 text-sm leading-relaxed text-text-muted">
             <li>
-              {/* TODO: Fill in BetWinner rollover/wagering requirement (e.g. "Rollover de Xx o valor do bônus") */}
-              <strong className="text-text">Rollover:</strong> [TODO — inserir requisito de apostas da BetWinner]
-              {/* "Wagering requirement: [TODO — insert BetWinner rollover]" */}
+              <strong className="text-text">Bônus:</strong> {BETWINNER.bonusShort} no 1º depósito
+              qualificado via PIX
+              {/* "Bonus: 100% on 1st qualifying PIX deposit" */}
             </li>
             <li>
-              <strong className="text-text">Depósito mínimo:</strong> {BETWINNER.minDeposit}
-              {/* "Minimum deposit: R$10" */}
+              <strong className="text-text">Depósito mínimo:</strong> {LP_COPA_BONUS_100_OFFER.minDeposit}
+              {/* "Minimum deposit: R$60" */}
             </li>
             <li>
-              {/* TODO: Fill in maximum bonus cap from BetWinner terms */}
-              <strong className="text-text">Bônus máximo:</strong> até R$ [TODO]
-              {/* "Maximum bonus: up to R$ [TODO]" */}
+              <strong className="text-text">Bônus máximo:</strong> até {LP_COPA_BONUS_100_OFFER.maxBonus}
+              {/* "Maximum bonus: up to R$700" */}
             </li>
             <li>
-              {/* TODO: Fill in bonus validity period from BetWinner terms */}
-              <strong className="text-text">Prazo:</strong> [TODO — prazo para cumprir rollover]
-              {/* "Time limit: [TODO — deadline to complete rollover]" */}
+              <strong className="text-text">Rollover e prazo:</strong> conforme os termos da promoção na{" "}
+              {BETWINNER.name}
+              {/* "Wagering requirement and time limit: per BetWinner promotion terms" */}
             </li>
             <li>
               Bônus sujeito aos termos e condições da {BETWINNER.name}. Apostas envolvem risco
@@ -202,10 +207,13 @@ export default async function CopaBonus100Page({ searchParams }: PageProps) {
             </li>
           </ul>
 
-          <PushSecondaryCta href={ctaHref} className="mt-6">
-            Garantir meu bônus de {BETWINNER.bonusShort} →
-            {/* "Claim my 100% bonus" */}
-          </PushSecondaryCta>
+          <AffiliateOfferCard
+            href={ctaHref}
+            variant="terms"
+            ctaLabel={`Garantir meu bônus de ${BETWINNER.bonusShort} →`}
+            offerTerms={LP_COPA_BONUS_100_OFFER}
+            className="mt-6"
+          />
         </Container>
       </section>
 
