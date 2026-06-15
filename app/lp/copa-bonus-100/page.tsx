@@ -4,7 +4,6 @@ import { isExternalLpCta } from "@/components/lp/lp-cta-link";
 import { AffiliateOfferCard } from "@/components/site/affiliate-offer-card";
 import { ButtonLink } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { buildCopaBonus100CtaHref } from "@/lib/affiliate";
 import { LP_COPA_BONUS_100, LP_COPA_BONUS_100_OFFER, LP_COPA_BONUS_100_PATH } from "@/lib/lp-copa-bonus-100";
 import { BETWINNER } from "@/lib/partner";
 import { buildMetadata } from "@/lib/seo";
@@ -25,12 +24,9 @@ export const metadata = {
   title: {
     absolute: `Bônus de ${BETWINNER.bonusShort} para apostar na Copa 2026`,
   },
-  // TODO: BeMob delegate-ch meta tag — paste from BeMob LP pixel generator when available
 };
 
-type PageProps = {
-  searchParams: Promise<Record<string, string | string[] | undefined>>;
-};
+const CTA_HREF = "https://39hmh.bemobtrcks.com/click/1";
 
 const STEPS = [
   `Cadastre-se com o código ${BETWINNER.promoCode}`,
@@ -67,10 +63,7 @@ function PushSecondaryCta({
   );
 }
 
-export default async function CopaBonus100Page({ searchParams }: PageProps) {
-  const params = await searchParams;
-  const ctaHref = buildCopaBonus100CtaHref(params);
-
+export default function CopaBonus100Page() {
   return (
     <main className="min-h-screen bg-bg pb-28">
       {/* Hero — above the fold, bonus-first */}
@@ -107,7 +100,7 @@ export default async function CopaBonus100Page({ searchParams }: PageProps) {
           </h1>
 
           <AffiliateOfferCard
-            href={ctaHref}
+            href={CTA_HREF}
             variant="hero"
             ctaLabel={`Ativar bônus de ${BETWINNER.bonusShort} →`}
             offerTerms={LP_COPA_BONUS_100_OFFER}
@@ -134,7 +127,7 @@ export default async function CopaBonus100Page({ searchParams }: PageProps) {
             </div>
           ))}
           <AffiliateOfferCard
-            href={ctaHref}
+            href={CTA_HREF}
             variant="compact"
             offerTerms={LP_COPA_BONUS_100_OFFER}
             className="mt-6 shadow-xl"
@@ -208,7 +201,7 @@ export default async function CopaBonus100Page({ searchParams }: PageProps) {
           </ul>
 
           <AffiliateOfferCard
-            href={ctaHref}
+            href={CTA_HREF}
             variant="terms"
             ctaLabel={`Garantir meu bônus de ${BETWINNER.bonusShort} →`}
             offerTerms={LP_COPA_BONUS_100_OFFER}
@@ -224,7 +217,7 @@ export default async function CopaBonus100Page({ searchParams }: PageProps) {
             Cadastro em ~2 min · PIX em minutos · Suporte em português
             {/* "Sign-up in ~2 min · PIX in minutes · Portuguese support" */}
           </p>
-          <PushSecondaryCta href={ctaHref} className="mt-4">
+          <PushSecondaryCta href={CTA_HREF} className="mt-4">
             Começar agora →
             {/* "Start now" */}
           </PushSecondaryCta>
@@ -244,7 +237,7 @@ export default async function CopaBonus100Page({ searchParams }: PageProps) {
         </p>
       </footer>
 
-      <StickyMobileCta href={ctaHref} label="Ativar bônus →" />
+      <StickyMobileCta href={CTA_HREF} label="Ativar bônus →" />
     </main>
   );
 }
