@@ -69,9 +69,9 @@ export function buildLpCtaHref(
   return appendAffiliateParams(buildBemobCtaBaseUrl(landingNumber), toSearchParams(params));
 }
 
-/** Build BeMob CTA href for /lp/copa-bonus-100 — uses BEMOB_COPA_BONUS_100_CTA_URL placeholder. */
-export function buildCopaBonus100CtaHref(params: Record<string, SearchParamValue>): string {
-  return appendAffiliateParams(BEMOB_COPA_BONUS_100_CTA_URL, toSearchParams(params));
+/** Build BeMob CTA href for /lp/copa-bonus-100 — fixed tracker URL (RichAds click ID via cookie). */
+export function buildCopaBonus100CtaHref(_params?: Record<string, SearchParamValue>): string {
+  return BEMOB_COPA_BONUS_100_CTA_URL;
 }
 
 /** Append all incoming query params onto an affiliate tracker URL. */
