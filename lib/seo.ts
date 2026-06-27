@@ -11,11 +11,11 @@ type SeoInput = {
 
 export function buildMetadata({ title, description, path, noindex, image }: SeoInput): Metadata {
   const url = new URL(path, SITE.url).toString();
-  const fullTitle = title.includes(SITE.shortName) ? title : `${title} | ${SITE.shortName}`;
+  const brandedTitle = title.includes(SITE.shortName) ? title : `${title} | ${SITE.shortName}`;
   const ogImage = image ?? `${SITE.url}/og-default.png`;
 
   return {
-    title: fullTitle,
+    title: { absolute: brandedTitle },
     description,
     metadataBase: new URL(SITE.url),
     alternates: {
@@ -26,7 +26,7 @@ export function buildMetadata({ title, description, path, noindex, image }: SeoI
       ? { index: false, follow: false }
       : { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large" } },
     openGraph: {
-      title: fullTitle,
+      title: brandedTitle,
       description,
       url,
       siteName: SITE.name,
@@ -37,7 +37,7 @@ export function buildMetadata({ title, description, path, noindex, image }: SeoI
     twitter: {
       card: "summary_large_image",
       site: SITE.twitter,
-      title: fullTitle,
+      title: brandedTitle,
       description,
       images: [ogImage],
     },

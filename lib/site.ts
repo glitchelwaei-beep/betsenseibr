@@ -2,7 +2,7 @@ export const SITE = {
   name: "BetSensei BR",
   shortName: "BetSensei",
   domain: "betsenseibrasil.com",
-  url: "https://betsenseibrasil.com",
+  url: "https://www.betsenseibrasil.com",
   description:
     "Apostas esportivas e casa de apostas com PIX no Brasil: guias, bônus BetWinner, cadastro, app e comparativos. Tudo em português.",
   htmlLang: "pt-BR",
