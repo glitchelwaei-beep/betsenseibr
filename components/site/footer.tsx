@@ -7,6 +7,7 @@ const FOOTER_GROUPS = [
     title: "BetWinner",
     links: [
       { href: "/betwinner", label: "Análise completa" },
+      { href: "/bonus", label: "Bônus BetWinner" },
       { href: "/codigo-promocional", label: "Código promocional BETSENSEI26" },
       { href: "/cadastro", label: "Cadastro" },
       { href: "/aplicativo", label: "App / APK" },

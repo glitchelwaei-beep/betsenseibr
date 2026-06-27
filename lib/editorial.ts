@@ -8,6 +8,7 @@ export const EDITORIAL = {
 export const PAGE_UPDATED = {
   home: "9 de junho de 2026",
   betwinner: "9 de junho de 2026",
+  bonus: "27 de junho de 2026",
   copa: "9 de junho de 2026",
   codigo: "22 de maio de 2026",
   cadastro: "22 de maio de 2026",

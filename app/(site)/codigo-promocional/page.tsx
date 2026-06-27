@@ -55,6 +55,8 @@ export default function CodigoPromocionalPage() {
           <PageUpdated date={PAGE_UPDATED.codigo} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted">
             Bônus de boas-vindas com o código {BETWINNER.promoCode} — {BETWINNER.bonusContext}.
+            {" "}
+            <Link href="/bonus" className="text-brand hover:underline">Guia do bônus BetWinner →</Link>
           </p>
 
           <div className="my-8 rounded-2xl border-2 border-dashed border-brand bg-brand/5 p-6 sm:p-8 text-center">

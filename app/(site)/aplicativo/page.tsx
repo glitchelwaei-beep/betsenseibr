@@ -9,9 +9,9 @@ import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Baixar BetWinner APK Android e iOS — guia completo Brasil 2026",
+  title: "BetWinner mobile e APK: baixar app Android e iOS (Brasil 2026)",
   description:
-    "Como baixar e instalar o app BetWinner no Android (APK) e iPhone (iOS) do Brasil. Passo a passo, requisitos, segurança e diferenças vs. site mobile.",
+    "BetWinner mobile no celular: baixar APK Android, instalar no iPhone (iOS) e usar o site mobile. Passo a passo, requisitos e segurança para brasileiros.",
   path: "/aplicativo",
 });
 
@@ -30,6 +30,11 @@ const FAQ = [
     question: "Como instalar no iPhone (iOS)?",
     answer:
       "Sim, há versão para iOS. A instalação acontece via perfil de configuração da Apple (mais detalhes no guia abaixo). É um processo legítimo, mas o iPhone vai pedir confirmação extra de segurança.",
+  },
+  {
+    question: "Como usar a BetWinner mobile no celular?",
+    answer:
+      "Abra o site oficial no navegador do celular (Chrome ou Safari) para a versão mobile, ou baixe o app nativo: APK no Android e perfil Apple no iOS. Ambos estão em português e permitem apostas ao vivo, PIX e cadastro com o código promocional.",
   },
   {
     question: "Quais os requisitos mínimos?",
@@ -54,11 +59,11 @@ export default function AplicativoPage() {
       <section className="py-10">
         <Container className="max-w-3xl">
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
-            Baixar o app da BetWinner no Brasil
+            BetWinner mobile e app — baixar APK no Brasil
           </h1>
           <PageUpdated date={PAGE_UPDATED.aplicativo} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted">
-            App oficial em português para Android (APK) e iPhone (iOS).
+            BetWinner mobile no celular: app oficial em português para Android (APK) e iPhone (iOS), além do site mobile no navegador.
           </p>
 
           <div className="my-8 rounded-2xl border border-border bg-bg-elevated p-6 sm:p-8">
@@ -105,6 +110,13 @@ export default function AplicativoPage() {
               <li><strong>iOS:</strong> 12 ou superior, iPhone 6s ou mais novo</li>
               <li><strong>Internet:</strong> Wi-Fi ou 4G/5G estável para apostas ao vivo</li>
             </ul>
+
+            <h2>BetWinner mobile: site vs app</h2>
+            <p>
+              Você pode apostar pela BetWinner mobile de duas formas: pelo <strong>site mobile</strong> no navegador do celular
+              (Chrome, Safari) ou pelo <strong>app nativo</strong> (APK no Android, perfil Apple no iOS). O app oferece notificações
+              push, login biométrico e transmissões mais estáveis; o site mobile não exige instalação.
+            </p>
 
             <h2>Recursos do app vs. site mobile</h2>
             <ul>

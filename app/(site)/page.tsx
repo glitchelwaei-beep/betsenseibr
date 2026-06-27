@@ -145,10 +145,11 @@ export default function HomePage() {
             Guias passo a passo para começar, depositar, sacar e apostar com a BetWinner.
           </p>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <NavCard href="/bonus" title="Bônus BetWinner 2026" desc={`${BETWINNER.bonusHeadline}. Como ativar com código ${BETWINNER.promoCode}, rollover e depósito via PIX.`} />
             <NavCard href="/cadastro" title="Como se cadastrar" desc="Cadastro em 2 minutos: telefone +55, CPF, código promocional BETSENSEI26. Tutorial completo." />
             <NavCard href="/pix" title="Depósito e saque via PIX" desc="O método mais rápido e barato. Sem taxa, creditado em até 5 minutos. Limites, dicas e troubleshooting." />
             <NavCard href="/codigo-promocional" title={`Código promocional ${BETWINNER.promoCode}`} desc={`Ative o bônus de ${BETWINNER.bonusShort} para novos jogadores. Como aplicar, condições de rollover e prazos.`} />
-            <NavCard href="/aplicativo" title="App BetWinner para Android e iOS" desc="Download do APK, instalação no iPhone via perfil Apple, requisitos e diferenças vs. site mobile." />
+            <NavCard href="/aplicativo" title="BetWinner mobile e app (APK)" desc="BetWinner mobile no celular: download do APK, instalação no iPhone e diferenças vs. site mobile." />
             <NavCard href="/futebol" title="Apostas no Campeonato Brasileiro" desc="Mercados, odds médias, dicas para apostar em Série A, Libertadores, Copa do Brasil e estaduais." />
             <NavCard href="/como-apostar" title="Como apostar (para iniciantes)" desc="Glossário, tipos de aposta (simples, múltipla, handicap), gestão de banca e estratégias básicas." />
             <NavCard href="/aposta-ao-vivo" title="Apostas ao vivo" desc="Como funciona o live, transmissões da BetWinner, cash out e estratégias para apostas in-play." />

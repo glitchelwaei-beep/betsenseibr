@@ -147,7 +147,9 @@ export default function BetWinnerPage() {
             <h2>Bônus de boas-vindas + código {BETWINNER.promoCode}</h2>
             <p>
               <strong>{BETWINNER.bonusHeadline}</strong> ao usar o código <strong>{BETWINNER.promoCode}</strong> no cadastro.
-              <Link href="/codigo-promocional"> Detalhes completos do código promocional →</Link>
+              <Link href="/bonus"> Guia completo do bônus BetWinner →</Link>
+              {" · "}
+              <Link href="/codigo-promocional"> Detalhes do código promocional →</Link>
             </p>
             <p>
               <strong>Atenção:</strong> a Lei 14.790/2023 proíbe bônus de boas-vindas para casas autorizadas pela SPA desde
