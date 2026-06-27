@@ -2,8 +2,11 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { NAV_LINKS } from "@/lib/nav";
+import { NAV_GUIDE_LINKS, NAV_PRIMARY_LINKS } from "@/lib/nav";
 import { cn } from "@/lib/cn";
+
+const linkClass =
+  "rounded-md px-3 py-2.5 text-sm text-text-muted hover:text-text hover:bg-bg-elevated transition-colors";
 
 export function HeaderMobileNav() {
   const [open, setOpen] = useState(false);
@@ -35,13 +38,15 @@ export function HeaderMobileNav() {
         )}
       >
         <nav className="flex flex-col px-4 py-3" aria-label="Menu principal">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="rounded-md px-3 py-2.5 text-sm text-text-muted hover:text-text hover:bg-bg-elevated transition-colors"
-              onClick={() => setOpen(false)}
-            >
+          {NAV_PRIMARY_LINKS.map((link) => (
+            <Link key={link.href} href={link.href} className={linkClass} onClick={() => setOpen(false)}>
+              {link.label}
+            </Link>
+          ))}
+          <div className="my-2 border-t border-border" />
+          <div className="px-3 py-1 text-xs font-semibold uppercase tracking-wide text-text-dim">Guias</div>
+          {NAV_GUIDE_LINKS.map((link) => (
+            <Link key={link.href} href={link.href} className={linkClass} onClick={() => setOpen(false)}>
               {link.label}
             </Link>
           ))}
