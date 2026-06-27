@@ -15,6 +15,16 @@ const FOOTER_GROUPS = [
     ],
   },
   {
+    title: "Comparar casas",
+    links: [
+      { href: "/alternativas", label: "Todas as alternativas" },
+      { href: "/alternativas/betwinner-vs-superbet", label: "BetWinner vs Superbet" },
+      { href: "/alternativas/betwinner-vs-bet365", label: "BetWinner vs bet365" },
+      { href: "/alternativas/betwinner-vs-betnacional", label: "BetWinner vs Betnacional" },
+      { href: "/alternativas/betwinner-vs-blaze", label: "BetWinner vs Blaze" },
+    ],
+  },
+  {
     title: "Guias",
     links: [
       { href: "/apostas-esportivas", label: "Apostas esportivas" },
@@ -40,7 +50,7 @@ export function Footer() {
   return (
     <footer className="mt-24 border-t border-border bg-bg-elevated/40">
       <Container className="py-12">
-        <div className="grid gap-10 md:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div>
             <div className="font-display text-xl font-extrabold tracking-tight">
               <span className="text-brand">BET</span>

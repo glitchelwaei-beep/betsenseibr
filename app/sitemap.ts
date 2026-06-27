@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { COMPARISONS } from "@/lib/comparisons";
 import { SITE } from "@/lib/site";
 
 const ROUTES: {
@@ -11,6 +12,13 @@ const ROUTES: {
   { path: "/copa-do-mundo-2026", priority: 0.95, changeFreq: "daily", lastModified: "2026-06-09" },
   { path: "/betwinner", priority: 0.95, changeFreq: "weekly", lastModified: "2026-06-09" },
   { path: "/bonus", priority: 0.92, changeFreq: "weekly", lastModified: "2026-06-27" },
+  { path: "/alternativas", priority: 0.88, changeFreq: "weekly", lastModified: "2026-06-27" },
+  ...COMPARISONS.map((c) => ({
+    path: c.path,
+    priority: 0.85,
+    changeFreq: "weekly" as const,
+    lastModified: "2026-06-27",
+  })),
   { path: "/codigo-promocional", priority: 0.9, changeFreq: "weekly", lastModified: "2026-05-22" },
   { path: "/cadastro", priority: 0.9, changeFreq: "weekly", lastModified: "2026-05-22" },
   { path: "/pix", priority: 0.9, changeFreq: "weekly", lastModified: "2026-05-22" },

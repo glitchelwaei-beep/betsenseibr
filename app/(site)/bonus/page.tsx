@@ -122,8 +122,10 @@ export default function BonusPage() {
             <p>
               A Lei 14.790/2023 proíbe bônus de boas-vindas para operadoras com licença da SPA desde 1º de janeiro de 2025.
               Como a BetWinner opera com licença internacional (Curaçao), ela ainda oferece o{" "}
-              <strong>bônus BetWinner</strong> — mas está fora da supervisão brasileira. Leia nossa{" "}
-              <Link href="/betwinner">análise completa da BetWinner</Link> antes de depositar.
+              <strong>bônus BetWinner</strong> — mas está fora da supervisão brasileira.{" "}
+              <Link href="/alternativas">Compare vs Superbet e outras casas →</Link>
+              {" · "}
+              <Link href="/betwinner">Análise completa da BetWinner →</Link>
             </p>
 
             <h2>Perguntas frequentes</h2>

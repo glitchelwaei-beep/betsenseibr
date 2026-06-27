@@ -293,7 +293,9 @@ export default function CopaDoMundoPage() {
             Odds para campeão da Copa do Mundo 2026
           </h2>
           <p className="mt-3 text-sm text-text-dim">
-            Médias das principais casas brasileiras (Superbet, bet365, Novibet). Última atualização: 19/05/2026 — odds variam até o apito inicial.
+            Médias das principais casas brasileiras (Superbet, bet365, Novibet).{" "}
+            <Link href="/alternativas" className="text-brand hover:underline">Compare BetWinner vs essas casas →</Link>
+            {" "}Última atualização: 19/05/2026 — odds variam até o apito inicial.
           </p>
 
           <div className="mt-6 rounded-2xl border border-border bg-bg-elevated overflow-hidden">

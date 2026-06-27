@@ -145,6 +145,7 @@ export default function HomePage() {
             Guias passo a passo para começar, depositar, sacar e apostar com a BetWinner.
           </p>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <NavCard href="/alternativas" title="BetWinner vs outras casas" desc="Compare com Superbet, bet365, Betnacional, Blaze, KTO e mais. Bônus, PIX e licença SPA." />
             <NavCard href="/bonus" title="Bônus BetWinner 2026" desc={`${BETWINNER.bonusHeadline}. Como ativar com código ${BETWINNER.promoCode}, rollover e depósito via PIX.`} />
             <NavCard href="/cadastro" title="Como se cadastrar" desc="Cadastro em 2 minutos: telefone +55, CPF, código promocional BETSENSEI26. Tutorial completo." />
             <NavCard href="/pix" title="Depósito e saque via PIX" desc="O método mais rápido e barato. Sem taxa, creditado em até 5 minutos. Limites, dicas e troubleshooting." />

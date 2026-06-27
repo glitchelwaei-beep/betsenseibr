@@ -155,6 +155,8 @@ export default function BetWinnerPage() {
               <strong>Atenção:</strong> a Lei 14.790/2023 proíbe bônus de boas-vindas para casas autorizadas pela SPA desde
               1º de janeiro de 2025. Como a BetWinner opera fora da SPA (licença internacional), ela ainda pode oferecer
               bônus de cadastro. Isso é um diferencial — mas significa que a plataforma também está fora da supervisão brasileira.
+              {" "}
+              <Link href="/alternativas">Compare BetWinner vs Superbet, bet365 e outras casas →</Link>
             </p>
 
             <h2>App da BetWinner para Android e iOS</h2>
