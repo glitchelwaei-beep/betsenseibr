@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
+import { AffiliateOfferCard } from "@/components/site/affiliate-offer-card";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { PageUpdated } from "@/components/site/page-updated";
 import { JsonLd } from "@/components/site/json-ld";
@@ -64,6 +65,12 @@ export default function AlternativasHubPage() {
             Não representamos as demais operadoras listadas abaixo.
           </div>
 
+          <AffiliateOfferCard
+            href="/go/betwinner?src=alternativas-hub-top"
+            variant="compact"
+            className="mt-8 max-w-3xl shadow-xl"
+          />
+
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {COMPARISONS.map((c) => (
               <Link
@@ -95,6 +102,12 @@ export default function AlternativasHubPage() {
               <Link href="/pix">PIX BetWinner</Link> e{" "}
               <Link href="/copa-do-mundo-2026">Copa do Mundo 2026</Link>.
             </p>
+
+            <AffiliateOfferCard
+              href="/go/betwinner?src=alternativas-hub-bottom"
+              variant="banner"
+              className="my-8 not-prose"
+            />
 
             <h2>Perguntas frequentes</h2>
             <div className="not-prose space-y-3 mt-4">

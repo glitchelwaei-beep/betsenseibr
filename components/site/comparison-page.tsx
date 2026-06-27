@@ -1,11 +1,10 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
-import { ButtonLink } from "@/components/ui/button";
+import { AffiliateOfferCard } from "@/components/site/affiliate-offer-card";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { PageUpdated } from "@/components/site/page-updated";
 import { JsonLd } from "@/components/site/json-ld";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
-import { BETWINNER } from "@/lib/partner";
 import { PAGE_UPDATED } from "@/lib/editorial";
 import type { ComparisonCompetitor } from "@/lib/comparisons";
 import { COMPARISONS } from "@/lib/comparisons";
@@ -49,6 +48,12 @@ export function ComparisonPageView({ comparison }: ComparisonPageViewProps) {
             Não temos parceria com {c.name}. Este comparativo é editorial e imparcial dentro do nosso escopo de análise.
           </div>
 
+          <AffiliateOfferCard
+            href={`/go/betwinner?src=compare-${c.slug}-top`}
+            variant="compact"
+            className="my-8 shadow-xl"
+          />
+
           <div className="my-8 overflow-x-auto rounded-2xl border border-border">
             <table className="w-full min-w-[480px] text-sm">
               <thead>
@@ -69,6 +74,12 @@ export function ComparisonPageView({ comparison }: ComparisonPageViewProps) {
               </tbody>
             </table>
           </div>
+
+          <AffiliateOfferCard
+            href={`/go/betwinner?src=compare-${c.slug}-table`}
+            variant="banner"
+            className="my-8"
+          />
 
           <article className="prose-content">
             <h2>Licença e regulamentação</h2>
@@ -101,21 +112,11 @@ export function ComparisonPageView({ comparison }: ComparisonPageViewProps) {
             <h2>Quando a BetWinner faz mais sentido</h2>
             <p>{c.whenBetwinnerWins}</p>
 
-            <div className="my-8 rounded-2xl border border-brand/30 bg-gradient-to-br from-brand/10 to-transparent p-6 not-prose">
-              <h3 className="font-display text-xl font-bold text-text mb-2">
-                Testar a BetWinner com bônus {BETWINNER.bonusShort}
-              </h3>
-              <p className="text-text-muted mb-4">
-                Código <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span> · PIX a partir de{" "}
-                {BETWINNER.minDeposit} ·{" "}
-                <Link href="/cadastro" className="text-brand hover:underline">
-                  cadastro em 2 min
-                </Link>
-              </p>
-              <ButtonLink href={`/go/betwinner?src=compare-${c.slug}`} external size="lg" variant="primary">
-                Cadastrar na BetWinner →
-              </ButtonLink>
-            </div>
+            <AffiliateOfferCard
+              href={`/go/betwinner?src=compare-${c.slug}-mid`}
+              variant="compact"
+              className="my-8 not-prose shadow-xl"
+            />
 
             <h2>Outros comparativos</h2>
             <ul>
@@ -148,6 +149,12 @@ export function ComparisonPageView({ comparison }: ComparisonPageViewProps) {
                 </details>
               ))}
             </div>
+
+            <AffiliateOfferCard
+              href={`/go/betwinner?src=compare-${c.slug}-bottom`}
+              variant="banner"
+              className="mt-8 not-prose"
+            />
           </article>
         </Container>
       </section>
