@@ -10,9 +10,9 @@ import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "PIX BetWinner: como depositar e sacar (guia 2026)",
+  title: "Depósito e saque via PIX na BetWinner — guia 2026",
   description:
-    "Depósito e saque via PIX na BetWinner Brasil: passo a passo, limites, tempo, problemas comuns. Sem taxa, em até 5 minutos. Atualizado em 2026.",
+    "Depósito PIX e saque via PIX na BetWinner: passo a passo, limites, tempo e problemas comuns. Sem taxa, creditado em até 5 minutos.",
   path: "/pix",
 });
 
@@ -55,11 +55,12 @@ export default function PixPage() {
       <section className="py-10">
         <Container className="max-w-3xl">
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
-            PIX BetWinner: depósito e saque
+            Depósito e saque via PIX na BetWinner
           </h1>
           <PageUpdated date={PAGE_UPDATED.pix} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted">
-            O método de pagamento mais usado pelos brasileiros. Sem taxa, 24/7, creditado em até 5 minutos.
+            O método de pagamento mais usado pelos brasileiros. Sem taxa, 24/7, creditado em até 5 minutos.{" "}
+            <Link href="/casa-de-apostas-com-pix" className="text-brand hover:underline">Guia casa de apostas com PIX →</Link>
           </p>
 
           <article className="prose-content mt-8">

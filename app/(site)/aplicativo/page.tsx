@@ -9,9 +9,9 @@ import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "BetWinner mobile e APK: baixar app Android e iOS (Brasil 2026)",
+  title: "App de apostas e aplicativo de apostas esportivas — BetWinner 2026",
   description:
-    "BetWinner mobile no celular: baixar APK Android, instalar no iPhone (iOS) e usar o site mobile. Passo a passo, requisitos e segurança para brasileiros.",
+    "App de apostas esportivas no celular: baixar APK Android, instalar no iPhone e usar o site mobile da BetWinner. Passo a passo para brasileiros.",
   path: "/aplicativo",
 });
 
@@ -30,6 +30,11 @@ const FAQ = [
     question: "Como instalar no iPhone (iOS)?",
     answer:
       "Sim, há versão para iOS. A instalação acontece via perfil de configuração da Apple (mais detalhes no guia abaixo). É um processo legítimo, mas o iPhone vai pedir confirmação extra de segurança.",
+  },
+  {
+    question: "Qual o melhor app de apostas esportivas para brasileiros?",
+    answer:
+      "Depende do que você prioriza. A BetWinner oferece app em português com PIX, apostas ao vivo, transmissões e bônus de boas-vindas — baixe o APK no Android ou instale via perfil Apple no iOS.",
   },
   {
     question: "Como usar a BetWinner mobile no celular?",
@@ -59,11 +64,11 @@ export default function AplicativoPage() {
       <section className="py-10">
         <Container className="max-w-3xl">
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
-            BetWinner mobile e app — baixar APK no Brasil
+            App de apostas esportivas — BetWinner no celular
           </h1>
           <PageUpdated date={PAGE_UPDATED.aplicativo} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted">
-            BetWinner mobile no celular: app oficial em português para Android (APK) e iPhone (iOS), além do site mobile no navegador.
+            Aplicativo de apostas esportivas em português para Android (APK) e iPhone (iOS), além do site mobile no navegador.
           </p>
 
           <div className="my-8 rounded-2xl border border-border bg-bg-elevated p-6 sm:p-8">

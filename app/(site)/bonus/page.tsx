@@ -10,8 +10,8 @@ import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: `Bônus BetWinner 2026: ${BETWINNER.bonusShort} no 1º depósito`,
-  description: `Bônus BetWinner ${BETWINNER.bonusShort} para novos jogadores em 2026. Como ativar com código ${BETWINNER.promoCode}, rollover, depósito mínimo ${BETWINNER.minDeposit} via PIX.`,
+  title: `Bônus de boas-vindas e bônus de cadastro BetWinner 2026 — ${BETWINNER.bonusShort}`,
+  description: `Bonus apostas BetWinner: bônus de boas-vindas ${BETWINNER.bonusShort} no 1º depósito. Código ${BETWINNER.promoCode}, rollover e ativação via PIX.`,
   path: "/bonus",
 });
 
@@ -36,6 +36,10 @@ const FAQ = [
     question: "O bônus BetWinner vale para apostas na Copa do Mundo 2026?",
     answer: `Sim. A campanha ${BETWINNER.bonusContext.toLowerCase()} cobre mercados de futebol, incluindo jogos da Copa do Mundo 2026.`,
   },
+  {
+    question: "A BetWinner tem bônus sem depósito, freebet ou apostas grátis?",
+    answer: `Não oferecemos páginas para promessas que não condizem com a oferta real. A BetWinner trabalha com ${BETWINNER.bonusHeadline.toLowerCase()} no primeiro depósito qualificado (mín. ${BETWINNER.minDeposit} via PIX) — não bônus sem depósito. Desconfie de sites que prometem freebet garantido.`,
+  },
 ];
 
 export default function BonusPage() {
@@ -54,7 +58,7 @@ export default function BonusPage() {
       <section className="py-10">
         <Container className="max-w-3xl">
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
-            Bônus BetWinner 2026 — {BETWINNER.bonusShort} no 1º depósito
+            Bônus de boas-vindas BetWinner 2026 — {BETWINNER.bonusShort} no cadastro
           </h1>
           <PageUpdated date={PAGE_UPDATED.bonus} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted">

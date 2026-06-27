@@ -412,6 +412,92 @@ export const COMPARISONS: ComparisonCompetitor[] = [
       },
     ],
   },
+  {
+    slug: "betwinner-vs-sportingbet",
+    name: "Sportingbet",
+    path: "/alternativas/betwinner-vs-sportingbet",
+    metaTitle: "BetWinner vs Sportingbet apostas esportivas (2026)",
+    metaDescription:
+      "Sportingbet ou BetWinner para apostas esportivas? Compare bônus, PIX, app, licença SPA e mercados. Guia imparcial — afiliados BetWinner.",
+    h1: "BetWinner ou Sportingbet — apostas esportivas em 2026",
+    intro:
+      "A Sportingbet é uma marca histórica de apostas esportivas no Brasil. Quem pesquisa Sportingbet apostas esportivas vs BetWinner compara regulamentação SPA, bônus e experiência mobile.",
+    licenseSummary:
+      "A Sportingbet opera no mercado regulado brasileiro (SPA). A BetWinner possui licença internacional (Curaçao) e não está na lista SPA.",
+    spaAuthorized: true,
+    competitorStrengths: [
+      "Marca consolidada em apostas esportivas",
+      "Operação regulada pela SPA",
+      "App e PIX integrados ao ecossistema brasileiro",
+    ],
+    competitorWeaknesses: [
+      "Sem bônus de boas-vindas SPA desde jan/2025",
+      "Promoções de entrada limitadas vs casas offshore",
+    ],
+    whenCompetitorWins:
+      "Prioridade em operadora SPA com histórico esportivo e supervisão brasileira.",
+    whenBetwinnerWins:
+      `Quem busca ${BW.bonusHeadline.toLowerCase()}, código ${BW.promoCode}, PIX rápido e mercados da Copa 2026 pode preferir BetWinner — aceitando licença offshore.`,
+    table: withCompetitor(BETWINNER_TABLE_BASE, [
+      "Sim (SPA)",
+      "Não (proibido p/ SPA desde jan/2025)",
+      "Sim",
+      "Conforme operadora",
+      "Conforme operadora",
+      "Sim",
+      "Sim",
+    ]),
+    faq: [
+      {
+        question: "Sportingbet ou BetWinner para apostas esportivas?",
+        answer:
+          "Ambas cobrem futebol e esportes principais. Sportingbet no modelo SPA; BetWinner com bônus de novos jogadores e foco em mercados internacionais.",
+      },
+    ],
+  },
+  {
+    slug: "betwinner-vs-betao",
+    name: "Betão",
+    path: "/alternativas/betwinner-vs-betao",
+    metaTitle: "BetWinner vs Betão: apostas esportivas e cassino ao vivo (2026)",
+    metaDescription:
+      "Betão ou BetWinner? Compare apostas esportivas, cassino ao vivo, bônus, PIX e app. Não somos afiliados da Betão.",
+    h1: "BetWinner ou Betão — apostas esportivas e cassino ao vivo",
+    intro:
+      "A Betão combina apostas esportivas e cassino ao vivo no mercado brasileiro. A comparação com BetWinner interessa quem avalia bônus, PIX e profundidade esportiva para a Copa 2026.",
+    licenseSummary:
+      "A Betão opera no segmento regulado/internacional conforme sua operação declarada. A BetWinner possui licença internacional de Curaçao.",
+    spaAuthorized: true,
+    competitorStrengths: [
+      "Mix apostas esportivas e cassino ao vivo",
+      "Presença de marca no Brasil",
+      "App mobile e PIX",
+    ],
+    competitorWeaknesses: [
+      "Bônus de boas-vindas limitado no modelo SPA (desde 2025)",
+      "Cobertura esportiva internacional pode ser menor que casas globais",
+    ],
+    whenCompetitorWins:
+      "Se você quer cassino ao vivo e esportes na mesma conta sob operadora conhecida no BR.",
+    whenBetwinnerWins:
+      `Para ${BW.bonusContext}, ${BW.sports}+ esportes, transmissões ao vivo e ${BW.bonusHeadline.toLowerCase()} com ${BW.promoCode}.`,
+    table: withCompetitor(BETWINNER_TABLE_BASE, [
+      "Sim (SPA)",
+      "Não (proibido p/ SPA desde jan/2025)",
+      "Sim",
+      "Conforme operadora",
+      "Conforme operadora",
+      "Sim",
+      "Sim",
+    ]),
+    faq: [
+      {
+        question: "Betão ou BetWinner para a Copa do Mundo?",
+        answer:
+          "Ambas cobrem a Copa. BetWinner se destaca em bônus de entrada e mercados esportivos profundos; Betão em mix esportes + cassino ao vivo no ecossistema local.",
+      },
+    ],
+  },
 ];
 
 export const COMPARISON_BY_SLUG = Object.fromEntries(

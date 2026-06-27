@@ -4,7 +4,7 @@ export const SITE = {
   domain: "betsenseibrasil.com",
   url: "https://betsenseibrasil.com",
   description:
-    "Análise honesta da BetWinner Brasil: bônus, código promocional, cadastro com PIX, app, saque e suporte. Tudo em português.",
+    "Apostas esportivas e casa de apostas com PIX no Brasil: guias, bônus BetWinner, cadastro, app e comparativos. Tudo em português.",
   htmlLang: "pt-BR",
   ogLocale: "pt_BR",
   twitter: "@betsensei_br",

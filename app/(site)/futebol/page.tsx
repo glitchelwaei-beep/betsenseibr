@@ -10,12 +10,17 @@ import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Apostas em futebol no Brasil — Brasileirão, Libertadores e estaduais 2026",
-  description: "Como apostar em futebol no Brasil em 2026: Campeonato Brasileiro, Libertadores, Copa do Brasil, estaduais. Mercados, odds e dicas com BetWinner.",
+  title: "Apostas em futebol e odds futebol no Brasil 2026",
+  description: "Odds de futebol e apostas em Brasileirão, Libertadores, Copa do Brasil e estaduais. Mercados, dicas e guia BetWinner.",
   path: "/futebol",
 });
 
 const FAQ = [
+  {
+    question: "Como funcionam as odds de futebol na BetWinner?",
+    answer:
+      "As odds de futebol refletem a probabilidade implícita de cada resultado (1X2, gols, handicap). Na BetWinner você encontra linhas para Brasileirão, Libertadores, Copa do Brasil e ligas internacionais, com atualização em tempo real no ao vivo.",
+  },
   {
     question: "Quais campeonatos de futebol a BetWinner cobre?",
     answer:
@@ -78,9 +83,9 @@ export default function FutebolPage() {
           <article className="prose-content mt-8">
             <h2>Competições cobertas pela BetWinner</h2>
             <ul>
-              <li><strong>Campeonato Brasileiro Série A</strong> — 20 clubes, 38 rodadas</li>
+              <li><strong>Campeonato Brasileiro Série A</strong> — <Link href="/apostas-brasileirao">apostas Brasileirão</Link></li>
               <li><strong>Série B</strong> — segunda divisão</li>
-              <li><strong>Copa do Brasil</strong> — eliminatórias do mata-mata</li>
+              <li><strong>Copa do Brasil</strong> — <Link href="/apostas-copa-do-brasil">apostas Copa do Brasil</Link></li>
               <li><strong>Copa Libertadores</strong> — clubes sul-americanos</li>
               <li><strong>Copa Sul-Americana</strong></li>
               <li><strong>Estaduais:</strong> Paulista, Carioca, Mineiro, Gaúcho, Baiano, Pernambucano</li>
@@ -101,6 +106,14 @@ export default function FutebolPage() {
               <li><strong>Cartões:</strong> total, primeiro cartão, jogador específico</li>
               <li><strong>Apostas combinadas (criar aposta / bet builder):</strong> múltiplos mercados na mesma partida</li>
             </ul>
+
+            <h2>Odds de futebol na BetWinner</h2>
+            <p>
+              As <strong>odds de futebol</strong> na BetWinner cobrem Brasileirão, Libertadores, Copa do Brasil, estaduais e ligas europeias. Compare linhas de 1X2, gols e handicap antes de apostar — no ao vivo, as odds se ajustam a cada lance. Veja também{" "}
+              <Link href="/apostas-brasileirao">apostas no Brasileirão</Link>,{" "}
+              <Link href="/apostas-copa-do-brasil">apostas na Copa do Brasil</Link> e{" "}
+              <Link href="/palpites-futebol">palpites de futebol</Link>.
+            </p>
 
             <h2>Dicas para apostar em Brasileirão Série A</h2>
             <ul>

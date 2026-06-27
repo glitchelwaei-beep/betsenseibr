@@ -10,8 +10,8 @@ import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: `Código promocional BetWinner 2026: ${BETWINNER.promoCode} — bônus ${BETWINNER.bonusShort}`,
-  description: `Código promocional BetWinner ${BETWINNER.promoCode} — ${BETWINNER.bonusHeadline.toLowerCase()}. Passo a passo para usar em 2026.`,
+  title: `Código promocional e cupom promocional BetWinner 2026 — ${BETWINNER.promoCode}`,
+  description: `Código promocional e cupom promocional BetWinner ${BETWINNER.promoCode} — ${BETWINNER.bonusHeadline.toLowerCase()}. Passo a passo para usar em 2026.`,
   path: "/codigo-promocional",
 });
 
@@ -50,7 +50,7 @@ export default function CodigoPromocionalPage() {
       <section className="py-10">
         <Container className="max-w-3xl">
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
-            Código promocional BetWinner 2026
+            Código promocional e cupom promocional BetWinner 2026
           </h1>
           <PageUpdated date={PAGE_UPDATED.codigo} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted">

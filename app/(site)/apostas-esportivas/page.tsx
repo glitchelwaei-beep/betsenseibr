@@ -10,8 +10,8 @@ import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Apostas esportivas Brasil 2026 — guia completo com BetWinner",
-  description: "Tudo sobre apostas esportivas no Brasil: tipos de mercado, esportes cobertos pela BetWinner, odds, estratégias e legislação 2026.",
+  title: "Apostas esportivas no Brasil 2026 — guia completo",
+  description: "Apostas esportivas e cassino ao vivo na BetWinner: tipos de mercado, esportes cobertos, odds, legislação e estratégias para brasileiros.",
   path: "/apostas-esportivas",
 });
 
@@ -66,8 +66,9 @@ export default function ApostasEsportivasPage() {
             Apostas esportivas no Brasil — guia 2026
           </h1>
           <PageUpdated date={PAGE_UPDATED.apostas} className="mt-2" />
-          <p className="mt-4 text-lg text-text-muted">
-            Tipos de aposta, esportes cobertos pela BetWinner, odds, legislação brasileira e estratégias básicas.
+            <p className="mt-4 text-lg text-text-muted">
+            Tipos de aposta, esportes cobertos, odds, legislação brasileira e cassino ao vivo na BetWinner.{" "}
+            <Link href="/casa-de-apostas" className="text-brand hover:underline">Guia casa de apostas →</Link>
           </p>
 
           <Link
@@ -125,6 +126,11 @@ export default function ApostasEsportivasPage() {
             </ul>
             <p>
               A BetWinner opera com licença internacional (Curaçao) e não está na lista da SPA. Por isso ainda oferece bônus, mas está fora da regulamentação brasileira.
+            </p>
+
+            <h2>Apostas esportivas e cassino ao vivo</h2>
+            <p>
+              A BetWinner é focada em <strong>apostas esportivas</strong>, com transmissões ao vivo, cash out e mercados in-play. Também oferece <strong>cassino ao vivo</strong> como complemento — roleta, blackjack e mesas com dealers reais. Se seu foco principal é futebol e Copa do Mundo, a plataforma esportiva costuma ser o ponto de partida; o cassino fica disponível na mesma conta.
             </p>
 
             <h2>Estratégias básicas para iniciantes</h2>

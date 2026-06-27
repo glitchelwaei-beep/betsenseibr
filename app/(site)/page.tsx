@@ -145,13 +145,16 @@ export default function HomePage() {
             Guias passo a passo para começar, depositar, sacar e apostar com a BetWinner.
           </p>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <NavCard href="/casa-de-apostas" title="Casa de apostas no Brasil" desc="O que avaliar ao escolher uma casa de apostas: licença, PIX, bônus, app e comparativos honestos." />
             <NavCard href="/alternativas" title="BetWinner vs outras casas" desc="Compare com Superbet, bet365, Betnacional, Blaze, KTO e mais. Bônus, PIX e licença SPA." />
             <NavCard href="/bonus" title="Bônus BetWinner 2026" desc={`${BETWINNER.bonusHeadline}. Como ativar com código ${BETWINNER.promoCode}, rollover e depósito via PIX.`} />
             <NavCard href="/cadastro" title="Como se cadastrar" desc="Cadastro em 2 minutos: telefone +55, CPF, código promocional BETSENSEI26. Tutorial completo." />
             <NavCard href="/pix" title="Depósito e saque via PIX" desc="O método mais rápido e barato. Sem taxa, creditado em até 5 minutos. Limites, dicas e troubleshooting." />
             <NavCard href="/codigo-promocional" title={`Código promocional ${BETWINNER.promoCode}`} desc={`Ative o bônus de ${BETWINNER.bonusShort} para novos jogadores. Como aplicar, condições de rollover e prazos.`} />
             <NavCard href="/aplicativo" title="BetWinner mobile e app (APK)" desc="BetWinner mobile no celular: download do APK, instalação no iPhone e diferenças vs. site mobile." />
-            <NavCard href="/futebol" title="Apostas no Campeonato Brasileiro" desc="Mercados, odds médias, dicas para apostar em Série A, Libertadores, Copa do Brasil e estaduais." />
+            <NavCard href="/apostas-esportivas" title="Apostas esportivas Brasil" desc="Guia completo: mercados, legislação, cassino ao vivo e como começar na BetWinner." />
+            <NavCard href="/futebol" title="Apostas no Campeonato Brasileiro" desc="Mercados, odds de futebol, Brasileirão, Libertadores e Copa do Brasil." />
+            <NavCard href="/palpites-futebol" title="Palpites de futebol" desc="Análises editoriais Copa 2026 e Brasileirão — atualizado semanalmente." />
             <NavCard href="/como-apostar" title="Como apostar (para iniciantes)" desc="Glossário, tipos de aposta (simples, múltipla, handicap), gestão de banca e estratégias básicas." />
             <NavCard href="/aposta-ao-vivo" title="Apostas ao vivo" desc="Como funciona o live, transmissões da BetWinner, cash out e estratégias para apostas in-play." />
             <NavCard href="/imposto" title="Imposto sobre prêmios (IR 15%)" desc="O que mudou com a Lei 14.790/2023, como declarar ganhos de casas offshore como a BetWinner." />

@@ -11,9 +11,9 @@ import { COMPARISONS } from "@/lib/comparisons";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Melhores casas de apostas Brasil 2026 — comparativo BetWinner",
+  title: "Melhor casa de apostas Brasil 2026 — comparativo honesto",
   description:
-    "Compare BetWinner vs bet365, Superbet, Betnacional, Blaze, KTO e mais. Bônus, PIX, licença SPA e Copa 2026 — guia imparcial para brasileiros.",
+    "Melhor casa de apostas para brasileiros: compare BetWinner vs bet365, Superbet, Betnacional e mais. Bônus, PIX, licença SPA e Copa 2026.",
   path: "/alternativas",
 });
 
@@ -52,7 +52,7 @@ export default function AlternativasHubPage() {
       <section className="py-10">
         <Container>
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight max-w-3xl">
-            Melhores casas de apostas Brasil 2026 — comparativo honesto
+            Melhor casa de apostas Brasil 2026 — comparativo honesto
           </h1>
           <PageUpdated date={PAGE_UPDATED.alternativas} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted max-w-3xl">

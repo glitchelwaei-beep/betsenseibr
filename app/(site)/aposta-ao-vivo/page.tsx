@@ -9,12 +9,17 @@ import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Aposta ao vivo (live betting) na BetWinner — guia 2026",
-  description: "Como funciona a aposta ao vivo (in-play) na BetWinner Brasil: transmissões, cash out, estratégias e diferenças vs. pré-jogo.",
+  title: "Apostas ao vivo no Brasil 2026 — guia BetWinner",
+  description: "Apostas ao vivo (in-play) na BetWinner: transmissões, cash out, estratégias e diferenças vs. pré-jogo para brasileiros.",
   path: "/aposta-ao-vivo",
 });
 
 const FAQ = [
+  {
+    question: "O que são apostas ao vivo?",
+    answer:
+      "Apostas ao vivo (in-play) são feitas com a partida em andamento. As odds mudam em tempo real conforme gols, cartões e escanteios — diferente da aposta pré-jogo.",
+  },
   {
     question: "O que é aposta ao vivo (in-play)?",
     answer:
@@ -53,7 +58,7 @@ export default function ApostaAoVivoPage() {
       <section className="py-10">
         <Container className="max-w-3xl">
           <h1 className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight">
-            Aposta ao vivo na BetWinner
+            Apostas ao vivo no Brasil 2026
           </h1>
           <PageUpdated date={PAGE_UPDATED.live} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted">

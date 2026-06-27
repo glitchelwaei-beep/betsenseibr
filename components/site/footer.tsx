@@ -21,7 +21,19 @@ const FOOTER_GROUPS = [
       { href: "/alternativas/betwinner-vs-superbet", label: "BetWinner vs Superbet" },
       { href: "/alternativas/betwinner-vs-bet365", label: "BetWinner vs bet365" },
       { href: "/alternativas/betwinner-vs-betnacional", label: "BetWinner vs Betnacional" },
-      { href: "/alternativas/betwinner-vs-blaze", label: "BetWinner vs Blaze" },
+      { href: "/alternativas/betwinner-vs-sportingbet", label: "BetWinner vs Sportingbet" },
+      { href: "/alternativas/betwinner-vs-betao", label: "BetWinner vs Betão" },
+    ],
+  },
+  {
+    title: "Guias gerais",
+    links: [
+      { href: "/casa-de-apostas", label: "Casa de apostas" },
+      { href: "/casas-de-apostas-confiaveis", label: "Casas confiáveis" },
+      { href: "/casas-de-apostas-licenciadas", label: "Casas licenciadas" },
+      { href: "/casa-de-apostas-com-pix", label: "Casa de apostas com PIX" },
+      { href: "/palpites-futebol", label: "Palpites de futebol" },
+      { href: "/grupo-apostas", label: "Grupo Telegram" },
     ],
   },
   {
@@ -29,6 +41,8 @@ const FOOTER_GROUPS = [
     links: [
       { href: "/apostas-esportivas", label: "Apostas esportivas" },
       { href: "/futebol", label: "Apostas em futebol" },
+      { href: "/apostas-brasileirao", label: "Apostas Brasileirão" },
+      { href: "/apostas-copa-do-brasil", label: "Apostas Copa do Brasil" },
       { href: "/aposta-ao-vivo", label: "Aposta ao vivo" },
       { href: "/como-apostar", label: "Como apostar (iniciantes)" },
       { href: "/imposto", label: "Imposto sobre prêmios (IR 15%)" },
@@ -50,7 +64,7 @@ export function Footer() {
   return (
     <footer className="mt-24 border-t border-border bg-bg-elevated/40">
       <Container className="py-12">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
           <div>
             <div className="font-display text-xl font-extrabold tracking-tight">
               <span className="text-brand">BET</span>

@@ -13,9 +13,9 @@ import { Countdown } from "@/components/site/countdown";
 import { WORLD_CUP } from "@/lib/worldcup";
 
 const PAGE_PATH = WORLD_CUP.pagePath;
-const PAGE_TITLE = `Copa do Mundo 2026: apostas, odds e bônus ${BETWINNER.bonusShort}`;
+const PAGE_TITLE = `Apostas Copa do Mundo 2026: odds, jogos do Brasil e bônus ${BETWINNER.bonusShort}`;
 const PAGE_DESCRIPTION =
-  `Jogos do Brasil no Grupo C, favoritos, artilheiro e mercados da Copa 2026. Bônus ${BETWINNER.bonusShort} na BetWinner com PIX — guia completo em português.`;
+  `Apostas na Copa do Mundo 2026: jogos do Brasil no Grupo C, favoritos, artilheiro e mercados. Bônus ${BETWINNER.bonusShort} na BetWinner com PIX.`;
 const PUBLISHED_AT = "2026-05-26";
 const MODIFIED_AT = "2026-06-09";
 
@@ -75,6 +75,11 @@ const FAQ_ITEMS = [
     question: "Quais mercados estão disponíveis para apostar na Copa 2026?",
     answer:
       "Os principais: campeão (outright), vencedor de grupo, classificação para as oitavas, artilheiro/chuteira de ouro, próxima seleção eliminada, jogador da Copa, resultado final (1X2), total de gols, ambas marcam, handicap asiático, resultado exato, escanteios, cartões e apostas combinadas (criar aposta).",
+  },
+  {
+    question: "Onde encontrar palpites para apostas na Copa do Mundo?",
+    answer:
+      "Publicamos análises editoriais em nossa página de palpites de futebol e no grupo Telegram — sem garantia de resultado. Apostas envolvem risco (18+).",
   },
 ];
 
@@ -388,7 +393,8 @@ export default function CopaDoMundoPage() {
             </Step>
             <Step n={3} title="Encontre os jogos da Copa">
               Na seção <strong>Esportes → Futebol → Copa do Mundo 2026</strong> você acha todos os jogos da fase de grupos, mata-mata,
-              mercados de campeão, artilheiro e props (escanteios, cartões, gols por tempo).
+              mercados de campeão, artilheiro e props (escanteios, cartões, gols por tempo).{" "}
+              <Link href="/palpites-futebol" className="text-brand hover:underline">Palpites de futebol →</Link>
             </Step>
             <Step n={4} title="Aposte ao vivo e use cash out">
               Durante os jogos da Copa, a BetWinner oferece odds em tempo real, transmissão integrada para a maioria das partidas e cash out
