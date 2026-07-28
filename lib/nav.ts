@@ -9,6 +9,7 @@ export const NAV_PRIMARY_LINKS: readonly NavLink[] = [
 ];
 
 export const NAV_GUIDE_LINKS: readonly NavLink[] = [
+  { href: "/blog", label: "Blog" },
   { href: "/codigo-promocional", label: "Código promocional" },
   { href: "/aplicativo", label: "Aplicativo" },
   { href: "/apostas-esportivas", label: "Esportes" },

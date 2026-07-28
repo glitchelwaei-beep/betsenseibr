@@ -39,6 +39,7 @@ const FOOTER_GROUPS = [
   {
     title: "Guias",
     links: [
+      { href: "/blog", label: "Blog" },
       { href: "/apostas-esportivas", label: "Apostas esportivas" },
       { href: "/futebol", label: "Apostas em futebol" },
       { href: "/apostas-brasileirao", label: "Apostas Brasileirão" },

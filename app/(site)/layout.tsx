@@ -1,5 +1,6 @@
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
+import { StickyBetwinnerBanner } from "@/components/site/sticky-betwinner-banner";
 
 export default function SiteLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -7,6 +8,7 @@ export default function SiteLayout({ children }: Readonly<{ children: React.Reac
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
+      <StickyBetwinnerBanner />
     </>
   );
 }

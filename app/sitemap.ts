@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getAllPosts } from "@/lib/blog";
 import { COMPARISONS } from "@/lib/comparisons";
 import { SITE } from "@/lib/site";
 
@@ -35,6 +36,7 @@ const ROUTES: {
   { path: "/futebol", priority: 0.85, changeFreq: "weekly", lastModified: "2026-06-27" },
   { path: "/aposta-ao-vivo", priority: 0.8, changeFreq: "weekly", lastModified: "2026-05-22" },
   { path: "/como-apostar", priority: 0.8, changeFreq: "weekly", lastModified: "2026-05-22" },
+  { path: "/blog", priority: 0.85, changeFreq: "weekly", lastModified: "2026-07-28" },
   { path: "/imposto", priority: 0.75, changeFreq: "monthly", lastModified: "2026-05-01" },
   { path: "/jogo-responsavel", priority: 0.5, changeFreq: "yearly", lastModified: "2026-05-01" },
   { path: "/sobre", priority: 0.4, changeFreq: "monthly", lastModified: "2026-05-01" },
@@ -44,10 +46,19 @@ const ROUTES: {
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return ROUTES.map((r) => ({
+  const staticEntries = ROUTES.map((r) => ({
     url: `${SITE.url}${r.path}`,
     lastModified: new Date(r.lastModified),
     changeFrequency: r.changeFreq,
     priority: r.priority,
   }));
+
+  const blogEntries = getAllPosts().map((post) => ({
+    url: `${SITE.url}/blog/${post.slug}`,
+    lastModified: new Date(post.updated),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticEntries, ...blogEntries];
 }
