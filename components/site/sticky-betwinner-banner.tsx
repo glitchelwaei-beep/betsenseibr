@@ -85,8 +85,15 @@ export function StickyBetwinnerBanner() {
               </svg>
             </span>
             <p className="truncate font-display text-xs font-bold italic leading-tight text-white sm:text-sm md:text-base">
-              <span className="sm:hidden">Cadastre-se agora</span>
-              <span className="hidden sm:inline">Cadastre-se na BetWinner agora</span>
+              <span className="sm:hidden">
+                Código{" "}
+                <span style={{ color: BETWINNER.brandColor }}>{BETWINNER.promoCode}</span>
+              </span>
+              <span className="hidden sm:inline">
+                Use o código{" "}
+                <span style={{ color: BETWINNER.brandColor }}>{BETWINNER.promoCode}</span>
+                {" · "}Cadastre-se agora
+              </span>
             </p>
           </div>
 
