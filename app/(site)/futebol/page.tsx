@@ -37,9 +37,9 @@ const FAQ = [
       "Sim. A BetWinner oferece live streaming integrado para a maioria das partidas do Brasileirão e Libertadores, com estatísticas em tempo real, cash out e apostas in-play.",
   },
   {
-    question: "Como apostar na Copa do Mundo 2026 pela BetWinner?",
+    question: "A Copa do Mundo 2026 acabou — o que apostar na BetWinner?",
     answer:
-      `Cadastre-se com PIX (mínimo ${BETWINNER.minDeposit}), use o código ${BETWINNER.promoCode} para ${BETWINNER.bonusHeadline.toLowerCase()} e acesse Esportes → Futebol → Copa do Mundo 2026. Veja nosso guia completo com jogos do Brasil no Grupo C.`,
+      `O Mundial encerrou em julho/2026 (Espanha campeã). Cadastre-se com PIX (mínimo ${BETWINNER.minDeposit}), use o código ${BETWINNER.promoCode} e aposte em Brasileirão, Libertadores e ligas europeias. Resumo do Mundial: /copa-do-mundo-2026.`,
   },
 ];
 
@@ -74,9 +74,9 @@ export default function FutebolPage() {
               <span className="text-2xl" aria-hidden>🏆</span>
             </div>
             <div className="flex-1">
-              <div className="text-[10px] uppercase tracking-wide font-bold text-brand">Especial</div>
-              <div className="font-display text-lg font-bold text-text">Copa do Mundo 2026 — Brasil estreia 13/jun</div>
-              <div className="text-sm text-text-muted">Jogos do Grupo C, odds atualizadas, bônus de {BETWINNER.bonusShort} →</div>
+              <div className="text-[10px] uppercase tracking-wide font-bold text-brand">Arquivo · Pós-Copa</div>
+              <div className="font-display text-lg font-bold text-text">Copa do Mundo 2026 — Espanha campeã</div>
+              <div className="text-sm text-text-muted">Resultados, Brasil nas oitavas e o que apostar agora →</div>
             </div>
           </Link>
 

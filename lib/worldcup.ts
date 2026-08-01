@@ -1,10 +1,28 @@
+/** Copa do Mundo FIFA 2026 — tournament ended 19/jul/2026. */
 export const WORLD_CUP = {
-  kickoffIso: "2026-06-11T19:00:00Z", // 16:00 BRT — México x África do Sul
-  countdownLabel: "Falta para o apito inicial (11/jun 16h BRT)",
   pagePath: "/copa-do-mundo-2026",
   heroImage: "/hero/world-cup-stadium.webp",
-  brasilOdds: "9.00",
+  startDate: "2026-06-11",
+  endDate: "2026-07-19",
+  kickoffIso: "2026-06-11T19:00:00Z",
+  countdownLabel: "Copa do Mundo 2026 — encerrada",
+
+  champion: "Espanha",
+  runnerUp: "Argentina",
+  finalScore: "1–0 (prorrogação)",
+  finalScorer: "Ferran Torres",
+  finalVenue: "MetLife Stadium · Nova Jersey/NY",
+  goldenBoot: "Kylian Mbappé (FRA)",
+  goldenBootGoals: "10",
+
+  brasilGroup: "Grupo C",
   brasilDebut: "13/jun",
   brasilDebutMatch: "Brasil × Marrocos",
-  brasilGroup: "Grupo C",
+  brasilExit: "Oitavas de final",
+  brasilExitOpponent: "Noruega",
+  brasilExitScore: "1–2",
+  brasilExitDate: "5 de julho de 2026",
+  brasilFinalRank: "11º",
+  /** Pre-tournament odds kept for archival LP copy only */
+  brasilOdds: "9.00",
 } as const;

@@ -6,18 +6,16 @@ import { PageUpdated } from "@/components/site/page-updated";
 import { JsonLd } from "@/components/site/json-ld";
 import { breadcrumbSchema, faqSchema, sportsEventSchema, articleSchema } from "@/lib/schema";
 import { BETWINNER } from "@/lib/partner";
-import { SITE } from "@/lib/site";
 import { EDITORIAL, PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
-import { Countdown } from "@/components/site/countdown";
 import { WORLD_CUP } from "@/lib/worldcup";
 
 const PAGE_PATH = WORLD_CUP.pagePath;
-const PAGE_TITLE = `Apostas Copa do Mundo 2026: odds, jogos do Brasil e bônus ${BETWINNER.bonusShort}`;
+const PAGE_TITLE = `Copa do Mundo 2026: resultados, Espanha campeã e apostas pós-Mundial`;
 const PAGE_DESCRIPTION =
-  `Apostas na Copa do Mundo 2026: jogos do Brasil no Grupo C, favoritos, artilheiro e mercados. Bônus ${BETWINNER.bonusShort} na BetWinner com PIX.`;
+  `Copa do Mundo 2026 encerrada: Espanha campeã, Brasil nas oitavas, Mbappé artilheiro. Veja o resumo e continue apostando na BetWinner com bônus ${BETWINNER.bonusShort} e PIX.`;
 const PUBLISHED_AT = "2026-05-26";
-const MODIFIED_AT = "2026-06-09";
+const MODIFIED_AT = "2026-08-01";
 
 export const metadata = buildMetadata({
   title: PAGE_TITLE,
@@ -27,97 +25,85 @@ export const metadata = buildMetadata({
 
 const FAQ_ITEMS = [
   {
-    question: "Quando começa a Copa do Mundo 2026?",
+    question: "Quem ganhou a Copa do Mundo 2026?",
     answer:
-      "A Copa do Mundo FIFA 2026 começa em quinta-feira, 11 de junho de 2026, às 16h (horário de Brasília), com México x África do Sul no Estadio Azteca, na Cidade do México. A final será em 19 de julho de 2026, no MetLife Stadium (Nova Jersey/Nova York).",
+      "A Espanha conquistou o bicampeonato mundial ao vencer a Argentina por 1 a 0 na prorrogação, em 19 de julho de 2026, no MetLife Stadium (Nova Jersey). O gol do título foi de Ferran Torres.",
   },
   {
-    question: "Onde será a Copa do Mundo 2026?",
+    question: "Até onde o Brasil chegou na Copa do Mundo 2026?",
     answer:
-      "Esta edição é a primeira tri-sede da história: Estados Unidos, Canadá e México. Serão 16 cidades-sede no total — 11 nos EUA, 3 no México e 2 no Canadá. Também é a primeira Copa com 48 seleções, em 12 grupos de 4, totalizando 104 partidas.",
+      "O Brasil caiu nas oitavas de final, em 5 de julho de 2026, ao perder por 2 a 1 para a Noruega no MetLife Stadium. Na classificação geral do Mundial, a seleção terminou em 11º lugar.",
   },
   {
-    question: "Em que grupo está o Brasil na Copa do Mundo 2026?",
+    question: "Como foi a campanha do Brasil na Copa 2026?",
     answer:
-      "O Brasil caiu no Grupo C, ao lado de Marrocos, Escócia e Haiti. O sorteio foi realizado em 5 de dezembro de 2025 e o grupo é considerado um dos 'grupos da morte' do Mundial — Marrocos foi semifinalista em 2022 e a Escócia é um adversário aguerrido.",
+      "No Grupo C, o Brasil empatou com Marrocos, venceu Haiti e Escócia, depois eliminou o Japão na primeira fase do mata-mata e caiu para a Noruega nas oitavas. Técnico: Carlo Ancelotti.",
   },
   {
-    question: "Quais são os jogos do Brasil na fase de grupos?",
+    question: "Quem foi o artilheiro da Copa do Mundo 2026?",
     answer:
-      "O Brasil tem três jogos na primeira fase, todos em horário acessível para o torcedor brasileiro: 13/jun (sábado) 19h00 contra Marrocos no MetLife Stadium (NY/NJ); 19/jun (sexta) 21h30 contra Haiti em Filadélfia; e 24/jun (quarta) 19h00 contra Escócia em Miami. Todos os horários em horário de Brasília.",
+      "Kylian Mbappé (França) conquistou a Chuteira de Ouro com 10 gols no torneio.",
   },
   {
-    question: "Quem é o técnico da seleção brasileira na Copa 2026?",
+    question: "Quando foi a Copa do Mundo 2026?",
     answer:
-      "Carlo Ancelotti, contratado em maio de 2025, é o primeiro técnico estrangeiro a comandar a seleção brasileira em Copa do Mundo. A convocação final dos 26 jogadores foi anunciada em 18 de maio de 2026.",
+      "De 11 de junho a 19 de julho de 2026, nos Estados Unidos, Canadá e México — primeira edição tri-sede e com 48 seleções (104 jogos).",
   },
   {
-    question: "Quais são os favoritos para vencer a Copa do Mundo 2026?",
-    answer:
-      "Pelas odds atualizadas das principais casas brasileiras (Superbet, bet365, Novibet), os favoritos são: Espanha (5.50), França (6.00), Inglaterra (7.00–8.00), Brasil e Argentina (9.00), Portugal (12.00) e Alemanha (13.00–14.00). Brasil é apontado como favorito para vencer o Grupo C, com odds entre 1.15 e 1.25.",
+    question: "Ainda dá para usar o bônus BetWinner depois da Copa?",
+    answer: `Sim. A oferta de ${BETWINNER.bonusHeadline.toLowerCase()} com o código ${BETWINNER.promoCode} continua disponível para novos jogadores via link BetSensei — útil para Brasileirão, Libertadores e futebol europeu. Depósito mínimo ${BETWINNER.minDeposit} via PIX.`,
   },
   {
-    question: "Qual a melhor casa de apostas para a Copa do Mundo 2026?",
+    question: "O que apostar agora que a Copa acabou?",
     answer:
-      `A BetWinner é a nossa recomendação para apostadores brasileiros: aceita PIX (depósito mínimo R$ 10), tem cobertura completa da Copa em português, oferece ${BETWINNER.bonusHeadline.toLowerCase()} (${BETWINNER.bonusContext}) com o código ${BETWINNER.promoCode} e licença internacional desde 2018. Leia nossa análise completa antes de cadastrar.`,
+      "Mercados diários de Brasileirão, Copa do Brasil, Libertadores, Champions e ligas europeias na BetWinner. Use PIX, odds ao vivo e o app em português — a cobertura não depende do Mundial.",
   },
   {
-    question: "A BetWinner aceita PIX para apostas da Copa do Mundo?",
+    question: "A BetWinner ainda cobre jogos da seleção brasileira?",
     answer:
-      "Sim. Depósitos via PIX são creditados em até 5 minutos e os saques saem em até 1 hora após a verificação da conta. Sem taxas da casa. É o método mais usado por apostadores brasileiros tanto na Copa quanto no dia a dia.",
-  },
-  {
-    question: "A BetWinner vai lançar um bônus específico para a Copa do Mundo?",
-    answer:
-      `A BetWinner disponibiliza a campanha ${BETWINNER.bonusHeadline.toLowerCase()} (${BETWINNER.bonusContext}) pelo link BetSensei. ${BETWINNER.promoCodeNote} A oferta vale para apostas em qualquer mercado, incluindo jogos da Copa. Termos e rollover conforme a promoção na BetWinner.`,
-  },
-  {
-    question: "Quais mercados estão disponíveis para apostar na Copa 2026?",
-    answer:
-      "Os principais: campeão (outright), vencedor de grupo, classificação para as oitavas, artilheiro/chuteira de ouro, próxima seleção eliminada, jogador da Copa, resultado final (1X2), total de gols, ambas marcam, handicap asiático, resultado exato, escanteios, cartões e apostas combinadas (criar aposta).",
-  },
-  {
-    question: "Onde encontrar palpites para apostas na Copa do Mundo?",
-    answer:
-      "Publicamos análises editoriais em nossa página de palpites de futebol e no grupo Telegram — sem garantia de resultado. Apostas envolvem risco (18+).",
+      "Sim. Amistosos e próximas competições da Seleção costumam aparecer em Esportes → Futebol. Confira a agenda atualizada no app ou site da casa.",
   },
 ];
 
-const FAVORITES = [
-  { team: "Espanha", odds: "5.50", note: "Atual campeã da Euro" },
-  { team: "França", odds: "6.00", note: "Mbappé em alta" },
-  { team: "Inglaterra", odds: "7.00 – 8.00", note: "Geração madura, Kane no comando" },
-  { team: "Brasil", odds: "9.00", note: "Era Ancelotti — busca pelo hexa", highlight: true },
-  { team: "Argentina", odds: "9.00 – 9.50", note: "Defende o título de 2022" },
-  { team: "Portugal", odds: "12.00", note: "Geração talentosa pós-CR7" },
-  { team: "Alemanha", odds: "13.00 – 14.00", note: "Reconstrução em andamento" },
+const PODIUM = [
+  { place: "1º", team: "Espanha", note: "Campeã — 1–0 ARG na prorrogação" },
+  { place: "2º", team: "Argentina", note: "Vice — final no MetLife Stadium" },
+  { place: "3º", team: "Inglaterra", note: "Bronze no Mundial de 48 times" },
+  { place: "4º", team: "França", note: "Mbappé com a Chuteira de Ouro" },
 ];
 
-const BRASIL_FIXTURES = [
+const BRASIL_RESULTS = [
   {
-    date: "Sáb 13/jun",
+    date: "13/jun",
     matchup: "Brasil × Marrocos",
-    time: "19h00 BRT",
-    venue: "MetLife Stadium · Nova Jersey/NY",
+    result: "Empate",
+    phase: "Grupo C",
   },
   {
-    date: "Sex 19/jun",
+    date: "19/jun",
     matchup: "Brasil × Haiti",
-    time: "21h30 BRT",
-    venue: "Lincoln Financial Field · Filadélfia",
+    result: "Vitória",
+    phase: "Grupo C",
   },
   {
-    date: "Qua 24/jun",
+    date: "24/jun",
     matchup: "Escócia × Brasil",
-    time: "19h00 BRT",
-    venue: "Hard Rock Stadium · Miami",
+    result: "Vitória",
+    phase: "Grupo C",
   },
-];
-
-const TOP_SCORER_ODDS = [
-  { player: "Kylian Mbappé (FRA)", odds: "7.00 – 9.00", favorite: true },
-  { player: "Harry Kane (ING)", odds: "8.00 – 10.00" },
-  { player: "Vinícius Júnior (BRA)", odds: "23.00 – 26.00", highlight: true },
+  {
+    date: "Mata-mata",
+    matchup: "Brasil × Japão",
+    result: "Vitória",
+    phase: "32 avos",
+  },
+  {
+    date: "05/jul",
+    matchup: "Brasil × Noruega",
+    result: "1–2 — eliminado",
+    phase: "Oitavas",
+    highlight: true,
+  },
 ];
 
 export default function CopaDoMundoPage() {
@@ -133,14 +119,15 @@ export default function CopaDoMundoPage() {
       <JsonLd
         data={sportsEventSchema({
           name: "Copa do Mundo FIFA 2026",
-          startDate: "2026-06-11",
-          endDate: "2026-07-19",
+          startDate: WORLD_CUP.startDate,
+          endDate: WORLD_CUP.endDate,
           locationName: "Estados Unidos, Canadá e México",
           countryCodes: ["US", "CA", "MX"],
           organizerName: "FIFA",
           organizerUrl: "https://www.fifa.com",
           url: PAGE_PATH,
           description: PAGE_DESCRIPTION,
+          eventStatus: "https://schema.org/EventCompleted",
         })}
       />
       <JsonLd
@@ -163,35 +150,39 @@ export default function CopaDoMundoPage() {
         />
       </Container>
 
-      {/* HERO */}
       <section className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0 bg-gradient-to-b from-bg via-bg/95 to-bg" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(249,115,22,0.18),transparent_55%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(34,211,238,0.10),transparent_55%)]" />
         <Container className="relative py-14 sm:py-20">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-semibold text-brand">
-              <span className="h-2 w-2 rounded-full bg-brand animate-pulse" />
-              Especial · Copa do Mundo FIFA 2026
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-bg-elevated px-3 py-1 text-xs font-semibold text-text-muted">
+              Encerrada · 11/jun – 19/jul/2026
             </div>
             <h1 className="mt-5 font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]">
-              Copa do Mundo 2026 — <span className="text-brand">apostas, odds e bônus</span> para o hexa
+              Copa do Mundo 2026 —{" "}
+              <span className="text-brand">resultados, Brasil e o que apostar agora</span>
             </h1>
             <p className="mt-5 text-lg text-text-muted leading-relaxed max-w-2xl">
-              Brasil estreia contra Marrocos em 13 de junho. Aqui você encontra os jogos do Grupo C,
-              odds atualizadas dos favoritos, mercados de artilheiro, como apostar pela BetWinner
-              com PIX e {BETWINNER.bonusHeadline.toLowerCase()}. Tudo em português.
+              O Mundial acabou: <strong className="text-text">{WORLD_CUP.champion}</strong> campeã,
+              Brasil nas {WORLD_CUP.brasilExit.toLowerCase()}, {WORLD_CUP.goldenBoot} com a Chuteira de Ouro.
+              Este guia resume o torneio e aponta o próximo passo nas apostas — BetWinner com PIX e{" "}
+              {BETWINNER.bonusHeadline.toLowerCase()}.
             </p>
             <PageUpdated date={PAGE_UPDATED.copa} className="mt-3" />
 
-            <Countdown targetIso={WORLD_CUP.kickoffIso} label={WORLD_CUP.countdownLabel} />
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              <MiniStat label="Campeã" value={WORLD_CUP.champion} />
+              <MiniStat label="Brasil" value={WORLD_CUP.brasilExit} sub={WORLD_CUP.brasilFinalRank} />
+              <MiniStat label="Artilheiro" value="Mbappé" sub={`${WORLD_CUP.goldenBootGoals} gols`} />
+            </div>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <ButtonLink href="/go/bw-worldcup?src=copa-hero" external size="lg" variant="primary">
-                Garantir bônus de {BETWINNER.bonusShort} →
+                Ativar bônus de {BETWINNER.bonusShort} →
               </ButtonLink>
-              <ButtonLink href="/betwinner" size="lg" variant="outline">
-                Análise da BetWinner
+              <ButtonLink href="/futebol" size="lg" variant="outline">
+                Apostas de futebol agora
               </ButtonLink>
             </div>
 
@@ -206,209 +197,179 @@ export default function CopaDoMundoPage() {
         </Container>
       </section>
 
-      {/* QUANDO E ONDE */}
       <section className="py-12 sm:py-16">
         <Container className="max-w-4xl">
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Quando e onde será a Copa do Mundo 2026
+            Como terminou a Copa do Mundo 2026
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <Card label="Abertura" value="11 de junho, 16h BRT" sub="México × África do Sul · Estadio Azteca, Cidade do México" />
-            <Card label="Final" value="19 de julho, 2026" sub="MetLife Stadium · Nova Jersey/NY" />
-            <Card label="Países-sede" value="EUA · Canadá · México" sub="Primeira Copa tri-sede da história" />
-            <Card label="Formato" value="48 seleções · 12 grupos de 4" sub="104 partidas · 8 melhores 3º colocados também avançam" />
+            <Card
+              label="Final · 19/jul"
+              value={`${WORLD_CUP.champion} ${WORLD_CUP.finalScore} ${WORLD_CUP.runnerUp}`}
+              sub={`Gol: ${WORLD_CUP.finalScorer} · ${WORLD_CUP.finalVenue}`}
+            />
+            <Card
+              label="Chuteira de Ouro"
+              value={WORLD_CUP.goldenBoot}
+              sub={`${WORLD_CUP.goldenBootGoals} gols no torneio`}
+            />
+            <Card
+              label="Sedes"
+              value="EUA · Canadá · México"
+              sub="Primeira Copa tri-sede · 48 seleções · 104 jogos"
+            />
+            <Card
+              label="Brasil"
+              value={`${WORLD_CUP.brasilExit} · ${WORLD_CUP.brasilFinalRank}`}
+              sub={`Derrota ${WORLD_CUP.brasilExitScore} para ${WORLD_CUP.brasilExitOpponent} · ${WORLD_CUP.brasilExitDate}`}
+            />
           </div>
-          <p className="mt-6 text-text-muted leading-relaxed">
-            Esta é a primeira Copa do Mundo com 48 seleções (antes eram 32) e a primeira disputada por três países simultaneamente.
-            São 16 cidades-sede no total: 11 nos Estados Unidos, 3 no México e 2 no Canadá. Avançam para a fase de mata-mata
-            os dois primeiros de cada grupo, mais os 8 melhores terceiros colocados — totalizando uma rodada de 32 antes das oitavas.
-          </p>
+
+          <h3 className="mt-10 font-display text-xl font-bold text-text">Pódio e top 4</h3>
+          <div className="mt-4 rounded-2xl border border-border bg-bg-elevated overflow-hidden">
+            {PODIUM.map((row, i) => (
+              <div
+                key={row.team}
+                className={`flex flex-col sm:flex-row sm:items-center justify-between gap-1 p-4 sm:p-5 ${i > 0 ? "border-t border-border" : ""}`}
+              >
+                <div className="flex items-center gap-4">
+                  <span className="font-mono text-sm font-bold text-brand w-8">{row.place}</span>
+                  <span className="font-semibold text-text">{row.team}</span>
+                </div>
+                <span className="text-sm text-text-muted sm:pl-12">{row.note}</span>
+              </div>
+            ))}
+          </div>
         </Container>
       </section>
 
-      {/* BRASIL NA COPA */}
       <section className="py-12 sm:py-16 border-t border-border bg-bg-elevated/20">
         <Container className="max-w-4xl">
-          <div className="flex items-center gap-3 mb-2">
+          <div className="flex flex-wrap items-center gap-3 mb-2">
             <span className="rounded-full bg-success/15 text-success px-2.5 py-1 text-xs font-semibold">
-              Grupo C
+              {WORLD_CUP.brasilGroup}
             </span>
-            <span className="rounded-full bg-brand/15 text-brand px-2.5 py-1 text-xs font-semibold">
-              Era Ancelotti
+            <span className="rounded-full bg-warning/15 text-warning px-2.5 py-1 text-xs font-semibold">
+              Eliminado nas oitavas
             </span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight">
             Brasil na Copa do Mundo 2026
           </h2>
           <p className="mt-4 text-text-muted leading-relaxed">
-            A seleção brasileira caiu no <strong>Grupo C</strong>, considerado um dos "grupos da morte" do Mundial,
-            ao lado de <strong>Marrocos</strong> (semifinalista em 2022), <strong>Escócia</strong> e <strong>Haiti</strong>.
-            Carlo Ancelotti — primeiro técnico estrangeiro a comandar o Brasil em Copa — anunciou a lista final dos
-            26 convocados em 18 de maio de 2026.
+            A Seleção, sob Carlo Ancelotti, saiu do {WORLD_CUP.brasilGroup} e avançou no mata-mata até as oitavas,
+            onde perdeu para a <strong className="text-text">{WORLD_CUP.brasilExitOpponent}</strong> (
+            {WORLD_CUP.brasilExitScore}) em {WORLD_CUP.brasilExitDate}. Na tabela final do Mundial,
+            o Brasil ficou em <strong className="text-text">{WORLD_CUP.brasilFinalRank}</strong> — campanha abaixo
+            do esperado para a busca do hexa.
           </p>
 
-          <h3 className="mt-8 font-display text-xl font-bold text-text">Jogos do Brasil na fase de grupos</h3>
+          <h3 className="mt-8 font-display text-xl font-bold text-text">Caminho da Seleção</h3>
           <div className="mt-4 rounded-2xl border border-border bg-bg-elevated overflow-hidden">
-            {BRASIL_FIXTURES.map((f, i) => (
+            {BRASIL_RESULTS.map((f, i) => (
               <div
-                key={f.matchup}
-                className={`flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-4 sm:p-5 ${i > 0 ? "border-t border-border" : ""}`}
+                key={`${f.matchup}-${f.phase}`}
+                className={`flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-4 sm:p-5 ${i > 0 ? "border-t border-border" : ""} ${f.highlight ? "bg-warning/5" : ""}`}
               >
                 <div className="flex items-center gap-4">
                   <div className="text-xs uppercase tracking-wide font-semibold text-text-dim w-20">{f.date}</div>
-                  <div className="font-semibold text-text">{f.matchup}</div>
+                  <div>
+                    <div className="font-semibold text-text">{f.matchup}</div>
+                    <div className="text-xs text-text-dim">{f.phase}</div>
+                  </div>
                 </div>
-                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 text-sm text-text-muted">
-                  <span className="font-mono font-bold text-brand">{f.time}</span>
-                  <span>{f.venue}</span>
+                <div className={`text-sm font-semibold ${f.highlight ? "text-warning" : "text-brand"}`}>
+                  {f.result}
                 </div>
               </div>
             ))}
           </div>
 
-          <h3 className="mt-10 font-display text-xl font-bold text-text">Quem o Brasil leva para a Copa</h3>
-          <p className="mt-3 text-text-muted leading-relaxed">
-            Convocação anunciada por Ancelotti em 18/05/2026. Destaques do ataque: <strong>Vinícius Júnior</strong> (Real Madrid),{" "}
-            <strong>Raphinha</strong> (Barcelona) e <strong>Neymar</strong> — que retorna após 2 anos e 7 meses fora.
-            No meio: <strong>Casemiro</strong>, Bruno Guimarães e Lucas Paquetá. Defesa com Marquinhos, Gabriel Magalhães,
-            Danilo e Alex Sandro. <strong>Alisson</strong> segue como titular do gol. Endrick e Matheus Cunha completam o
-            setor ofensivo, mesclando experiência e força nova.
-          </p>
-
-          <div className="mt-6 rounded-xl border border-border bg-bg p-4 text-sm text-text-muted">
-            <strong className="text-text">Antes da Copa:</strong> amistoso contra <strong>Panamá no Maracanã em 31/05</strong>,{" "}
-            viagem aos EUA em 01/06 e amistoso contra <strong>Egito em Cleveland em 06/06</strong> — último teste antes da estreia.
-          </div>
-
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
             <ButtonLink href="/go/bw-worldcup?src=copa-brasil" external size="lg" variant="primary">
-              Apostar no Brasil pela BetWinner →
+              Apostar futebol na BetWinner →
             </ButtonLink>
-            <ButtonLink href="/futebol" size="lg" variant="outline">
-              Cobertura permanente de futebol brasileiro
+            <ButtonLink href="/apostas-brasileirao" size="lg" variant="outline">
+              Apostas no Brasileirão
             </ButtonLink>
           </div>
         </Container>
       </section>
 
-      {/* ODDS */}
       <section className="py-12 sm:py-16">
-        <Container className="max-w-4xl">
+        <Container className="max-w-3xl">
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Odds para campeão da Copa do Mundo 2026
+            O que apostar agora que a Copa acabou
           </h2>
-          <p className="mt-3 text-sm text-text-dim">
-            Médias das principais casas brasileiras (Superbet, bet365, Novibet).{" "}
-            <Link href="/alternativas" className="text-brand hover:underline">Compare BetWinner vs essas casas →</Link>
-            {" "}Última atualização: 19/05/2026 — odds variam até o apito inicial.
+          <p className="mt-4 text-text-muted leading-relaxed">
+            O calendário não para. Na BetWinner você segue com Brasileirão, Libertadores, Copa do Brasil,
+            Champions e ligas europeias — depósito via PIX, app em português e odds ao vivo.
           </p>
-
-          <div className="mt-6 rounded-2xl border border-border bg-bg-elevated overflow-hidden">
-            <table className="w-full text-sm">
-              <thead className="bg-bg/40">
-                <tr className="text-left">
-                  <th className="px-4 sm:px-5 py-3 text-xs uppercase tracking-wide font-semibold text-text-dim">Seleção</th>
-                  <th className="px-4 sm:px-5 py-3 text-xs uppercase tracking-wide font-semibold text-text-dim">Odd campeão</th>
-                  <th className="px-4 sm:px-5 py-3 text-xs uppercase tracking-wide font-semibold text-text-dim hidden sm:table-cell">Análise</th>
-                </tr>
-              </thead>
-              <tbody>
-                {FAVORITES.map((row) => (
-                  <tr
-                    key={row.team}
-                    className={`border-t border-border ${row.highlight ? "bg-brand/5" : ""}`}
-                  >
-                    <td className="px-4 sm:px-5 py-3 font-semibold text-text">
-                      {row.team}
-                      {row.highlight ? (
-                        <span className="ml-2 text-[10px] font-bold uppercase tracking-wide text-brand">Brasil</span>
-                      ) : null}
-                    </td>
-                    <td className="px-4 sm:px-5 py-3 font-mono font-bold text-brand">{row.odds}</td>
-                    <td className="px-4 sm:px-5 py-3 text-text-muted hidden sm:table-cell">{row.note}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <h3 className="mt-10 font-display text-xl font-bold text-text">Mercado de artilheiro (chuteira de ouro)</h3>
-          <div className="mt-4 rounded-2xl border border-border bg-bg-elevated overflow-hidden">
-            <table className="w-full text-sm">
-              <thead className="bg-bg/40">
-                <tr className="text-left">
-                  <th className="px-4 sm:px-5 py-3 text-xs uppercase tracking-wide font-semibold text-text-dim">Jogador</th>
-                  <th className="px-4 sm:px-5 py-3 text-xs uppercase tracking-wide font-semibold text-text-dim">Odd artilheiro</th>
-                </tr>
-              </thead>
-              <tbody>
-                {TOP_SCORER_ODDS.map((row) => (
-                  <tr
-                    key={row.player}
-                    className={`border-t border-border ${row.highlight ? "bg-brand/5" : ""}`}
-                  >
-                    <td className="px-4 sm:px-5 py-3 font-semibold text-text">
-                      {row.player}
-                      {row.favorite ? (
-                        <span className="ml-2 text-[10px] font-bold uppercase tracking-wide text-success">Favorito</span>
-                      ) : null}
-                    </td>
-                    <td className="px-4 sm:px-5 py-3 font-mono font-bold text-brand">{row.odds}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="mt-6 rounded-xl border border-brand/30 bg-gradient-to-br from-brand/10 to-transparent p-5">
-            <h3 className="font-display text-lg font-bold text-text">Vencedor do Grupo C</h3>
-            <p className="mt-2 text-text-muted">
-              Brasil é apontado como amplo favorito para vencer o Grupo C — odds entre <strong className="font-mono text-brand">1.15 e 1.25</strong>{" "}
-              nas principais casas. Marrocos aparece como segundo colocado natural (odds ~5.00–6.00), com Escócia e Haiti completando o grupo.
-            </p>
-            <div className="mt-4">
-              <ButtonLink href="/go/bw-worldcup?src=copa-odds" external size="lg" variant="primary">
-                Conferir odds atualizadas na BetWinner →
-              </ButtonLink>
-            </div>
-          </div>
+          <ul className="mt-6 space-y-3">
+            <li className="rounded-xl border border-border bg-bg-elevated p-4">
+              <Link href="/apostas-brasileirao" className="font-semibold text-brand hover:underline">
+                Brasileirão
+              </Link>
+              <p className="mt-1 text-sm text-text-muted">Rodadas semanais, handicap e mercados de gols.</p>
+            </li>
+            <li className="rounded-xl border border-border bg-bg-elevated p-4">
+              <Link href="/apostas-copa-do-brasil" className="font-semibold text-brand hover:underline">
+                Copa do Brasil
+              </Link>
+              <p className="mt-1 text-sm text-text-muted">Mata-mata nacional com odds e ao vivo.</p>
+            </li>
+            <li className="rounded-xl border border-border bg-bg-elevated p-4">
+              <Link href="/futebol" className="font-semibold text-brand hover:underline">
+                Futebol na BetWinner
+              </Link>
+              <p className="mt-1 text-sm text-text-muted">Libertadores, Europeus e Seleção nos próximos amistosos.</p>
+            </li>
+            <li className="rounded-xl border border-border bg-bg-elevated p-4">
+              <Link href="/palpites-futebol" className="font-semibold text-brand hover:underline">
+                Palpites de futebol
+              </Link>
+              <p className="mt-1 text-sm text-text-muted">Análises editoriais — sem garantia de resultado.</p>
+            </li>
+          </ul>
         </Container>
       </section>
 
-      {/* COMO APOSTAR */}
       <section className="py-12 sm:py-16 border-t border-border bg-bg-elevated/20">
         <Container className="max-w-3xl">
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Como apostar na Copa do Mundo 2026 pela BetWinner
+            Como continuar apostando pela BetWinner
           </h2>
           <ol className="mt-6 space-y-4">
             <Step n={1} title={`Cadastre-se com o código ${BETWINNER.promoCode}`}>
-              Acesse a BetWinner pelo nosso link verificado, preencha telefone (+55), CPF e o código promocional{" "}
-              <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span>. Leva menos de 2 minutos.{" "}
-              <Link href="/cadastro" className="text-brand hover:underline">Veja o tutorial completo de cadastro</Link>.
+              Acesse pelo nosso link, preencha telefone (+55), CPF e o código{" "}
+              <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span>.{" "}
+              <Link href="/cadastro" className="text-brand hover:underline">
+                Tutorial de cadastro
+              </Link>
+              .
             </Step>
-            <Step n={2} title="Deposite via PIX (mínimo R$ 10)">
-              PIX é creditado em até 5 minutos. Sem taxas da casa. {BETWINNER.bonusHeadline} é ativado no primeiro depósito conforme os termos da promoção.{" "}
-              <Link href="/pix" className="text-brand hover:underline">Detalhes sobre PIX na BetWinner</Link>.
+            <Step n={2} title={`Deposite via PIX (mínimo ${BETWINNER.minDeposit})`}>
+              Crédito em minutos. {BETWINNER.bonusHeadline} no 1º depósito qualificado, até R$ 700.{" "}
+              <Link href="/pix" className="text-brand hover:underline">
+                Guia PIX
+              </Link>
+              .
             </Step>
-            <Step n={3} title="Encontre os jogos da Copa">
-              Na seção <strong>Esportes → Futebol → Copa do Mundo 2026</strong> você acha todos os jogos da fase de grupos, mata-mata,
-              mercados de campeão, artilheiro e props (escanteios, cartões, gols por tempo).{" "}
-              <Link href="/palpites-futebol" className="text-brand hover:underline">Palpites de futebol →</Link>
+            <Step n={3} title="Escolha o mercado">
+              Em <strong>Esportes → Futebol</strong> você acha Brasileirão, Libertadores, Champions e mais.{" "}
+              <Link href="/aposta-ao-vivo" className="text-brand hover:underline">
+                Aposta ao vivo
+              </Link>
+              .
             </Step>
-            <Step n={4} title="Aposte ao vivo e use cash out">
-              Durante os jogos da Copa, a BetWinner oferece odds em tempo real, transmissão integrada para a maioria das partidas e cash out
-              para fechar a aposta antes do apito final.{" "}
-              <Link href="/aposta-ao-vivo" className="text-brand hover:underline">Guia de aposta ao vivo</Link>.
-            </Step>
-            <Step n={5} title="Saque os ganhos via PIX">
-              Saques via PIX caem em até 1 hora após a verificação da conta. Sem taxas da casa.
+            <Step n={4} title="Saque via PIX">
+              Após verificação da conta, saques em até cerca de 1 hora — sem taxa da casa no fluxo PIX.
             </Step>
           </ol>
 
           <div className="mt-8 rounded-2xl border border-brand/30 bg-gradient-to-br from-brand/10 to-transparent p-6">
             <p className="text-text-muted">
-              Pronto para o apito inicial em 11 de junho?
+              Mundo pós-Copa: mesma casa, mesmos mercados de futebol — com bônus de boas-vindas ainda ativo para novos cadastros.
             </p>
             <div className="mt-4">
               <ButtonLink href="/go/bw-worldcup?src=copa-como-apostar" external size="lg" variant="primary">
@@ -419,60 +380,33 @@ export default function CopaDoMundoPage() {
         </Container>
       </section>
 
-      {/* MERCADOS POPULARES */}
       <section className="py-12 sm:py-16">
         <Container className="max-w-3xl">
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Mercados mais populares para Copa do Mundo
-          </h2>
-          <article className="prose-content mt-6">
-            <p>
-              Além dos mercados clássicos (1X2, total de gols, ambas marcam, handicap),
-              a Copa do Mundo concentra apostas em mercados de longa duração e props específicos do torneio.
-              Os mais procurados pelos apostadores brasileiros:
-            </p>
-            <ul>
-              <li><strong>Campeão (Outright winner):</strong> escolha quem levanta a taça em 19/jul. Odds em movimento até o jogo final.</li>
-              <li><strong>Vencedor de grupo:</strong> apostar no 1º colocado de cada um dos 12 grupos. Brasil é favorito no Grupo C com odds ~1.15–1.25.</li>
-              <li><strong>Classificação direta às oitavas:</strong> top 2 de cada grupo + 8 melhores terceiros — mercados específicos para "Brasil avança", "Brasil termina em 1º", etc.</li>
-              <li><strong>Artilheiro / Chuteira de Ouro:</strong> Mbappé é o favoritão (7.00–9.00). Vinícius pagaria 23.00–26.00. Mercado paga bem em zebras.</li>
-              <li><strong>Jogador da Copa (MVP):</strong> escolhido pela FIFA — geralmente conversa com o desempenho do campeão.</li>
-              <li><strong>Próxima seleção eliminada:</strong> mercado live durante a fase de grupos e mata-mata.</li>
-              <li><strong>Total de gols na Copa:</strong> over/under (geralmente linha em torno de 150–160 gols totais para todo o torneio).</li>
-              <li><strong>Combinadas / Bet builder:</strong> múltiplos mercados na mesma partida (ex: Brasil vence + Vinícius marca + over 2.5 gols).</li>
-            </ul>
-            <p>
-              Em jogos da seleção brasileira, recomendamos atenção especial a: escalação confirmada (sai 1h antes do jogo),
-              clima local nas cidades-sede americanas (calor pode mudar ritmo de jogo) e fadiga acumulada na reta final do mata-mata.
-            </p>
-          </article>
-        </Container>
-      </section>
-
-      {/* PROMO COPA 2026 */}
-      <section className="py-12 sm:py-16 border-t border-border bg-bg-elevated/20">
-        <Container className="max-w-3xl">
-          <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Bônus Copa do Mundo 2026 na BetWinner
+            Bônus BetWinner depois do Mundial
           </h2>
           <p className="mt-3 text-text-muted leading-relaxed">
-            A campanha especial de {BETWINNER.bonusContext.toLowerCase()} já está ativa pelo link BetSensei — ideal para
-            chegar com saldo extra antes do apito inicial em 11 de junho.
+            A oferta de novos jogadores segue válida pelo link BetSensei — independente do calendário da Copa.
+            Ideal para montar banca no Brasileirão e no futebol europeu.
           </p>
 
           <div className="mt-6 rounded-2xl border border-brand/40 bg-gradient-to-br from-brand/10 to-transparent p-6 sm:p-8">
             <div className="flex items-center gap-2 mb-3">
               <span className="rounded-full border border-brand/40 bg-brand/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-brand">
-                Ativo · {BETWINNER.bonusContext}
+                Novos jogadores · 2026
               </span>
             </div>
             <h3 className="font-display text-2xl font-extrabold text-text">
               {BETWINNER.bonusHeadline}
             </h3>
             <p className="mt-3 text-text-muted">
-              Resgate pelo link BetSensei e use o código{" "}
-              <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span> no cadastro, se solicitado —
-              válido para apostas em qualquer mercado, inclusive os jogos da Copa a partir de 13 de junho.
+              Até <strong className="text-text">R$ 700</strong> de bônus no 1º depósito · mín.{" "}
+              {BETWINNER.minDeposit} via PIX · código{" "}
+              <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span>.{" "}
+              <Link href="/bonus" className="text-brand hover:underline">
+                Detalhes da oferta
+              </Link>
+              .
             </p>
             <div className="mt-5">
               <ButtonLink href="/go/bw-worldcup?src=copa-promo" external size="lg" variant="primary">
@@ -480,22 +414,13 @@ export default function CopaDoMundoPage() {
               </ButtonLink>
             </div>
           </div>
-
-          <p className="mt-6 text-sm text-text-dim">
-            Quer chegar pronto para o apito inicial?{" "}
-            <Link href="/go/bw-worldcup?src=copa-embreve" className="text-brand font-semibold hover:underline" target="_blank" rel="sponsored noopener noreferrer">
-              Cadastre-se agora com bônus de {BETWINNER.bonusShort}
-            </Link>{" "}
-            — saldo disponível para apostar desde o jogo de abertura em 11 de junho.
-          </p>
         </Container>
       </section>
 
-      {/* FAQ */}
       <section className="py-12 sm:py-16 border-t border-border">
         <Container className="max-w-3xl">
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight mb-8 text-center">
-            Perguntas frequentes sobre apostas na Copa do Mundo 2026
+            Perguntas frequentes — Copa 2026 e apostas
           </h2>
           <div className="space-y-4">
             {FAQ_ITEMS.map((item) => (
@@ -505,7 +430,9 @@ export default function CopaDoMundoPage() {
               >
                 <summary className="cursor-pointer list-none flex items-start justify-between gap-4">
                   <h3 className="font-semibold text-text">{item.question}</h3>
-                  <span className="text-brand text-xl leading-none transition-transform group-open:rotate-45 flex-shrink-0">+</span>
+                  <span className="text-brand text-xl leading-none transition-transform group-open:rotate-45 flex-shrink-0">
+                    +
+                  </span>
                 </summary>
                 <p className="mt-3 text-text-muted leading-relaxed">{item.answer}</p>
               </details>
@@ -514,20 +441,18 @@ export default function CopaDoMundoPage() {
         </Container>
       </section>
 
-      {/* FINAL CTA */}
       <section className="py-14 sm:py-20 border-t border-border bg-bg-elevated/40">
         <Container className="max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-semibold text-brand">
-            <span className="h-2 w-2 rounded-full bg-brand animate-pulse" />
-            Faltam poucos dias — abertura em 11/jun
+            Pós-Copa · futebol continua
           </div>
           <h2 className="mt-5 font-display text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Esteja pronto para o apito inicial
+            Pronto para a próxima rodada?
           </h2>
           <p className="mt-4 text-text-muted leading-relaxed">
-            Cadastre-se na BetWinner agora, ative {BETWINNER.bonusHeadline.toLowerCase()} com o código{" "}
-            <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span> e tenha saldo disponível
-            desde o primeiro jogo da Copa do Mundo 2026.
+            Cadastre-se na BetWinner, ative {BETWINNER.bonusHeadline.toLowerCase()} com{" "}
+            <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span> e aposte no calendário
+            que vem depois do Mundial.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <ButtonLink href="/go/bw-worldcup?src=copa-final" external size="lg" variant="primary">
@@ -538,9 +463,8 @@ export default function CopaDoMundoPage() {
             </ButtonLink>
           </div>
           <div className="mt-8 text-xs text-text-dim max-w-xl mx-auto">
-            <strong>Publicidade / conteúdo de afiliado.</strong> A BetSensei BR recebe comissão da BetWinner em cadastros e
-            depósitos realizados pelos links desta página. Não recebemos para alterar nossa análise.
-            Maiores de 18 anos. Apostar envolve risco — apenas com dinheiro que você pode perder.{" "}
+            <strong>Publicidade / conteúdo de afiliado.</strong> A BetSensei BR recebe comissão da BetWinner em
+            cadastros e depósitos pelos links desta página. Maiores de 18 anos.{" "}
             <Link href="/jogo-responsavel" className="text-brand hover:underline">
               Jogue com responsabilidade
             </Link>
@@ -553,6 +477,16 @@ export default function CopaDoMundoPage() {
         </Container>
       </section>
     </>
+  );
+}
+
+function MiniStat({ label, value, sub }: { label: string; value: string; sub?: string }) {
+  return (
+    <div className="rounded-xl border border-border bg-bg-elevated/80 px-4 py-3">
+      <div className="text-[10px] uppercase tracking-wide font-semibold text-text-dim">{label}</div>
+      <div className="mt-0.5 font-display text-lg font-extrabold text-text">{value}</div>
+      {sub ? <div className="text-xs text-text-muted">{sub}</div> : null}
+    </div>
   );
 }
 

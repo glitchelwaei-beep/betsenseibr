@@ -88,6 +88,8 @@ type SportsEventSchemaInput = {
   organizerUrl: string;
   url: string;
   description?: string;
+  /** Defaults to EventScheduled; use EventCompleted for past tournaments. */
+  eventStatus?: string;
 };
 export function sportsEventSchema({
   name,
@@ -99,6 +101,7 @@ export function sportsEventSchema({
   organizerUrl,
   url,
   description,
+  eventStatus = "https://schema.org/EventScheduled",
 }: SportsEventSchemaInput) {
   return {
     "@context": "https://schema.org",
@@ -106,7 +109,7 @@ export function sportsEventSchema({
     name,
     startDate,
     endDate,
-    eventStatus: "https://schema.org/EventScheduled",
+    eventStatus,
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: {
       "@type": "Place",

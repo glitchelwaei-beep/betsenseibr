@@ -71,7 +71,7 @@ export function StickyBetwinnerBanner() {
 
           <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-2.5">
             <span
-              className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-black/45 ring-1 ring-white/15 sm:h-7 sm:w-7"
+              className="hidden h-6 w-6 shrink-0 items-center justify-center rounded-full bg-black/45 ring-1 ring-white/15 sm:flex sm:h-7 sm:w-7"
               aria-hidden
             >
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
@@ -84,7 +84,7 @@ export function StickyBetwinnerBanner() {
                 />
               </svg>
             </span>
-            <p className="truncate font-display text-xs font-bold italic leading-tight text-white sm:text-sm md:text-base">
+            <p className="whitespace-nowrap font-display text-xs font-bold italic leading-tight text-white sm:truncate sm:text-sm md:text-base">
               <span className="sm:hidden">
                 Código{" "}
                 <span style={{ color: BETWINNER.brandColor }}>{BETWINNER.promoCode}</span>
@@ -100,12 +100,13 @@ export function StickyBetwinnerBanner() {
           <Link
             href={CTA_HREF}
             className={cn(
-              "shrink-0 rounded-full bg-[#eab308] px-3.5 py-2 text-xs font-extrabold text-black no-underline",
+              "shrink-0 rounded-full bg-[#eab308] px-2.5 py-2 text-xs font-extrabold text-black no-underline",
               "transition-colors hover:bg-[#facc15] active:scale-[0.98]",
               "sm:px-5 sm:py-2.5 sm:text-sm",
             )}
           >
-            Apostar agora
+            <span className="sm:hidden">Apostar</span>
+            <span className="hidden sm:inline">Apostar agora</span>
           </Link>
         </div>
       </div>

@@ -79,9 +79,9 @@ export default function ApostasEsportivasPage() {
               <span className="text-2xl" aria-hidden>🏆</span>
             </div>
             <div className="flex-1">
-              <div className="text-[10px] uppercase tracking-wide font-bold text-brand">Próximo grande evento</div>
-              <div className="font-display text-lg font-bold text-text">Copa do Mundo 2026 — 11 de junho a 19 de julho</div>
-              <div className="text-sm text-text-muted">Odds, favoritos, jogos do Brasil e bônus →</div>
+              <div className="text-[10px] uppercase tracking-wide font-bold text-brand">Mundial encerrado</div>
+              <div className="font-display text-lg font-bold text-text">Copa do Mundo 2026 — resultados e pós-Copa</div>
+              <div className="text-sm text-text-muted">Espanha campeã, Brasil nas oitavas e próximos mercados →</div>
             </div>
           </Link>
 

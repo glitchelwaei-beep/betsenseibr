@@ -146,8 +146,7 @@ export default async function BonusEstrangeiraLandingPage({ searchParams }: Page
           <Container className="max-w-[680px] p-0">
             <AffiliateOfferCard href={ctaHref} variant="compact" className="mt-0 shadow-xl" />
             <p className="mt-4 text-center text-xs text-text-dim">
-              Estreia do Brasil {WORLD_CUP.brasilDebut} · {WORLD_CUP.brasilGroup} · Bônus antes do
-              apito inicial
+              Pós-Copa 2026 · {WORLD_CUP.champion} campeã · Bônus {BETWINNER.bonusShort} via PIX
             </p>
           </Container>
         </div>

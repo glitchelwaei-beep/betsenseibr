@@ -10,7 +10,7 @@ const ROUTES: {
   lastModified: string;
 }[] = [
   { path: "/", priority: 1.0, changeFreq: "daily", lastModified: "2026-06-09" },
-  { path: "/copa-do-mundo-2026", priority: 0.95, changeFreq: "daily", lastModified: "2026-06-09" },
+  { path: "/copa-do-mundo-2026", priority: 0.9, changeFreq: "weekly", lastModified: "2026-08-01" },
   { path: "/betwinner", priority: 0.95, changeFreq: "weekly", lastModified: "2026-06-09" },
   { path: "/bonus", priority: 0.92, changeFreq: "weekly", lastModified: "2026-06-27" },
   { path: "/casa-de-apostas", priority: 0.92, changeFreq: "weekly", lastModified: "2026-06-27" },

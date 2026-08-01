@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { AffiliateOfferCard } from "@/components/site/affiliate-offer-card";
-import { Countdown } from "@/components/site/countdown";
 import { BETWINNER } from "@/lib/partner";
 import { WORLD_CUP } from "@/lib/worldcup";
 
@@ -35,7 +34,6 @@ export function WorldCupHero({ affiliateSrc, showBackground = false }: WorldCupH
       <Container className="relative py-16 sm:py-24">
         <div className="max-w-4xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-semibold text-brand">
-            <span className="h-2 w-2 rounded-full bg-brand animate-pulse" />
             BetWinner Brasil · Análise 2026
           </div>
           <h1 className="mt-5 font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]">
@@ -44,27 +42,24 @@ export function WorldCupHero({ affiliateSrc, showBackground = false }: WorldCupH
           <p className="mt-5 text-lg text-text-muted leading-relaxed max-w-2xl">
             Análise independente da BetWinner para apostadores brasileiros: depósito via PIX em 5 minutos, app em português
             e código{" "}
-            <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span>.
-            Especial{" "}
+            <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span>.{" "}
             <Link href={WORLD_CUP.pagePath} className="text-brand font-semibold hover:underline">
               Copa do Mundo 2026
             </Link>
-            : Brasil estreia {WORLD_CUP.brasilDebut} vs Marrocos.
+            : {WORLD_CUP.champion} campeã · Brasil nas {WORLD_CUP.brasilExit.toLowerCase()}.
           </p>
-
-          <Countdown targetIso={WORLD_CUP.kickoffIso} label={WORLD_CUP.countdownLabel} />
 
           <AffiliateOfferCard affiliateSrc={affiliateSrc} />
 
           <div className="mt-4">
             <ButtonLink href={WORLD_CUP.pagePath} size="md" variant="ghost" className="text-text-muted hover:text-text">
-              Ver jogos e odds do Brasil →
+              Ver resultados e o que apostar agora →
             </ButtonLink>
           </div>
 
           <div className="mt-8 grid grid-cols-3 gap-4 max-w-lg">
-            <Stat value={WORLD_CUP.brasilOdds} label="odds Brasil campeão" />
-            <Stat value={WORLD_CUP.brasilDebut} label="estreia da Seleção" />
+            <Stat value={WORLD_CUP.champion} label="campeã do Mundial" />
+            <Stat value={WORLD_CUP.brasilFinalRank} label="Brasil no Mundial" />
             <Stat value="PIX" label="depósito em 5 min" />
           </div>
 
