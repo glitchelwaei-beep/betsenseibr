@@ -12,6 +12,10 @@ import { BonusTrapCards } from "@/components/blog/infographics/bonus-trap-cards"
 import { ActivationStepsVisual } from "@/components/blog/infographics/activation-steps-visual";
 import { PromoCodeFieldVisual } from "@/components/blog/infographics/promo-code-field-visual";
 import { ActivationFailCards } from "@/components/blog/infographics/activation-fail-cards";
+import { TrustSignalsBoard } from "@/components/blog/infographics/trust-signals-board";
+import { TrustTradeoffCards } from "@/components/blog/infographics/trust-tradeoff-cards";
+import { TrustVerdictBar } from "@/components/blog/infographics/trust-verdict-bar";
+import { BlogVideo } from "@/components/blog/blog-video";
 import { Callout } from "@/components/blog/callout";
 import { AffiliateCta } from "@/components/blog/affiliate-cta";
 import { RelatedLinks } from "@/components/blog/related-links";
@@ -48,6 +52,10 @@ export const blogMdxComponents: MDXComponents = {
   ActivationStepsVisual,
   PromoCodeFieldVisual,
   ActivationFailCards,
+  TrustSignalsBoard,
+  TrustTradeoffCards,
+  TrustVerdictBar,
+  BlogVideo,
   Callout,
   AffiliateCta,
   AffiliateOfferCard,

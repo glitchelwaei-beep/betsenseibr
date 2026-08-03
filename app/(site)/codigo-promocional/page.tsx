@@ -4,10 +4,17 @@ import { ButtonLink } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/site/breadcrumbs";
 import { PageUpdated } from "@/components/site/page-updated";
 import { JsonLd } from "@/components/site/json-ld";
+import { BlogVideo } from "@/components/blog/blog-video";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { BETWINNER } from "@/lib/partner";
 import { PAGE_UPDATED } from "@/lib/editorial";
 import { buildMetadata } from "@/lib/seo";
+
+const ACTIVATION_VIDEO = {
+  src: "/blog/como-ativar-bonus-betwinner.mp4",
+  poster: "/blog/como-ativar-bonus-betwinner-video-poster.jpg",
+  title: `Como usar o código ${BETWINNER.promoCode} na BetWinner`,
+} as const;
 
 export const metadata = buildMetadata({
   title: `Código promocional e cupom promocional BetWinner 2026 — ${BETWINNER.promoCode}`,
@@ -54,7 +61,8 @@ export default function CodigoPromocionalPage() {
           </h1>
           <PageUpdated date={PAGE_UPDATED.codigo} className="mt-2" />
           <p className="mt-4 text-lg text-text-muted">
-            Bônus de boas-vindas com o código {BETWINNER.promoCode} — {BETWINNER.bonusContext}.
+            Bônus de boas-vindas com o código {BETWINNER.promoCode} — {BETWINNER.bonusHeadline.toLowerCase()}{" "}
+            até R$ 700 no 1º depósito.
             {" "}
             <Link href="/bonus" className="text-brand hover:underline">Guia do bônus BetWinner →</Link>
           </p>
@@ -74,7 +82,39 @@ export default function CodigoPromocionalPage() {
             </ButtonLink>
           </div>
 
-          <article className="prose-content">
+          <div className="not-prose mt-10">
+            <h2 className="font-display text-2xl font-extrabold tracking-tight text-text sm:text-3xl">
+              Assista: onde colar o código (15s)
+            </h2>
+            <p className="mt-3 text-text-muted leading-relaxed">
+              Veja o campo <strong className="text-text">Código de promoção</strong> e o fluxo até o 1º depósito —
+              depois use o passo a passo escrito abaixo se preferir.
+            </p>
+            <BlogVideo
+              src={ACTIVATION_VIDEO.src}
+              poster={ACTIVATION_VIDEO.poster}
+              title={ACTIVATION_VIDEO.title}
+              caption={`Demonstração: cadastro BetWinner e código ${BETWINNER.promoCode}.`}
+              className="my-6"
+            />
+            <p className="text-sm text-text-dim">
+              Quer o guia completo (PIX, erros comuns e FAQ)?{" "}
+              <Link
+                href="/blog/como-ativar-bonus-betwinner"
+                className="font-semibold text-brand hover:underline"
+              >
+                Como ativar o bônus da BetWinner →
+              </Link>
+            </p>
+          </div>
+
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <ButtonLink href="/go/betwinner?src=promo-video" external size="lg" variant="primary">
+              Cadastrar com {BETWINNER.promoCode} →
+            </ButtonLink>
+          </div>
+
+          <article className="prose-content mt-10">
             <h2>Como usar o código {BETWINNER.promoCode} — passo a passo</h2>
             <ol>
               <li>Clique em <a href="/go/betwinner?src=promo-step1">cadastrar na BetWinner</a></li>
@@ -88,12 +128,12 @@ export default function CodigoPromocionalPage() {
 
             <h2>Termos do bônus de boas-vindas</h2>
             <ul>
-              <li><strong>Oferta:</strong> {BETWINNER.bonusHeadline}</li>
-              <li><strong>Campanha:</strong> {BETWINNER.bonusContext}</li>
-              <li><strong>Depósito mínimo qualificador:</strong> {BETWINNER.minDeposit}</li>
+              <li><strong>Oferta:</strong> {BETWINNER.bonusHeadline} (até R$ 700 no 1º depósito)</li>
+              <li><strong>Código:</strong> {BETWINNER.promoCode}</li>
+              <li><strong>Depósito mínimo qualificador:</strong> {BETWINNER.minDeposit} via PIX</li>
               <li><strong>Rollover:</strong> conforme termos da promoção na BetWinner (geralmente 5x em apostas combinadas)</li>
               <li><strong>Prazo:</strong> confira no e-mail de confirmação após o depósito</li>
-              <li><strong>Mercados elegíveis:</strong> esportes, incluindo jogos da Copa do Mundo 2026</li>
+              <li><strong>Mercados elegíveis:</strong> esportes, incluindo futebol brasileiro e internacionais</li>
             </ul>
 
             <h2>Aviso legal: Lei 14.790/2023</h2>

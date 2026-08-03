@@ -6,6 +6,15 @@ import { SITE } from "./site";
 
 export type BlogFaq = { question: string; answer: string };
 
+export type BlogVideoMeta = {
+  src: string;
+  poster: string;
+  title: string;
+  description: string;
+  duration: string;
+  uploadDate: string;
+};
+
 export type BlogPostMeta = {
   slug: string;
   title: string;
@@ -19,6 +28,7 @@ export type BlogPostMeta = {
   image?: string;
   imageAlt?: string;
   faq?: BlogFaq[];
+  video?: BlogVideoMeta;
   authorName: string;
 };
 
@@ -52,6 +62,28 @@ function parseMeta(data: Record<string, unknown>, fallbackSlug: string): BlogPos
         ? data.ogImage
         : undefined;
 
+  let video: BlogVideoMeta | undefined;
+  if (data.video && typeof data.video === "object") {
+    const v = data.video as Record<string, unknown>;
+    if (
+      typeof v.src === "string" &&
+      typeof v.poster === "string" &&
+      typeof v.title === "string" &&
+      typeof v.description === "string" &&
+      typeof v.duration === "string" &&
+      typeof v.uploadDate === "string"
+    ) {
+      video = {
+        src: v.src,
+        poster: v.poster,
+        title: v.title,
+        description: v.description,
+        duration: v.duration,
+        uploadDate: v.uploadDate,
+      };
+    }
+  }
+
   return {
     slug,
     title: typeof data.title === "string" ? data.title : slug,
@@ -64,6 +96,7 @@ function parseMeta(data: Record<string, unknown>, fallbackSlug: string): BlogPos
     image: imagePath,
     imageAlt: typeof data.imageAlt === "string" ? data.imageAlt : undefined,
     faq: faq?.length ? faq : undefined,
+    video,
     authorName:
       typeof data.authorName === "string" ? data.authorName : EDITORIAL.authorName,
   };

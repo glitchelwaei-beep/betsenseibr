@@ -129,6 +129,36 @@ export function sportsEventSchema({
   };
 }
 
+type VideoObjectSchemaInput = {
+  name: string;
+  description: string;
+  contentUrl: string;
+  thumbnailUrl: string;
+  uploadDate: string;
+  duration: string;
+};
+
+export function videoObjectSchema({
+  name,
+  description,
+  contentUrl,
+  thumbnailUrl,
+  uploadDate,
+  duration,
+}: VideoObjectSchemaInput) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name,
+    description,
+    contentUrl: new URL(contentUrl, SITE.url).toString(),
+    thumbnailUrl: new URL(thumbnailUrl, SITE.url).toString(),
+    uploadDate,
+    duration,
+    inLanguage: SITE.htmlLang,
+  };
+}
+
 type ArticleSchemaInput = {
   headline: string;
   description: string;
@@ -137,6 +167,7 @@ type ArticleSchemaInput = {
   dateModified: string;
   authorName: string;
   image?: string;
+  video?: VideoObjectSchemaInput;
 };
 export function articleSchema({
   headline,
@@ -146,6 +177,7 @@ export function articleSchema({
   dateModified,
   authorName,
   image,
+  video,
 }: ArticleSchemaInput) {
   const fullUrl = new URL(url, SITE.url).toString();
   return {
@@ -164,5 +196,18 @@ export function articleSchema({
     mainEntityOfPage: { "@type": "WebPage", "@id": fullUrl },
     image: image ?? `${SITE.url}/og-default.png`,
     inLanguage: SITE.htmlLang,
+    ...(video
+      ? {
+          video: {
+            "@type": "VideoObject",
+            name: video.name,
+            description: video.description,
+            contentUrl: new URL(video.contentUrl, SITE.url).toString(),
+            thumbnailUrl: new URL(video.thumbnailUrl, SITE.url).toString(),
+            uploadDate: video.uploadDate,
+            duration: video.duration,
+          },
+        }
+      : {}),
   };
 }

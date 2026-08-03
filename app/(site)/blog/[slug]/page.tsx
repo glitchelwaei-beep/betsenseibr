@@ -5,7 +5,7 @@ import { PageUpdated } from "@/components/site/page-updated";
 import { JsonLd } from "@/components/site/json-ld";
 import { BlogFeaturedImage } from "@/components/blog/featured-image";
 import { buildMetadata } from "@/lib/seo";
-import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, faqSchema, videoObjectSchema } from "@/lib/schema";
 import {
   absoluteBlogImageUrl,
   formatBlogDate,
@@ -39,6 +39,16 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const Content = await renderBlogMdx(post.content);
   const absoluteImage = absoluteBlogImageUrl(post.image);
+  const articleVideo = post.video
+    ? {
+        name: post.video.title,
+        description: post.video.description,
+        contentUrl: post.video.src,
+        thumbnailUrl: post.video.poster,
+        uploadDate: post.video.uploadDate,
+        duration: post.video.duration,
+      }
+    : undefined;
 
   return (
     <>
@@ -58,8 +68,21 @@ export default async function BlogPostPage({ params }: PageProps) {
           dateModified: post.updated,
           authorName: post.authorName,
           image: absoluteImage,
+          video: articleVideo,
         })}
       />
+      {post.video ? (
+        <JsonLd
+          data={videoObjectSchema({
+            name: post.video.title,
+            description: post.video.description,
+            contentUrl: post.video.src,
+            thumbnailUrl: post.video.poster,
+            uploadDate: post.video.uploadDate,
+            duration: post.video.duration,
+          })}
+        />
+      ) : null}
       {post.faq?.length ? <JsonLd data={faqSchema(post.faq)} /> : null}
 
       <Container className="pt-6">

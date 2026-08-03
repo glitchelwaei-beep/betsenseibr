@@ -43,7 +43,7 @@ export function BlogFeaturedImage({
               : "(max-width: 768px) 100vw, (max-width: 1200px) 720px, 768px"
         }
         className={cn(
-          "object-cover object-center",
+          isHero ? "object-contain object-center" : "object-cover object-center",
           (variant === "card" || isThumb) &&
             "transition-transform duration-500 ease-out group-hover:scale-[1.02]",
         )}
