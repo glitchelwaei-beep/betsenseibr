@@ -10,9 +10,9 @@ import { PALPITES, PALPITES_UPDATED } from "@/lib/palpites";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Palpites de futebol 2026 — Copa do Mundo e Brasileirão",
+  title: "Palpites de futebol 2026 — Brasileirão e mercados",
   description:
-    "Palpites de futebol com análise editorial: Copa do Mundo 2026, Brasileirão e mercados sugeridos. Sem garantias — jogo responsável 18+.",
+    "Palpites de futebol com análise editorial: Brasileirão, Libertadores e mercados sugeridos. Sem garantias — jogo responsável 18+.",
   path: "/palpites-futebol",
 });
 

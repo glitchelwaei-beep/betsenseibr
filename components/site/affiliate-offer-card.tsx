@@ -38,7 +38,7 @@ function RatingBadges({ className }: { className?: string }) {
         {BETWINNER.rating}/10
       </span>
       <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-[11px] font-semibold text-zinc-600 sm:px-2.5 sm:py-1 sm:text-xs">
-        Recomendada · Copa 2026
+        Recomendada · PIX
       </span>
     </div>
   );
@@ -252,7 +252,7 @@ function HeroOfferCard({
         </div>
 
         <p className="mt-3 font-display text-base font-bold leading-snug text-white sm:text-lg">
-          Bônus {BETWINNER.bonusShort} · Copa 2026
+          Bônus {BETWINNER.bonusShort} · Código {BETWINNER.promoCode}
         </p>
         <p className="mt-1.5 text-sm font-medium text-[#FFDF00]">{moneyLine}</p>
         {moneyExample ? (

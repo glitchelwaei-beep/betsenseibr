@@ -26,7 +26,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE.name} — BetWinner Brasil: análise, código promocional e PIX 2026`,
+    default: `${SITE.name} — BetWinner: bônus 100%, código BETSENSEI26 e PIX`,
     template: `%s | ${SITE.shortName}`,
   },
   description: SITE.description,

@@ -42,24 +42,24 @@ export function WorldCupHero({ affiliateSrc, showBackground = false }: WorldCupH
           <p className="mt-5 text-lg text-text-muted leading-relaxed max-w-2xl">
             Análise independente da BetWinner para apostadores brasileiros: depósito via PIX em 5 minutos, app em português
             e código{" "}
-            <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span>.{" "}
-            <Link href={WORLD_CUP.pagePath} className="text-brand font-semibold hover:underline">
-              Copa do Mundo 2026
-            </Link>
-            : {WORLD_CUP.champion} campeã · Brasil nas {WORLD_CUP.brasilExit.toLowerCase()}.
+            <span className="font-mono font-bold text-brand">{BETWINNER.promoCode}</span> —{" "}
+            {BETWINNER.bonusContext}. Guias em português, sem enrolação.
           </p>
 
           <AffiliateOfferCard affiliateSrc={affiliateSrc} />
 
-          <div className="mt-4">
-            <ButtonLink href={WORLD_CUP.pagePath} size="md" variant="ghost" className="text-text-muted hover:text-text">
-              Ver resultados e o que apostar agora →
+          <div className="mt-4 flex flex-wrap gap-3">
+            <ButtonLink href="/bonus" size="md" variant="ghost" className="text-text-muted hover:text-text">
+              Ver oferta de bônus →
+            </ButtonLink>
+            <ButtonLink href="/codigo-promocional" size="md" variant="ghost" className="text-text-muted hover:text-text">
+              Código {BETWINNER.promoCode} →
             </ButtonLink>
           </div>
 
           <div className="mt-8 grid grid-cols-3 gap-4 max-w-lg">
-            <Stat value={WORLD_CUP.champion} label="campeã do Mundial" />
-            <Stat value={WORLD_CUP.brasilFinalRank} label="Brasil no Mundial" />
+            <Stat value={BETWINNER.bonusShort} label="bônus no 1º depósito" />
+            <Stat value={BETWINNER.promoCode} label="código promocional" />
             <Stat value="PIX" label="depósito em 5 min" />
           </div>
 

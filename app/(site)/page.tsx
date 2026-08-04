@@ -8,9 +8,9 @@ import { BETWINNER } from "@/lib/partner";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: `BetWinner Brasil: bônus ${BETWINNER.bonusShort}, PIX e Copa 2026`,
+  title: `BetWinner: bônus ${BETWINNER.bonusShort} até R$ 700 + PIX`,
   description:
-    `BetWinner Brasil: bônus ${BETWINNER.bonusShort}, cadastro com PIX, app APK e código ${BETWINNER.promoCode}. Análise honesta e guias em português — inclui especial Copa 2026.`,
+    `Ative o bônus de ${BETWINNER.bonusShort} (até R$ 700) com ${BETWINNER.promoCode}. Cadastro rápido, PIX a partir de ${BETWINNER.minDeposit} e guias em português na BetWinner.`,
   path: "/",
 });
 
@@ -154,7 +154,7 @@ export default function HomePage() {
             <NavCard href="/aplicativo" title="BetWinner mobile e app (APK)" desc="BetWinner mobile no celular: download do APK, instalação no iPhone e diferenças vs. site mobile." />
             <NavCard href="/apostas-esportivas" title="Apostas esportivas Brasil" desc="Guia completo: mercados, legislação, cassino ao vivo e como começar na BetWinner." />
             <NavCard href="/futebol" title="Apostas no Campeonato Brasileiro" desc="Mercados, odds de futebol, Brasileirão, Libertadores e Copa do Brasil." />
-            <NavCard href="/palpites-futebol" title="Palpites de futebol" desc="Análises editoriais Copa 2026 e Brasileirão — atualizado semanalmente." />
+            <NavCard href="/palpites-futebol" title="Palpites de futebol" desc="Análises editoriais de Brasileirão e futebol — atualizado semanalmente." />
             <NavCard href="/como-apostar" title="Como apostar (para iniciantes)" desc="Glossário, tipos de aposta (simples, múltipla, handicap), gestão de banca e estratégias básicas." />
             <NavCard href="/aposta-ao-vivo" title="Apostas ao vivo" desc="Como funciona o live, transmissões da BetWinner, cash out e estratégias para apostas in-play." />
             <NavCard href="/imposto" title="Imposto sobre prêmios (IR 15%)" desc="O que mudou com a Lei 14.790/2023, como declarar ganhos de casas offshore como a BetWinner." />

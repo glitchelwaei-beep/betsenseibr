@@ -10,10 +10,10 @@ export const BETWINNER = {
   rating: 9.1,
   brandColor: "#eab308",
 
-  // Welcome bonus — aligned with World Cup 2026 affiliate landing (100% offer)
+  // Welcome bonus — 100% first deposit (up to R$ 700 editorial)
   bonusHeadline: "Bônus de 100% para novos jogadores",
   bonusShort: "100%",
-  bonusContext: "Especial Copa do Mundo 2026",
+  bonusContext: "100% até R$ 700 no 1º depósito",
   bonusAmount: "100%",
   promoCode: "BETSENSEI26",
   promoCodeNote:
@@ -39,9 +39,9 @@ export const BETWINNER = {
   licenseText: "Licença internacional (Curaçao eGaming)",
 
   highlights: [
-    "Bônus de 100% para novos jogadores — especial Copa 2026",
+    "Bônus de 100% para novos jogadores — até R$ 700 no 1º depósito",
     "Saque via PIX em até 1 hora",
-    "Mais de 40 esportes incluindo futebol brasileiro e Copa do Mundo",
+    "Mais de 40 esportes incluindo futebol brasileiro e europeu",
     "App Android (APK) e iOS — interface 100% em português",
     "Suporte 24/7 em português via chat e e-mail",
   ],
@@ -49,7 +49,7 @@ export const BETWINNER = {
   pros: [
     "Cadastro rápido (menos de 2 minutos)",
     "Aceita PIX, boleto e criptomoedas",
-    "Cobertura completa do Campeonato Brasileiro e Copa do Mundo 2026",
+    "Cobertura completa do Campeonato Brasileiro e futebol internacional",
     "Transmissões ao vivo de futebol, UFC e e-sports",
     "Promoções recorrentes para apostadores recorrentes",
   ],
